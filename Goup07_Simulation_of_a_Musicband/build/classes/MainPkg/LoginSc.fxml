@@ -10,15 +10,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="521.0" prefWidth="713.0" style="-fx-background-color: blue;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="MainPkg.LoginScController">
+<AnchorPane id="AnchorPane" prefHeight="521.0" prefWidth="713.0" style="-fx-background-color: C7D4FA; -fx-background-color: ;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPkg.LoginScController">
    <children>
-      <Label layoutX="175.0" layoutY="206.0" prefHeight="27.0" prefWidth="91.0" text="User ID" textFill="WHITE">
+      <Label layoutX="175.0" layoutY="206.0" prefHeight="27.0" prefWidth="91.0" text="User ID" textFill="#252121">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="175.0" layoutY="260.0" prefHeight="27.0" prefWidth="91.0" text="Password" textFill="WHITE">
+      <Label layoutX="175.0" layoutY="260.0" prefHeight="27.0" prefWidth="91.0" text="Password" textFill="#4d4949">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -68,7 +67,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="72.0" layoutY="32.0" prefHeight="87.0" prefWidth="351.0" text="Welcome" textFill="#bae14f">
+      <Label layoutX="72.0" layoutY="32.0" prefHeight="87.0" prefWidth="351.0" text="Welcome" textFill="#191057">
          <font>
             <Font name="Constantia Bold Italic" size="67.0" />
          </font>

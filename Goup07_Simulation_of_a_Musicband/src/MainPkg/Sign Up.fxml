@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="750.0" style="-fx-background-color: Lavender;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPkg.SignUpController">
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="750.0" style="-fx-background-color: C7F2FA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPkg.SignUpController">
    <children>
       <Label layoutX="85.0" layoutY="165.0" prefHeight="17.0" prefWidth="77.0" text="Full Name" />
       <Label layoutX="82.0" layoutY="217.0" prefHeight="17.0" prefWidth="96.0" text="User Name" />
@@ -21,7 +21,7 @@
       <TextField fx:id="newPasswordTextField" layoutX="530.0" layoutY="213.0" />
       <TextField fx:id="confirmPasswordTextField" layoutX="530.0" layoutY="263.0" />
       <DatePicker fx:id="newUserDob" layoutX="530.0" layoutY="161.0" prefHeight="25.0" prefWidth="149.0" />
-      <Label layoutX="84.0" layoutY="79.0" text="Register New Account" textFill="#3300ff">
+      <Label layoutX="84.0" layoutY="79.0" text="Register New Account" textFill="#564790">
          <font>
             <Font name="System Bold Italic" size="33.0" />
          </font>
@@ -33,7 +33,7 @@
       </Button>
       <Button fx:id="goback" layoutX="75.0" layoutY="443.0" mnemonicParsing="false" onAction="#goBackButtonOnClick" prefHeight="27.0" prefWidth="96.0" text="Go Back" />
       <TextField fx:id="newNameTextField" layoutX="171.0" layoutY="161.0" />
-      <Label layoutX="196.0" layoutY="435.0" text="Give Valid Number in case you Forget your password" textFill="#ff1c00">
+      <Label layoutX="200.0" layoutY="450.0" text="Give Valid Number in case you Forget your password" textFill="#e818b4">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
