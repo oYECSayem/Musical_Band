@@ -31,13 +31,13 @@
       </Label>
       <ComboBox fx:id="quantityComboBox" layoutX="181.0" layoutY="24.0" prefWidth="150.0" />
       <TextArea fx:id="selectedItemsDescriptionTextArea" layoutX="491.0" layoutY="24.0" prefHeight="291.0" prefWidth="309.0" />
-      <Label layoutX="381.0" layoutY="55.0" text="Selected Items">
+      <Label layoutX="386.0" layoutY="119.0" text="Selected Items">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <DatePicker fx:id="datepicker" layoutX="163.0" layoutY="93.0" />
-      <Label layoutX="24.0" layoutY="98.0" text="Select Order Date ">
+      <DatePicker fx:id="datepicker" layoutX="122.0" layoutY="93.0" />
+      <Label layoutX="40.0" layoutY="98.0" text="Select Date ">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>

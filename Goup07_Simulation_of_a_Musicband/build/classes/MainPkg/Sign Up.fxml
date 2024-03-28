@@ -33,7 +33,7 @@
       </Button>
       <Button fx:id="goback" layoutX="75.0" layoutY="443.0" mnemonicParsing="false" onAction="#goBackButtonOnClick" prefHeight="27.0" prefWidth="96.0" text="Go Back" />
       <TextField fx:id="newNameTextField" layoutX="171.0" layoutY="161.0" />
-      <Label layoutX="196.0" layoutY="435.0" text="Give Valid Number in case you Forget your password" textFill="#ff1c00">
+      <Label layoutX="200.0" layoutY="450.0" text="Give Valid Number in case you Forget your password" textFill="#e818b4">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
