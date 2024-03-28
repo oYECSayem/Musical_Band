@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="757.0" style="-fx-background-color: D8F5EB;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="MainPkg.InstrumentManagerDashboardController">
+   <children>
+      <Label layoutX="196.0" layoutY="178.0" prefHeight="88.0" prefWidth="365.0" text="Welcome,Instrument Manager!" textFill="#761b9e">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabe" layoutX="237.0" layoutY="286.0" prefHeight="29.0" prefWidth="287.0" style="-fx-background-color: pink;" />
+      <ComboBox fx:id="myTaskComboBox" layoutX="25.0" layoutY="32.0" prefHeight="31.0" prefWidth="116.0" promptText="My Task" style="-fx-background-color: ABD2F5;" />
+      <ComboBox fx:id="InstrumentInformationComboBox" layoutX="156.0" layoutY="32.0" prefHeight="31.0" prefWidth="224.0" promptText="Instruments Information" style="-fx-background-color: ABD2F5;" />
+      <MenuBar layoutX="425.0" layoutY="32.0" style="-fx-background-color: ABD2F5;">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
