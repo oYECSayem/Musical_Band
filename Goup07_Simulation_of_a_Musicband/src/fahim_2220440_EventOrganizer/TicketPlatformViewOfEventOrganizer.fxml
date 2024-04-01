@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="581.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="48.0" layoutY="58.0" prefHeight="21.0" prefWidth="106.0" text="Concert Name:" />
+      <ComboBox fx:id="concertName" layoutX="175.0" layoutY="53.0" prefHeight="31.0" prefWidth="239.0" />
+      <Label layoutX="48.0" layoutY="116.0" prefHeight="21.0" prefWidth="168.0" text="Total Number Of Ticket:" />
+      <TextField fx:id="numberOfTicket" layoutX="216.0" layoutY="111.0" prefHeight="31.0" prefWidth="196.0" />
+      <Label layoutX="48.0" layoutY="167.0" prefHeight="21.0" prefWidth="168.0" text="Ticket Category:" />
+      <ComboBox fx:id="ticketCategory" layoutX="175.0" layoutY="162.0" prefHeight="31.0" prefWidth="239.0" />
+      <Button fx:id="addMoreTicket" layoutX="176.0" layoutY="218.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="239.0" text="Add More Ticket" />
+      <Label layoutX="429.0" layoutY="223.0" prefHeight="21.0" prefWidth="245.0" text="How many Ticket You want to add?" />
+      <TextField fx:id="howMantTicektWantToAdd" layoutX="668.0" layoutY="218.0" prefHeight="31.0" prefWidth="168.0" />
+      <Label layoutX="48.0" layoutY="303.0" prefHeight="21.0" prefWidth="168.0" text="Information Of Ticket:" />
+      <TableView fx:id="tableViewOfInfoOfTicket" layoutX="48.0" layoutY="345.0" prefHeight="200.0" prefWidth="787.0">
+        <columns>
+          <TableColumn fx:id="ticketCategory" prefWidth="150.0" text="Ticket Category" />
+          <TableColumn fx:id="totalTicket" minWidth="0.0" prefWidth="203.0" text="Total Ticket" />
+            <TableColumn fx:id="soldTicket" prefWidth="143.0" text="Sold Ticket" />
+            <TableColumn fx:id="remainTicket" prefWidth="290.0" text="Remain Ticket" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
