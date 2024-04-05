@@ -91,7 +91,7 @@ public class LoginScController implements Initializable {
                 currentStage.setScene(scene);
             }
             if (userType.equals("Fan")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Fan Dashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sadia_220645_Fan/FanDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);
