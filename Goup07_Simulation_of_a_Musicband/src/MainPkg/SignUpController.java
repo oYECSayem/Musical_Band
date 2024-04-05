@@ -82,7 +82,7 @@ public class SignUpController implements Initializable {
             System.out.println(success);
             Alert a = new Alert(AlertType.CONFIRMATION);
             a.setHeaderText("Confirmed");
-            a.setContentText("Your SignUp is Complete");
+            a.setContentText("SignUp is Complete");
             a.showAndWait();
         }
        else{
