@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -69,48 +70,28 @@ public class SignUpController implements Initializable {
 
     @FXML
     private void createAccountButtonOnClick(ActionEvent event) {
-        String fullName = newNameTextField.getText();
+        String fullName=newNameTextField.getText();
         String userName = newUserNameTextField.getText();
         String phoneNumber = newUserPhoneNumberTextField.getText();       
         String password = newPasswordTextField.getText();
         String confirmPassword = confirmPasswordTextField.getText();
-        LocalDate dob = newUserDob.getValue();
-
-        // Check if any field is empty
-        if (fullName.isEmpty() || userName.isEmpty() || phoneNumber.isEmpty() ||
-            password.isEmpty() || confirmPassword.isEmpty() || dob == null) {
-            showAlert("Error", "Empty Fields", "Please fill in all the fields.");
-            return;
-        }
-
-        // Check if password meets requirements
-        if (!password.matches("^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$")) {
-            showAlert("Error", "Invalid Password", "Password must contain at least 8 characters including a number.");
-            return;
-        }
-
-        // Check if password and confirm password match
-        if (!password.equals(confirmPassword)) {
-            showAlert("Error", "Password Mismatch", "Password and Confirm Password do not match.");
-            return;
-        }
-
-        // Proceed with creating the User object and writing to file
-        User newUser = new User(fullName, userName, phoneNumber, password, dob);
+        LocalDate dob = newUserDob.getValue();       
+        User newUser = new User(fullName,userName, phoneNumber, password, dob);
         Boolean success = SignUpFile.SignUpFileWrite(newUser, userTypeComboBox.getValue());
-        if (success) {
-            Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+        if(success){
+            System.out.println(success);
+            Alert a = new Alert(AlertType.CONFIRMATION);
             a.setHeaderText("Confirmed");
             a.setContentText("Your SignUp is Complete");
             a.showAndWait();
-        } else {
-            Alert a = new Alert(Alert.AlertType.ERROR);
+        }
+       else{
+            System.out.println(success);
+            Alert a = new Alert(AlertType.ERROR);
             a.setHeaderText("ERROR");
-            a.setContentText("Your SignUp is Incomplete. TRY AGAIN");
+            a.setContentText("Your SignUp is Incomplete.TRY AGAIN");
             a.showAndWait();
         }
-
-        // Clear fields after signup
         newNameTextField.clear();
         newUserNameTextField.clear();
         newUserPhoneNumberTextField.clear();       

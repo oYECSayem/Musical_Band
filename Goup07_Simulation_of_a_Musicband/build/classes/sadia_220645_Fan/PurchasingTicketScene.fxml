@@ -56,7 +56,7 @@
       </Label>
       <Line endX="12.0" endY="-31.0" layoutX="306.0" layoutY="79.0" startX="12.0" startY="221.0" />
       <ComboBox layoutX="348.0" layoutY="147.0" prefWidth="150.0" />
-      <Button layoutX="26.0" layoutY="622.0" mnemonicParsing="false" onAction="#confirmpurchaseButtonOnClicked" text="Confirm Purchase" />
+      <Button layoutX="26.0" layoutY="622.0" mnemonicParsing="false" onAction="#ConfirmpurchaseButtonOnClicked" text="Confirm Purchase" />
       <Button layoutX="667.0" layoutY="628.0" mnemonicParsing="false" onAction="#goToPreviousPageButtonOnClicked" text="Go to Previous Page" />
       <Button layoutX="26.0" layoutY="354.0" mnemonicParsing="false" onAction="#showDetailsButtonOnClicked" text="Show Details" />
    </children>

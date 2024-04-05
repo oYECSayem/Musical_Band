@@ -4,11 +4,8 @@ import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.time.LocalDate;
 
 public class SignUpFile {
 
@@ -41,7 +38,6 @@ public class SignUpFile {
         }
         return result;
     }
-
     public static boolean SignUpFileRead(String nameFile, String Username, String Password) {
         File f = null;
         FileInputStream fis = null;
@@ -74,8 +70,7 @@ public class SignUpFile {
         }
         return result;
     }
-
-    // Read file for sending user full name
+    //reaf filefor sending user fullname------------------
     public static String FileRead_forUserName(String nameFile, String Username, String Password) {
         File f = null;
         FileInputStream fis = null;
