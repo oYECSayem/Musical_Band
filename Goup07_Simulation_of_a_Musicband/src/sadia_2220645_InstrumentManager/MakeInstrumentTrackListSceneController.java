@@ -30,7 +30,7 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
     @FXML
     private TableColumn<Instrument, String> instrumentNameCol;
     @FXML
-    private TableColumn<Instrument, String> IdCol;
+    private TableColumn<Instrument, Integer> IdCol;
     @FXML
     private TableColumn<Instrument, String> serialNumberCol;
     @FXML
@@ -55,7 +55,7 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
                  "Trumpet", "Drum set", "Saxophone", "Ukulele");
 
         instrumentNameCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("name"));
-        IdCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("InstrumentID"));
+        IdCol.setCellValueFactory(new PropertyValueFactory<Instrument,Integer>("InstrumentID"));
         serialNumberCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("serialNumber"));
         modelCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("model"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("qantity"));
