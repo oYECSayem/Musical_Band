@@ -1,11 +1,11 @@
-
 package MainPkg;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDate;
 
 
-public class User implements Serializable{
+public class User implements Serializable {
     protected String fullName;
     protected String userName;
     protected String phoneNumber;
