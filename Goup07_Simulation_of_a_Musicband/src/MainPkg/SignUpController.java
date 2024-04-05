@@ -43,7 +43,7 @@ public class SignUpController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         userTypeComboBox.getItems().addAll("Fan", "Instrument Manager",
-                "Chief Accountant Manager", "Instrument Manager", "Merchandise Manager",
+                "Chief Accountant Manager", "Band Member", "Merchandise Manager",
                  "Band Promoter", "Event Organizer", "Operational Manager");
     }
 
