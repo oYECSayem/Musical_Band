@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="615.0" prefWidth="737.0" style="-fx-background-color: D8F5EB;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" prefHeight="615.0" prefWidth="737.0" style="-fx-background-color: D8F5EB;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sadia_2220645_Fan.GreetAndMeetInformationSceneController">
    <children>
       <Label layoutX="138.0" layoutY="21.0" text="Meet And Greet And Meet Information" textFill="#4f11e1">
          <font>

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="551.0" prefWidth="788.0" style="-fx-background-color: D8F5EB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="551.0" prefWidth="788.0" style="-fx-background-color: D8F5EB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_Fan.MeetAndGreetInformationSceneController">
    <children>
       <Label layoutX="141.0" layoutY="14.0" text="Meet &amp; Greet Information" textFill="#a41e95">
          <font>
