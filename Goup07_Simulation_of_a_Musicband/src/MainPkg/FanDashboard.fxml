@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="594.0" prefWidth="778.0" style="-fx-background-color: D8F5EB; -fx-background-color: ;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPkg.FanDashboardController">
+   <children>
+      <Label layoutX="255.0" layoutY="158.0" />
+      <Label layoutX="270.0" layoutY="179.0" prefHeight="72.0" prefWidth="164.0" text="Welcome!" textFill="#2a11cd" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="34.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="activitiesComboBox" layoutX="27.0" layoutY="30.0" onAction="#activitiesComboBoxButtonOnClicked" prefHeight="31.0" prefWidth="114.0" promptText="Activities" />
+      <ComboBox fx:id="latestUpdatesComboBox" layoutX="173.0" layoutY="30.0" onAction="#latestUpdatesComboBoxButtonOnClicked" prefHeight="31.0" prefWidth="164.0" promptText="Latest Updates!" />
+      <Label fx:id="fanNameLabel" layoutX="151.0" layoutY="283.0" prefHeight="45.0" prefWidth="402.0" style="-fx-background-color: pink;">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="362.0" layoutY="30.0" mnemonicParsing="false" onAction="#chechMerchandiseButtonOnClicked" prefHeight="39.0" prefWidth="221.0" text="Check Merchandise " />
+      <Button layoutX="607.0" layoutY="37.0" mnemonicParsing="false" onAction="#concertTicketButtonOnClicked" text="Concert Tickets" textAlignment="JUSTIFY" wrapText="true" />
+   </children>
+</AnchorPane>

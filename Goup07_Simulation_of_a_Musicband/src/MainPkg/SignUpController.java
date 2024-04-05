@@ -100,5 +100,3 @@ public class SignUpController implements Initializable {
         newUserDob.setValue(null);
     }
 }
-
-
