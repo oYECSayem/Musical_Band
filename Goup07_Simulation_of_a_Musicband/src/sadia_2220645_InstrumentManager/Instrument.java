@@ -13,7 +13,9 @@ import java.io.Serializable;
 public class Instrument implements Serializable {
     private String name, serialNumber, model;
     private int InstrumentID, qantity;
-
+    private int price;
+    private String brandName;
+    
     public Instrument(String name, String serialNumber, String model, int InstrumentID, int qantity) {
         this.name = name;
         this.serialNumber = serialNumber;
@@ -21,6 +23,17 @@ public class Instrument implements Serializable {
         this.InstrumentID = InstrumentID;
         this.qantity = qantity;
     }
+
+    public Instrument(String name, String model, int price, String brandName) {
+        this.name = name;
+        this.model = model;
+        this.price = price;
+        this.brandName = brandName;
+    }
+    
+    
+    
+    
 
     public String getName() {
         return name;

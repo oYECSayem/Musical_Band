@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="799.0" style="-fx-background-color: D8F5EB;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="799.0" style="-fx-background-color: D8F5EB;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sadia_220645_Fan.GiveFeedbackSceneController">
    <children>
       <Label layoutX="211.0" layoutY="42.0" prefHeight="40.0" prefWidth="423.0" text="Give Us Your Valuable Feedback!" textFill="#3a25dd">
          <font>
