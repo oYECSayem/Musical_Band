@@ -31,7 +31,8 @@ import javafx.stage.Stage;
  * @author USER
  */
 public class DefectedInstrumentTrackListSceneController implements Initializable {
-    
+
+   
     @FXML
     private TableView<DefectedInstrument> defectedInstrumentTableView;
     @FXML
@@ -140,7 +141,5 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
         currentStage.show();
         
     }
-    
-
     
 }

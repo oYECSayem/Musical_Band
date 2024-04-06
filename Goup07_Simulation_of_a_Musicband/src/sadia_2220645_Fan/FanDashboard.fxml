@@ -5,75 +5,72 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_Fan.FanDashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="759.0" prefWidth="1067.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_Fan.FanDashboardController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="View">
+          <Menu mnemonicParsing="false" text="Activities">
             <items>
               <MenuItem mnemonicParsing="false" text="goal5" />
                   <MenuItem mnemonicParsing="false" text="goal6" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Latest Updates">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="goal5" />
+                  <MenuItem mnemonicParsing="false" text="goal6" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Notifications">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="goal5" />
+                  <MenuItem mnemonicParsing="false" text="goal6" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Tickets &amp; Merchandise">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="goal5" />
+                  <MenuItem mnemonicParsing="false" text="goal6" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help &amp; Support">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="goal5" />
+                  <MenuItem mnemonicParsing="false" text="goal6" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>
-   <left>
-      <ScrollPane prefHeight="509.0" prefWidth="260.0" BorderPane.alignment="CENTER">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="497.0" prefWidth="187.0">
-               <children>
-                  <VBox layoutX="29.0" layoutY="20.0" prefHeight="435.0" prefWidth="149.0">
-                     <children>
-                        <Label prefHeight="44.0" prefWidth="90.0" text="User: Fan" textFill="#0c3386">
-                           <font>
-                              <Font name="System Bold Italic" size="15.0" />
-                           </font></Label>
-                        <ImageView fitHeight="152.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true" />
-                        <Button mnemonicParsing="false" text="goal1" />
-                        <Button mnemonicParsing="false" text="goal2" />
-                        <Button mnemonicParsing="false" text="goal3" />
-                        <Button mnemonicParsing="false" text="goal4" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Label text="Label" />
-                        <Button mnemonicParsing="false" text="Log out" />
-                     </children>
-                  </VBox>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
-   </left>
    <center>
-      <TabPane prefHeight="509.0" prefWidth="428.0" style="-fx-background-color: #0b3286;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-        <tabs>
-          <Tab text="Notifications">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="524.0">
-                     <children>
-                        <Label layoutX="123.0" layoutY="40.0" prefHeight="54.0" prefWidth="204.0" style="-fx-background-color: WHITE;" text="WELCOME!" textFill="#ab1790">
-                           <font>
-                              <Font name="System Bold Italic" size="36.0" />
-                           </font>
-                        </Label>
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Extras">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="431.0" />
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
+      <AnchorPane prefHeight="709.0" prefWidth="1067.0" style="-fx-background-color: DarkBlue;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="506.0" layoutY="73.0" prefHeight="68.0" prefWidth="453.0" style="-fx-background-color: white;" text="Welcome to Music  World!" textFill="#57096f">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+            </Label>
+            <Button layoutX="893.0" layoutY="645.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="132.0" text="LOG OUT">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="670.0" fitWidth="366.0" layoutX="23.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/bigguitr.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="388.0" fitWidth="335.0" layoutX="592.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/PINK%20MUSIC.gif" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </center>
 </BorderPane>

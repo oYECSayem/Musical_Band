@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -50,6 +51,11 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
     private TableColumn<Instrument, Integer> priceCol;
 
     ArrayList<Instrument> newUpdatedInstumentList=new ArrayList<>();
+    
+    
+    Alert success= new Alert(Alert.AlertType.INFORMATION,"New updated Instrument Added Successfully!");
+            
+    //Alert success=new Alert(Alert.AlertType.INFORMATION,"Successfully Added the product");
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -77,6 +83,12 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
         newUpdatedInstrument=new Instrument( newInstrumentsName,newInstrumentsModel, price,brandName);
         
         newUpdatedInstumentList.add(newUpdatedInstrument);
+        success.show();
+        
+        newInstrumentNameTextField.clear();
+        modelTextField.clear();
+        priceTextField.clear();
+        brandNameTextField.clear();
 
                 
     }

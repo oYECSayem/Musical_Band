@@ -29,6 +29,8 @@ public class InstrumentManagerDashboardController implements Initializable {
     
     @FXML
     private BorderPane borderPane;
+    @FXML
+    private MenuItem Task;
    
     
     @Override
@@ -90,7 +92,7 @@ public class InstrumentManagerDashboardController implements Initializable {
     }
 
     @FXML
-    private void logoutButtonOnClicked(ActionEvent event) {
+    private void logOutButtonOnclicked(ActionEvent event) {
     }
     
 }
