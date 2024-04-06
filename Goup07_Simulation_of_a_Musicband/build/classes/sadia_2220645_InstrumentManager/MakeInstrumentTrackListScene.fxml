@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -16,9 +17,9 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="489.0" layoutY="60.0" prefHeight="21.0" prefWidth="105.0" text="Instrument ID:" />
-      <TextField fx:id="instrumentIdTextField" layoutX="605.0" layoutY="55.0" />
-      <TableView fx:id="instrumentListTableView" layoutX="52.0" layoutY="300.0" prefHeight="227.0" prefWidth="647.0">
+      <Label layoutX="464.0" layoutY="60.0" prefHeight="21.0" prefWidth="128.0" text="Instrument Name:" />
+      <TextField fx:id="instrumentNameTextField" layoutX="605.0" layoutY="55.0" />
+      <TableView fx:id="instrumentListTableView" layoutX="75.0" layoutY="323.0" prefHeight="227.0" prefWidth="647.0">
         <columns>
           <TableColumn fx:id="instrumentNameCol" prefWidth="177.0" text="Instrument Name" />
           <TableColumn fx:id="IdCol" prefWidth="69.0" text="ID" />
@@ -27,14 +28,22 @@
             <TableColumn fx:id="quantityCol" prefWidth="122.0" text="Quantity" />
         </columns>
       </TableView>
-      <Button layoutX="60.0" layoutY="537.0" mnemonicParsing="false" onAction="#showInstrumentListButtonOnClicked" text="Show Instrument List" />
-      <Label layoutX="407.0" layoutY="98.0" prefHeight="21.0" prefWidth="187.0" text="Instrument Serial Number:" />
-      <Label layoutX="537.0" layoutY="148.0" prefHeight="21.0" prefWidth="54.0" text="Model:" />
-      <Label layoutX="441.0" layoutY="190.0" prefHeight="21.0" prefWidth="150.0" text="Instrument Quantity:" />
-      <TextField fx:id="serialNumberTextField" layoutX="605.0" layoutY="93.0" />
-      <TextField fx:id="modelTextField" layoutX="605.0" layoutY="143.0" />
-      <TextField fx:id="quantityTextField" layoutX="605.0" layoutY="185.0" />
-      <ComboBox fx:id="instrumentnameComboBox" layoutX="71.0" layoutY="34.0" prefHeight="31.0" prefWidth="170.0" promptText="Instrument Name" />
-      <Button layoutX="60.0" layoutY="249.0" mnemonicParsing="false" onAction="#addInstrumentButtonOnClicked" text="Add Instrument " />
+      <Button layoutX="77.0" layoutY="561.0" mnemonicParsing="false" onAction="#showInstrumentListButtonOnClicked" text="Show Instrument List" />
+      <Label layoutX="407.0" layoutY="136.0" prefHeight="21.0" prefWidth="187.0" text="Instrument Serial Number:" />
+      <Label layoutX="528.0" layoutY="181.0" prefHeight="21.0" prefWidth="54.0" text="Model:" />
+      <Label layoutX="432.0" layoutY="216.0" prefHeight="21.0" prefWidth="150.0" text="Instrument Quantity:" />
+      <TextField fx:id="serialNumberTextField" layoutX="605.0" layoutY="131.0" />
+      <TextField fx:id="modelTextField" layoutX="606.0" layoutY="176.0" />
+      <TextField fx:id="quantityTextField" layoutX="606.0" layoutY="211.0" />
+      <ComboBox fx:id="instrumentIdComboBox" layoutX="71.0" layoutY="34.0" onAction="#instrumentNameComboBoxButtonOnClicked" prefHeight="31.0" prefWidth="170.0" promptText="Instrument ID" />
+      <Button layoutX="76.0" layoutY="285.0" mnemonicParsing="false" onAction="#addInstrumentButtonOnClicked" text="Add Instrument " />
+      <Label layoutX="489.0" layoutY="94.0" prefHeight="21.0" prefWidth="105.0" text="Instrument ID:" />
+      <TextField fx:id="instrumentIdTextField" layoutX="606.0" layoutY="89.0" />
+      <TextArea fx:id="instrumentDetailsTextArea" layoutX="71.0" layoutY="71.0" prefHeight="204.0" prefWidth="200.0" />
+      <Label layoutX="14.0" layoutY="39.0" text="Search:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

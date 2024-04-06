@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -22,8 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * @author USER
  */
 public class MakeInstrumentTrackListSceneController implements Initializable {
-    @FXML
-    private TextField instrumentIdTextField;
+   
     @FXML
     private TableView<Instrument> instrumentListTableView;
     @FXML
@@ -42,16 +42,26 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
     private TextField modelTextField;
     @FXML
     private TextField quantityTextField;
-    @FXML
-    private ComboBox<String> instrumentnameComboBox;
+  
 
-    ArrayList<Instrument> InstrumentList=new ArrayList<>();
+   
+    @FXML
+    private TextField instrumentNameTextField;
+    
+     ArrayList<Instrument> InstrumentList=new ArrayList<>();
+      ArrayList<Integer> InstrumentID=new ArrayList<>();
+    @FXML
+    private TextField instrumentIdTextField;
+    @FXML
+    private TextArea instrumentDetailsTextArea;
+    @FXML
+    private ComboBox<Integer> instrumentIdComboBox;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        instrumentnameComboBox.getItems().addAll("Guitar", "Electric Guitar", "Piano", "Violin", "Flute",
-                 "Trumpet", "Drum set", "Saxophone", "Ukulele");
+       // instrumentnameComboBox.getItems().addAll("Guitar", "Electric Guitar", "Piano", "Violin", "Flute",
+        //         "Trumpet", "Drum set", "Saxophone", "Ukulele");
 
         instrumentNameCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("name"));
         IdCol.setCellValueFactory(new PropertyValueFactory<Instrument,Integer>("InstrumentID"));
@@ -65,10 +75,15 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
 
     @FXML
     private void addInstrumentButtonOnClicked(ActionEvent event) {
+        int ID= Integer.parseInt(instrumentIdTextField.getText());
         
          //Instrument(String name, String serialNumber, String model, int InstrumentID, int qantity)
-        InstrumentList.add(new Instrument(instrumentnameComboBox.getValue(),serialNumberTextField.getText(), modelTextField.getText(),
+        InstrumentList.add(new Instrument(instrumentNameTextField.getText(),serialNumberTextField.getText(), modelTextField.getText(),
                 Integer.parseInt(instrumentIdTextField.getText()),Integer.parseInt(quantityTextField.getText())));
+        InstrumentID.add(ID);
+        
+       instrumentIdComboBox.getItems().add(ID);
+      
         
     }
     
@@ -76,7 +91,23 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
     @FXML
     private void showInstrumentListButtonOnClicked(ActionEvent event) {
         
-        instrumentListTableView.getItems().addAll(InstrumentList);   
+        instrumentListTableView.getItems().addAll(InstrumentList);
+        
+         
+    }
+
+    @FXML
+    private void instrumentNameComboBoxButtonOnClicked(ActionEvent event) {
+        
+        int scelecteID= instrumentIdComboBox.getValue();
+         for(Instrument i:InstrumentList){
+             if(i.getInstrumentID()==scelecteID){
+                 instrumentDetailsTextArea.setText("\nInstrument Name:"+i.getName()+"\nInstumentId:"+i.getInstrumentID()
+                         +"\nSerial Number:"+i.getSerialNumber()+"\nModel:"+i.getModel()+"\nQantity:"+i.getQantity());
+             
+             break;
+             }
+         }
         
     }
 

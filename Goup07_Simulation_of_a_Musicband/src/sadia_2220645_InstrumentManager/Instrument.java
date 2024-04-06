@@ -91,7 +91,8 @@ public class Instrument implements Serializable {
 
     @Override
     public String toString() {
-        return "Instrument{" + "name=" + name + ", serialNumber=" + serialNumber + ", model=" + model + ", InstrumentID=" + InstrumentID + ", qantity=" + qantity + '}';
+        return  "\nName=" + name + "\n SerialNumber=" + serialNumber + "\n model=" + model
+                + "\n InstrumentID=" + InstrumentID + "\n Qantity=" + qantity ;
     }
 
   
