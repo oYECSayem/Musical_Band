@@ -58,28 +58,25 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
         serialNumberCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("serialNumber"));
         modelCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("model"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("qantity"));
-
-
-           
-          
-           
+     
         
     }
+  
+
     @FXML
-    private void addNewInstrumentButtonOnClicked(ActionEvent event) {
-        //Instrument(String name, String serialNumber, String model, int InstrumentID, int qantity)
+    private void addInstrumentButtonOnClicked(ActionEvent event) {
+        
+         //Instrument(String name, String serialNumber, String model, int InstrumentID, int qantity)
         InstrumentList.add(new Instrument(instrumentnameComboBox.getValue(),serialNumberTextField.getText(), modelTextField.getText(),
                 Integer.parseInt(instrumentIdTextField.getText()),Integer.parseInt(quantityTextField.getText())));
         
     }
-
+    
+   
     @FXML
     private void showInstrumentListButtonOnClicked(ActionEvent event) {
         
-        instrumentListTableView.getItems().addAll(InstrumentList);
-       
-        
-        
+        instrumentListTableView.getItems().addAll(InstrumentList);   
         
     }
 

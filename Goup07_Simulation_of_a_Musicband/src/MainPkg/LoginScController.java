@@ -93,7 +93,7 @@ public class LoginScController implements Initializable {
                 currentStage.setScene(scene);
             }
             if (userType.equals("Instrument Manager")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Instrument Manager Dashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sadia_2220645_InstrumentManager/InstrumentManagerDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);

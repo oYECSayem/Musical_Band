@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="663.0" prefWidth="792.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_InstrumentManager.MakeNewUpdatedInstrumentListSceneController">
+   <children>
+      <Label layoutX="294.0" text="New Updated Instrument List" textFill="#b91c84">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="80.0" prefHeight="21.0" prefWidth="166.0" text="New Instrument Name:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="newInstrumentNameTextField" layoutX="242.0" layoutY="75.0" />
+      <Label layoutX="69.0" layoutY="123.0" prefHeight="21.0" prefWidth="69.0" text="Model:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <TextField fx:id="modelTextField" layoutX="242.0" layoutY="118.0" />
+      <Label fx:id="brandNameTe" layoutX="69.0" layoutY="171.0" text="Brand Name:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="69.0" layoutY="220.0" prefHeight="21.0" prefWidth="52.0" text="Price:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <TextField fx:id="brandNameTextField" layoutX="242.0" layoutY="166.0" />
+      <TextField fx:id="priceTextField" layoutX="242.0" layoutY="215.0" />
+      <TableView fx:id="newUpdatedInstrumentTableView" layoutX="40.0" layoutY="356.0" prefHeight="214.0" prefWidth="654.0">
+        <columns>
+          <TableColumn fx:id="newInstrumentNameCol" prefWidth="247.0" text="New Instrument Name" />
+          <TableColumn fx:id="modelCol" prefWidth="144.0" text="Model" />
+            <TableColumn fx:id="brandNameCol" prefWidth="141.0" text="Brand Name" />
+            <TableColumn fx:id="priceCol" prefWidth="121.0" text="Price" />
+        </columns>
+      </TableView>
+      <Button layoutX="47.0" layoutY="301.0" mnemonicParsing="false" onAction="#addNewupdatedInstrumentButtonOnClicked" text="Add Updated Instrument In the List" />
+      <Button layoutX="47.0" layoutY="602.0" mnemonicParsing="false" onAction="#showNewUpdatedInstrumentButtonOnClicked" text="Show the Updated Instrument List" />
+      <Button layoutX="321.0" layoutY="600.0" mnemonicParsing="false" onAction="#nextSceneForInstrumentPurchaseBudgetPlanButtonOnClicked" prefHeight="35.0" prefWidth="391.0" text="Go to the Next Scene for Purchase budget plan" />
+   </children>
+</AnchorPane>
