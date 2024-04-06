@@ -15,9 +15,9 @@
    <center>
       <AnchorPane prefHeight="525.0" prefWidth="567.0" style="-fx-background-color: B949AD;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="240.0" layoutY="455.0" prefHeight="53.0" prefWidth="392.0" style="-fx-background-color: WHITE;" text="Welcome,Instrument Manager!" textFill="#540fa8">
+            <Label layoutX="145.0" layoutY="465.0" prefHeight="53.0" prefWidth="565.0" style="-fx-background-color: B949AD;" text="Welcome,Instrument Manager!" textFill="#1c0736">
                <font>
-                  <Font name="System Bold Italic" size="24.0" />
+                  <Font name="System Bold Italic" size="36.0" />
                </font>
             </Label>
             <Button layoutX="828.0" layoutY="616.0" mnemonicParsing="false" onAction="#logOutButtonOnclicked" prefHeight="31.0" prefWidth="133.0" text="LOG OUT" />
@@ -26,7 +26,7 @@
                   <Image url="@../Images/istockphoto-455586355-612x612.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="761.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="761.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/wired-gradient-955-demand.gif" />
                </image>
