@@ -9,29 +9,30 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author USER
  */
-public class GiveFeedbackSceneController implements Initializable {
+public class QuetionAndAnswerContestSceneController implements Initializable {
 
     @FXML
-    private RadioButton albumRadioButton;
+    private Label q1Label;
     @FXML
-    private RadioButton songsRaddioButton;
+    private Label q2Label;
     @FXML
-    private RadioButton concertRadioButton;
+    private RadioButton Q1_option_1;
     @FXML
-    private RadioButton merchandiseRadioButton;
+    private RadioButton Q2_option_1;
     @FXML
-    private TextArea feedbackTextArea;
+    private RadioButton Q2_option_2;
     @FXML
-    private TextField nameTextField;
+    private RadioButton Q1_option_2;
+    @FXML
+    private Label winnerResultLabel;
 
     /**
      * Initializes the controller class.
@@ -42,7 +43,11 @@ public class GiveFeedbackSceneController implements Initializable {
     }    
 
     @FXML
-    private void submitFeedbackButtonOnClicked(ActionEvent event) {
+    private void answerSubmitButtonOnClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void showWinnerNameButtonOnClicked(ActionEvent event) {
     }
     
 }

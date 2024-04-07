@@ -17,6 +17,7 @@ public class Instrument implements Serializable {
     private int price;
     private String brandName;
     
+    
     public Instrument(String name, String serialNumber, String model, int InstrumentID, int qantity) {
         this.name = name;
         this.serialNumber = serialNumber;
@@ -31,10 +32,6 @@ public class Instrument implements Serializable {
         this.price = price;
         this.brandName = brandName;
     }
-    
-    
-    
-    
 
     public String getName() {
         return name;
@@ -76,10 +73,28 @@ public class Instrument implements Serializable {
         this.qantity = qantity;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getBrandName() {
+        return brandName;
+    }
+
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
+
     @Override
     public String toString() {
-        return "Instrument{" + "Name=" + name + ", SerialNumber=" + serialNumber + ", Model=" + model + ", InstrumentID=" + InstrumentID + ", Qantity=" + qantity + '}';
+        return  "\nName=" + name + "\n SerialNumber=" + serialNumber + "\n model=" + model
+                + "\n InstrumentID=" + InstrumentID + "\n Qantity=" + qantity ;
     }
-    
+
+  
     
 }

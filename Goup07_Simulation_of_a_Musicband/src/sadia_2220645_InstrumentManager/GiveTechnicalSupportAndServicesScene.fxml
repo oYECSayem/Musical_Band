@@ -10,19 +10,19 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="732.0" prefWidth="920.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_InstrumentManager.GiveTechnicalSupportAndServicesSceneController">
+<AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="895.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_InstrumentManager.GiveTechnicalSupportAndServicesSceneController">
    <children>
-      <Label layoutX="112.0" prefHeight="43.0" prefWidth="362.0" text="Technical Support &amp; Services!!" textFill="#3b16ab">
+      <Label layoutX="263.0" layoutY="14.0" prefHeight="31.0" prefWidth="362.0" text="Technical Support &amp; Services!!" textFill="#3b16ab">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="477.0" layoutY="152.0" prefHeight="20.0" prefWidth="133.0" text="Instrument Name:">
+      <Label layoutX="493.0" layoutY="127.0" prefHeight="20.0" prefWidth="133.0" text="Instrument Name:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <TextField fx:id="instrumentNameTextField" layoutX="628.0" layoutY="146.0" />
-      <Label layoutX="480.0" layoutY="229.0" prefHeight="21.0" prefWidth="79.0" text="Guideline:">
+      <TextField fx:id="instrumentNameTextField" layoutX="639.0" layoutY="121.0" />
+      <Label layoutX="480.0" layoutY="180.0" prefHeight="21.0" prefWidth="79.0" text="Guideline:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
@@ -38,10 +38,10 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></RadioButton>
-      <TextArea fx:id="guidelineAndManualDetailsTextArea" layoutX="465.0" layoutY="432.0" prefHeight="241.0" prefWidth="400.0" />
+      <TextArea fx:id="guidelineAndManualDetailsTextArea" layoutX="456.0" layoutY="410.0" prefHeight="184.0" prefWidth="349.0" />
       <Label layoutX="38.0" layoutY="349.0" prefHeight="21.0" prefWidth="238.0" text="Give offline Service shedule:" />
       <DatePicker fx:id="datepicker" layoutX="34.0" layoutY="386.0" />
-      <Label layoutX="485.0" layoutY="407.0" prefHeight="21.0" prefWidth="272.0" text="Setup Guideline &amp; Manual Details:" textFill="#b52020">
+      <Label layoutX="467.0" layoutY="376.0" prefHeight="21.0" prefWidth="272.0" text="Setup Guideline &amp; Manual Details:" textFill="#b52020">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -54,17 +54,17 @@
       </Label>
       <Button layoutX="34.0" layoutY="608.0" mnemonicParsing="false" onAction="#sendMgsButtonOnclicked" text="Send Massage" />
       <Button layoutX="34.0" layoutY="292.0" mnemonicParsing="false" onAction="#receiveMgsButtonOnClicked" text="Receive Massage" />
-      <Button layoutX="710.0" layoutY="680.0" mnemonicParsing="false" onAction="#sendGuidelineAndManuaButtonOnClicked" text="Send Guideline &amp; Manuals" />
-      <Line endX="111.0" endY="283.0" layoutX="268.0" layoutY="427.0" startX="111.0" startY="-245.0" />
-      <TextArea fx:id="guidelineTextArea" layoutX="591.0" layoutY="194.0" prefHeight="69.0" prefWidth="261.0" />
-      <Label layoutX="490.0" layoutY="313.0" prefHeight="21.0" prefWidth="85.0" text="Manual:">
+      <Button layoutX="635.0" layoutY="602.0" mnemonicParsing="false" onAction="#sendGuidelineAndManuaButtonOnClicked" text="Send Guideline &amp; Manuals" />
+      <Line endX="111.0" endY="174.0" layoutX="268.0" layoutY="427.0" startX="111.0" startY="-245.0" />
+      <TextArea fx:id="guidelineTextArea" layoutX="591.0" layoutY="167.0" prefHeight="69.0" prefWidth="261.0" />
+      <Label layoutX="477.0" layoutY="272.0" prefHeight="21.0" prefWidth="85.0" text="Manual:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextArea fx:id="manualTextArea" layoutX="591.0" layoutY="273.0" prefHeight="69.0" prefWidth="261.0" />
-      <Button layoutX="614.0" layoutY="355.0" mnemonicParsing="false" onAction="#addSetupGuidelineAndManualButtonOnClicked" text="Add Setup Guideline and Manual" />
+      <TextArea fx:id="manualTextArea" layoutX="591.0" layoutY="248.0" prefHeight="69.0" prefWidth="261.0" />
+      <Button layoutX="613.0" layoutY="334.0" mnemonicParsing="false" onAction="#addSetupGuidelineAndManualButtonOnClicked" text="Add Setup Guideline and Manual" />
       <TextArea fx:id="receiveMgsTextArea" layoutX="24.0" layoutY="98.0" prefHeight="184.0" prefWidth="200.0" />
-      <Button layoutX="463.0" layoutY="680.0" mnemonicParsing="false" onAction="#showGuidelineAndManualButtonOnClicked" text="Show Guideline &amp; Manual" />
+      <Button layoutX="418.0" layoutY="602.0" mnemonicParsing="false" onAction="#showGuidelineAndManualButtonOnClicked" text="Show Guideline &amp; Manual" />
    </children>
 </AnchorPane>
