@@ -4,10 +4,13 @@
  */
 package sadia_2220645_InstrumentManager;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +24,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import static sadia_2220645_InstrumentManager.InstrumentManager.makeNewUpdatedInstrumentPurchasePlan;
 
 /**
  * FXML Controller class
@@ -33,8 +37,7 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
     private TextField newInstrumentNameTextField;
     @FXML
     private TextField modelTextField;
-    @FXML
-    private Label brandNameTe;
+    
     @FXML
     private TextField brandNameTextField;
     @FXML
@@ -50,10 +53,21 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
     @FXML
     private TableColumn<Instrument, Integer> priceCol;
 
-    ArrayList<Instrument> newUpdatedInstumentList=new ArrayList<>();
+    //ArrayList<Instrument> newUpdatedInstumentList=new ArrayList<>();
+    
+    @FXML
+    private TableColumn<Instrument, Integer> qauntityCol;
+    @FXML
+    private TextField qantityTextField;
+    
     
     
     Alert success= new Alert(Alert.AlertType.INFORMATION,"New updated Instrument Added Successfully!");
+    Alert warning= new Alert(Alert.AlertType.WARNING,"Already added!");
+    Alert alert = new Alert(Alert.AlertType.WARNING, "No instruments selected.");  
+    
+    @FXML
+    private Label brandNameTe;
             
     //Alert success=new Alert(Alert.AlertType.INFORMATION,"Successfully Added the product");
     @Override
@@ -64,6 +78,7 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
         priceCol.setCellValueFactory(new PropertyValueFactory<Instrument, Integer>("price"));
         modelCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("model"));
         brandNameCol.setCellValueFactory(new PropertyValueFactory<Instrument, String>("brandName"));
+        qauntityCol.setCellValueFactory(new PropertyValueFactory<Instrument, Integer>("qantity"));
 
         
          
@@ -77,38 +92,93 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
         String newInstrumentsModel=modelTextField.getText();
         int price=Integer.parseInt(priceTextField.getText());
         String brandName=brandNameTextField.getText();
+        int qantity=Integer.parseInt( qantityTextField.getText());
         
+       
+       
+       //Instrument(String name, String model, int qantity, int price, String brandName)
+        Instrument ni=new Instrument( newInstrumentsName,newInstrumentsModel,  qantity,price,brandName);
         
-        Instrument newUpdatedInstrument;
-        newUpdatedInstrument=new Instrument( newInstrumentsName,newInstrumentsModel, price,brandName);
+       
         
-        newUpdatedInstumentList.add(newUpdatedInstrument);
-        success.show();
+         if(!Instrument.checknewUpdatedInstrumentExistance(ni)){
+            makeNewUpdatedInstrumentPurchasePlan(ni);
+               success.show();
+         }else{
+            warning.show();
+         }
+         
+       
+        
         
         newInstrumentNameTextField.clear();
         modelTextField.clear();
         priceTextField.clear();
         brandNameTextField.clear();
+        qantityTextField.clear();
 
                 
     }
 
     @FXML
     private void showNewUpdatedInstrumentButtonOnClicked(ActionEvent event) {
-        newUpdatedInstrumentTableView.getItems().addAll( newUpdatedInstumentList);
+        //newUpdatedInstrumentTableView.getItems().addAll( newUpdatedInstumentList);
+        
+        ObjectInputStream ois = null;
+        ObservableList <Instrument> newUpdatedInstrumentList = FXCollections.observableArrayList();
+        try {
+             Instrument i;
+             ois = new ObjectInputStream(new FileInputStream("NewUpdatedInstrument.bin"));
+             
+            while(true){
+                i = (Instrument) ois.readObject();
+                
+               // if(i.getInstrumentID()%2==0){
+                //    InstrumentList.add(i);
+                
+                 newUpdatedInstrumentList.add(i);
+            }
+        }
+        catch(RuntimeException e){
+            e.printStackTrace();
+        }
+        catch (Exception ex) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            } catch (IOException ex1) {  }           
+        }
+
+        
+       newUpdatedInstrumentTableView.setItems( newUpdatedInstrumentList);
+       
+      
+         
     }
 
     
 
     @FXML
     private void nextSceneForInstrumentPurchaseBudgetPlanButtonOnClicked(ActionEvent event) throws IOException {
-        
-        Parent root=FXMLLoader.load(getClass().getResource("MakeInstrumentBudgetScene.fxml"));
-        Scene scene=new Scene(root);
-        Stage stage=new Stage();
-        stage.setTitle(" Receive mgs scene");
-        stage.setScene(scene);
-        stage.show();
+     // Get selected items from the table
+    ObservableList<Instrument> selectedInstruments = newUpdatedInstrumentTableView.getSelectionModel().getSelectedItems();
+
+    // Check if any instrument is selected
+    if (selectedInstruments.isEmpty()) {
+        alert.showAndWait();
+        return;
+    }
+
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("MakeInstrumentBudgetScene.fxml"));
+    Parent root = loader.load();
+    MakeInstrumentBudgetSceneController controller = loader.getController();
+
+    // Pass selected items to the next controller
+    controller.setSelectedInstruments(selectedInstruments);
+
+    Stage stage = new Stage();
+    stage.setScene(new Scene(root));
+    stage.show();
         
       
     }

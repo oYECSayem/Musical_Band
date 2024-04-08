@@ -15,10 +15,10 @@
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="84.0" layoutY="107.0" prefHeight="21.0" prefWidth="129.0" text="Enter your name:" />
-      <TextField fx:id="nameTextField" layoutX="207.0" layoutY="102.0" />
+      <Label layoutX="412.0" layoutY="104.0" prefHeight="21.0" prefWidth="129.0" text="Enter your name:" />
+      <TextField fx:id="nameTextField" layoutX="541.0" layoutY="99.0" />
       <TextArea fx:id="notificationTextArea" layoutX="65.0" layoutY="203.0" prefHeight="271.0" prefWidth="296.0" />
-      <ComboBox fx:id="selectEventTypeComboBox" layoutX="516.0" layoutY="51.0" onAction="#selectEventTypeButtonOnCicked" prefHeight="31.0" prefWidth="187.0" promptText="Scelect Event Type" />
+      <ComboBox fx:id="selectEventTypeComboBox" layoutX="65.0" layoutY="88.0" onAction="#selectEventTypeButtonOnCicked" prefHeight="31.0" prefWidth="187.0" promptText="Scelect Event Type" />
       <Label layoutX="65.0" layoutY="152.0" prefHeight="31.0" prefWidth="296.0" text="Meet and Greet Notifications:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
@@ -26,5 +26,10 @@
       </Label>
       <Label fx:id="allEventsLabel" layoutX="443.0" layoutY="203.0" prefHeight="321.0" prefWidth="316.0" style="-fx-background-color: pink;" />
       <Button layoutX="118.0" layoutY="493.0" mnemonicParsing="false" onAction="#addEventButtonOnclicked" text="Add the Event" />
+      <Label layoutX="440.0" layoutY="168.0" prefHeight="21.0" prefWidth="159.0" text="Your Added Events:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

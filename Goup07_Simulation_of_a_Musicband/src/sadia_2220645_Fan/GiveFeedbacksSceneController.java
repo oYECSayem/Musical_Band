@@ -4,10 +4,16 @@
  */
 package sadia_2220645_Fan;
 
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,6 +23,8 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import static sadia_2220645_Fan.Fan.giveFeedback;
+
 
 /**
  * FXML Controller class
@@ -53,8 +61,8 @@ public class GiveFeedbacksSceneController implements Initializable {
     Alert Success= new Alert(Alert.AlertType.INFORMATION,"Your Feedback Successfully Added!");
     
     
-    
-    ArrayList<Feedback> fb= new ArrayList<>();
+    private ObservableList<Feedback> fb = FXCollections.observableArrayList();
+    // ArrayList<Feedback> fb= new ArrayList<>();
     @FXML
     private TextArea writeFeedbacksTextArea;
    
@@ -100,7 +108,7 @@ public class GiveFeedbacksSceneController implements Initializable {
 
         if (selectedDate != null && !selectedDate.isBefore(currentDate)) {
             newfeedback = new Feedback(name, topic, description,date);
-            fb.add(newfeedback);
+            giveFeedback(newfeedback);
             Success.show();
         } else { 
           ErrorDate.show();}
@@ -112,14 +120,47 @@ public class GiveFeedbacksSceneController implements Initializable {
        concertRadioButton.setSelected(false);
        merchandiseRadioButton.setSelected(false);
         
-        
+       
         
     }
 
     @FXML
     private void viewFeedbackButtonOnClicked(ActionEvent event) {
-        viewfeedbackDetailsTextArea1.setText(fb.toString());
+       //instrumentListTableView.getItems().addAll(InstrumentList);
         
+         ObjectInputStream ois = null;
+        ObservableList <Feedback> feedbacklist = FXCollections.observableArrayList();
+        try {
+             Feedback i;
+             ois = new ObjectInputStream(new FileInputStream("Feedback.bin"));
+             
+            while(true){
+                i = (Feedback) ois.readObject();
+                
+               // if(i.getInstrumentID()%2==0){
+                //    InstrumentList.add(i);
+                
+                 feedbacklist.add(i);
+            }
+        }
+        catch(RuntimeException e){
+            e.printStackTrace();
+        }
+        catch (Exception ex) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            } catch (IOException ex1) {  }           
+        }
+
+    // Display feedback details in the TextArea
+    StringBuilder feedbackDetails = new StringBuilder();
+    for (Feedback feedback : feedbacklist) {
+        feedbackDetails.append(feedback.toString()).append("\n");
     }
+
+    viewfeedbackDetailsTextArea1.setText(feedbackDetails.toString());
+    }
+    
     
 }

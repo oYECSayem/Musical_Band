@@ -4,6 +4,9 @@
  */
 package sadia_2220645_InstrumentManager;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 
 /**
@@ -25,6 +28,16 @@ public class Instrument implements Serializable {
         this.InstrumentID = InstrumentID;
         this.qantity = qantity;
     }
+
+    public Instrument(String name, String model, int qantity, int price, String brandName) {
+        this.name = name;
+        this.model = model;
+        this.qantity = qantity;
+        this.price = price;
+        this.brandName = brandName;
+    }
+    
+    
 
     public Instrument(String name, String model, int price, String brandName) {
         this.name = name;
@@ -87,6 +100,12 @@ public class Instrument implements Serializable {
 
     public void setBrandName(String brandName) {
         this.brandName = brandName;
+        
+    }
+    
+    public int totalPrice(){
+        int totalPrice=this.qantity +this.price;
+        return totalPrice;
     }
 
     @Override
@@ -94,6 +113,70 @@ public class Instrument implements Serializable {
         return  "\nName=" + name + "\n SerialNumber=" + serialNumber + "\n model=" + model
                 + "\n InstrumentID=" + InstrumentID + "\n Qantity=" + qantity ;
     }
+    
+    public static boolean checkInstrumentExixtance(Instrument x) {
+        ObjectInputStream ois = null;
+        boolean result = false;
+        try {
+            Instrument i;
+            ois = new ObjectInputStream(new FileInputStream("Instrument.bin"));
+
+            while (true) {
+                i = (Instrument) ois.readObject();
+                if (i.getInstrumentID() == x.getInstrumentID()) {
+                    result = true;
+                }
+
+            }
+        }
+        catch(RuntimeException e){
+            e.printStackTrace();
+        }
+        catch (Exception ex) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            } catch (IOException ex1) {  }           
+        }
+        return result;
+    
+        
+    }
+    
+    
+    public static boolean checknewUpdatedInstrumentExistance(Instrument x) {
+        ObjectInputStream ois = null;
+        boolean result = false;
+        try {
+            Instrument i;
+            ois = new ObjectInputStream(new FileInputStream("NewUpdatedInstrument.bin"));
+
+            while (true) {
+                i = (Instrument) ois.readObject();
+                if (i.getBrandName().equals(x.getBrandName())
+                       && i.getName().equals(x.getName())
+                        && i.getModel().equals(x.getModel())) {
+                 result = true;
+                }
+
+            }
+        }
+        catch(RuntimeException e){
+            e.printStackTrace();
+        }
+        catch (Exception ex) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            } catch (IOException ex1) {  }           
+        }
+        return result;
+    
+        
+    }
+    
+    
+    
 
   
     
