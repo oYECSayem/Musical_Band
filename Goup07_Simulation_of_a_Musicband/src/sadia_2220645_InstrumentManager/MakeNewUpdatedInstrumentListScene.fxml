@@ -54,5 +54,6 @@
          </font>
       </Label>
       <TextField fx:id="qantityTextField" layoutX="242.0" layoutY="259.0" />
+      <Button layoutX="606.0" layoutY="301.0" mnemonicParsing="false" onAction="#viewChartButtonOnClicked" text="View Chart" />
    </children>
 </AnchorPane>

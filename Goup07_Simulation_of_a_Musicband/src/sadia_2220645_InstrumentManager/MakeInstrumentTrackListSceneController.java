@@ -5,6 +5,7 @@
 package sadia_2220645_InstrumentManager;
 
 import MainPkg.AppendableObjectOutputStream;
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -18,7 +19,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -26,6 +30,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import static sadia_2220645_InstrumentManager.InstrumentManager.addInstrument;
 
 /**
@@ -175,6 +180,33 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
              break;
              }
          }
+    }
+
+    @FXML
+    private void viewChartButtonOnClicked(ActionEvent event) throws IOException {
+         Parent root=FXMLLoader.load(getClass().getResource("InstrumentTrackListChart.fxml"));
+        Scene scene=new Scene(root);
+        Stage stage=new Stage();
+        stage.setTitle(" Chart");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+     
+    public ObservableList<Instrument> getInstrumentList() {
+        ObservableList<Instrument> newUpdatedInstrumentList = FXCollections.observableArrayList();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Instrument.bin"))) {
+            Instrument instrument;
+            while ((instrument = (Instrument) ois.readObject()) != null) {
+                newUpdatedInstrumentList.add(instrument);
+            }
+        } catch (EOFException eof) {
+            // End of file reached, ignore
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return newUpdatedInstrumentList;
+    
     }
 
 
