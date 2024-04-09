@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="610.0" prefWidth="931.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="writeBlogPost" layoutX="42.0" layoutY="75.0" prefHeight="173.0" prefWidth="855.0" />
+      <Label layoutX="42.0" layoutY="45.0" prefHeight="21.0" prefWidth="122.0" text="Write a Blogpost" />
+      <Button fx:id="addblogpostButton" layoutX="42.0" layoutY="131.0" mnemonicParsing="false" text="Add Blogpost" />
+      <Button fx:id="removeBlogPostButton" layoutX="164.0" layoutY="131.0" mnemonicParsing="false" text="Remove Bolgpost" />
+      <Button fx:id="NewBlogPostButton" layoutX="315.0" layoutY="131.0" mnemonicParsing="false" text="New Bolgpost" />
+      <Label layoutX="42.0" layoutY="203.0" prefHeight="21.0" prefWidth="169.0" text="Paste Newsletter Link" />
+      <TextField fx:id="newsletterLink" layoutX="38.0" layoutY="241.0" prefHeight="31.0" prefWidth="855.0" />
+      <Button fx:id="postNewsLetter" layoutX="344.0" layoutY="305.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="169.0" text="Post Newsletter" />
+      <Button fx:id="goToMailServer" layoutX="42.0" layoutY="397.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="324.0" text="Go to the internal Mail Service" />
+      <Label layoutX="42.0" layoutY="460.0" prefHeight="21.0" prefWidth="122.0" text="Mail to:" />
+      <RadioButton fx:id="fansRadioButton" layoutX="43.0" layoutY="500.0" mnemonicParsing="false" text="Fans" />
+      <RadioButton fx:id="bandMemberRadioButton" layoutX="178.0" layoutY="500.0" mnemonicParsing="false" text="Band Member" />
+      <RadioButton fx:id="organizerRadioButton" layoutX="43.0" layoutY="544.0" mnemonicParsing="false" text="Organizer" />
+      <RadioButton fx:id="staffRadioButton" layoutX="178.0" layoutY="544.0" mnemonicParsing="false" text="Staff" />
+   </children>
+</AnchorPane>
