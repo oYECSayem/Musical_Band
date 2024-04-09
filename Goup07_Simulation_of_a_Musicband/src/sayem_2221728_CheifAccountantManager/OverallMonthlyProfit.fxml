@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="459.0" prefWidth="629.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="your.package.name.MusicalBandSimulationController">
+
+    <children>
+        <ComboBox fx:id="monthComboBox" layoutX="14.0" layoutY="31.0" prefHeight="31.0" prefWidth="162.0" promptText="Select month" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="31.0" />
+        <TextField fx:id="yearTextField" layoutX="213.0" layoutY="31.0" promptText="Year" AnchorPane.leftAnchor="213.0" AnchorPane.topAnchor="31.0" />
+        
+        <TableView fx:id="gigTableView" layoutX="43.0" layoutY="90.0" prefHeight="234.0" prefWidth="551.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="90.0">
+            <columns>
+                <TableColumn prefWidth="100" text="Date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="date" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="150" text="Event Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="eventName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="100" text="Income">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="income" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="100" text="Expenses">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="expenses" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="100" text="Profit">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="profit" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+      <Label layoutX="88.0" layoutY="351.0" prefHeight="21.0" prefWidth="77.0" text="Total profit" />
+      <Label layoutX="220.0" layoutY="351.0" prefHeight="21.0" prefWidth="170.0" style="-fx-background-color: aqua;" />
+    </children>
+</AnchorPane>

@@ -9,10 +9,9 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sayem_2221728_BandMember.GiveScheduleForCollabrationSceneController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="807.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sayem_2221728_BandMember.GiveScheduleForCollabrationSceneController">
    <children>
       <MenuBar prefWidth="600.0">
          <menus>
@@ -47,17 +46,17 @@
       <Label layoutX="58.0" layoutY="160.0" prefHeight="21.0" prefWidth="170.0" text="Meet and greet sessions:" />
       <TextField fx:id="meetSessionsTF" layoutX="246.0" layoutY="155.0" prefHeight="31.0" prefWidth="222.0" />
       <Label layoutX="57.0" layoutY="220.0" prefHeight="21.0" prefWidth="86.0" text="Event titles:" />
-      <TextField fx:id="eventTitlesTF" layoutX="166.0" layoutY="215.0" prefHeight="31.0" prefWidth="336.0" />
+      <TextField fx:id="eventTitlesTF" layoutX="246.0" layoutY="215.0" prefHeight="31.0" prefWidth="336.0" />
       <Label layoutX="57.0" layoutY="280.0" prefHeight="21.0" prefWidth="95.0" text="Descriptions:" />
-      <TextArea fx:id="descriptionsTA" layoutX="175.0" layoutY="261.0" prefHeight="59.0" prefWidth="403.0" />
+      <TextArea fx:id="descriptionsTA" layoutX="246.0" layoutY="263.0" prefHeight="47.0" prefWidth="403.0" />
       <Label layoutX="56.0" layoutY="340.0" prefHeight="21.0" prefWidth="48.0" text="Dates:" />
-      <DatePicker fx:id="datesDP" layoutX="137.0" layoutY="335.0" />
+      <DatePicker fx:id="datesDP" layoutX="248.0" layoutY="325.0" />
       <Label layoutX="56.0" layoutY="386.0" prefHeight="21.0" prefWidth="48.0" text="Times:" />
-      <TextField fx:id="timesTF" layoutX="137.0" layoutY="381.0" prefHeight="31.0" prefWidth="196.0" />
+      <TextField fx:id="timesTF" layoutX="248.0" layoutY="371.0" prefHeight="31.0" prefWidth="205.0" />
       <Label layoutX="56.0" layoutY="427.0" prefHeight="21.0" prefWidth="69.0" text="Location:" />
-      <TextField fx:id="locationTF" layoutX="148.0" layoutY="422.0" prefHeight="31.0" prefWidth="196.0" />
+      <TextField fx:id="locationTF" layoutX="248.0" layoutY="422.0" prefHeight="31.0" prefWidth="205.0" />
       <Label layoutX="56.0" layoutY="473.0" prefHeight="21.0" prefWidth="126.0" text="Giveaway details:" />
-      <TextArea fx:id="giveawayTA" layoutX="175.0" layoutY="465.0" prefHeight="59.0" prefWidth="403.0" />
-      <Button layoutX="61.0" layoutY="545.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="470.0" text="Submit" />
+      <TextArea fx:id="giveawayTA" layoutX="246.0" layoutY="465.0" prefHeight="59.0" prefWidth="403.0" />
+      <Button layoutX="228.0" layoutY="559.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="470.0" text="Submit" />
    </children>
 </AnchorPane>
