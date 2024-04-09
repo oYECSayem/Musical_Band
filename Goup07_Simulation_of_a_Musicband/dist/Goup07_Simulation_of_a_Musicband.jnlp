@@ -8,7 +8,27 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="Goup07_Simulation_of_a_Musicband.jar" size="17604041" download="eager" />
+=======
+<<<<<<< HEAD
+    <jar href="Goup07_Simulation_of_a_Musicband.jar" size="17593342" download="eager" />
+=======
+<<<<<<< HEAD
+    <jar href="Goup07_Simulation_of_a_Musicband.jar" size="17590093" download="eager" />
+=======
+<<<<<<< HEAD
+    <jar href="Goup07_Simulation_of_a_Musicband.jar" size="17584290" download="eager" />
+=======
+<<<<<<< HEAD
+    <jar href="Goup07_Simulation_of_a_Musicband.jar" size="17573721" download="eager" />
+=======
+    <jar href="Goup07_Simulation_of_a_Musicband.jar" size="17582615" download="eager" />
+>>>>>>> 03b79620847da273735e42ccb996e3f06114413c
+>>>>>>> 4850c03901816bb9e256d72305cead59a0729afa
+>>>>>>> ec21bce5792ed8bfb921e03f00163427a9c8e6bc
+>>>>>>> 48790e14bd4019396d71c9f03434a06fff55d9a5
+>>>>>>> 659b48da32f836b2fb7bdf1a9bc4bb601d46f477
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="MainPkg.main"  name="Goup07_Simulation_of_a_Musicband" />
   <update check="always"/>
