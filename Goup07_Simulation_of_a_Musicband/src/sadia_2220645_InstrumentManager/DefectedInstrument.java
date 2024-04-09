@@ -4,6 +4,9 @@
  */
 package sadia_2220645_InstrumentManager;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 
 /**
@@ -61,6 +64,32 @@ public class DefectedInstrument implements Serializable {
     }
     
     
+    public static boolean checkDefectedInstrumentExixtance(DefectedInstrument x) {
+        ObjectInputStream ois = null;
+        boolean result = false;
+        try {
+            DefectedInstrument i;
+            ois = new ObjectInputStream(new FileInputStream("DefectedInstrument.bin.bin"));
+
+            while (true) {
+                i = (DefectedInstrument) ois.readObject();
+                if (i.getDefectedInstrumentId() == x.getDefectedInstrumentId()) {
+                    result = true;
+                }
+
+            }
+        }
+        catch(RuntimeException e){
+            e.printStackTrace();
+        }
+        catch (Exception ex) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            } catch (IOException ex1) {  }           
+        }
+        return result;
     
+    }
     
 }

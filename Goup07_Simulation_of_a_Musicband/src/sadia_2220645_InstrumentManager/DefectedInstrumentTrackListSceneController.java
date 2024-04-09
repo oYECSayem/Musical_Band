@@ -4,10 +4,14 @@
  */
 package sadia_2220645_InstrumentManager;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
@@ -24,6 +29,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import static sadia_2220645_InstrumentManager.InstrumentManager.makeDefactedIntrumentList;
 
 /**
  * FXML Controller class
@@ -59,6 +65,11 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
     
 
     ToggleGroup tg;
+    
+    
+    Alert success=new Alert(Alert.AlertType.INFORMATION,"Successfully Added the product");
+    Alert alert=new Alert(Alert.AlertType.WARNING," Instrument exixt Already!");
+    
     
     ArrayList<DefectedInstrument> DefectedInstrumentList=new ArrayList<>();
     @FXML
@@ -112,17 +123,63 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
         }
         
         i=new DefectedInstrument(defectedInstrumentId,defectedInstrumentName,problemDescription,defectCatagory);
+        
+         if(!DefectedInstrument.checkDefectedInstrumentExixtance(i)){
+             makeDefactedIntrumentList(i);
+        
+               success.show();
+         }else{
+            alert.show();
+         }
+        
+       
+        
+        success.show();
         DefectedInstrumentList.add(i);
         defectedInstumentIdComboBox.getItems().add(defectedInstrumentId);
         
+        defectedInstrumentIDTextField.clear();
+        defectedInstrumentNameTextField.clear();
+        defectsDescriptionTextArea.clear();
         
-        
+        minorDefectRadioButton.setSelected(false);
+        majorDefectsRadioButton.setSelected(false);
         
     }
 
     @FXML
     private void viewDefectedInstrumentButtonOnClicked(ActionEvent event) {
-         defectedInstrumentTableView.getItems().addAll(DefectedInstrumentList);
+         //defectedInstrumentTableView.getItems().addAll(DefectedInstrumentList);
+         
+         
+          ObjectInputStream ois = null;
+        ObservableList <DefectedInstrument> DefectedInstrumentInstrumentList = FXCollections.observableArrayList();
+        try {
+             DefectedInstrument i;
+             ois = new ObjectInputStream(new FileInputStream("DefectedInstrument.bin"));
+             
+            while(true){
+                i = (DefectedInstrument) ois.readObject();
+                
+               // if(i.getInstrumentID()%2==0){
+                //    InstrumentList.add(i);
+                
+                 DefectedInstrumentInstrumentList.add(i);
+            }
+        }
+        catch(RuntimeException e){
+            e.printStackTrace();
+        }
+        catch (Exception ex) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            } catch (IOException ex1) {  }           
+        }
+
+        
+       defectedInstrumentTableView.setItems( DefectedInstrumentInstrumentList);
+       
         
     }
 
