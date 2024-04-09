@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="718.0" prefWidth="914.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_InstrumentManager.MaintanaceAndRepairInfoSceneController">
+   <children>
+      <Label layoutX="227.0" layoutY="14.0" prefHeight="81.0" prefWidth="430.0" text="Maintanance And Repair Iformation" textFill="#4e02da">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="repairInstrumentsTableView" layoutX="55.0" layoutY="396.0" prefHeight="200.0" prefWidth="797.0">
+        <columns>
+          <TableColumn fx:id="repairInstrumentNameCol" prefWidth="216.0" text="Repair Instrument Name" />
+          <TableColumn fx:id="repairInstrumentIDCol" minWidth="0.0" prefWidth="99.0" text=" ID" />
+            <TableColumn fx:id="defectCatagoryCol" prefWidth="170.0" text="Defect Catagory" />
+            <TableColumn fx:id="problemDescriptionCol" prefWidth="166.0" text="Problem Description" />
+            <TableColumn fx:id="repairCostCol" prefWidth="145.0" text="Repair Cost" />
+        </columns>
+      </TableView>
+      <Button layoutX="80.0" layoutY="643.0" mnemonicParsing="false" onAction="#showRepairedInstrumentDetailsButtonOnClicked" text="View" />
+      <Button layoutX="55.0" layoutY="328.0" mnemonicParsing="false" onAction="#addRepairedInstrumentButtonOnClicked" text="ADD" />
+      <TextArea fx:id="expanceReciptTextArea" layoutX="629.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="598.0" layoutY="76.0" prefHeight="51.0" prefWidth="263.0" text=" Maintanace Expance Recept" textFill="#d90226">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -4,12 +4,18 @@
  */
 package sadia_2220645_Fan;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import sayem_2221728_BandMember.EventSchedule;
 
 /**
  * FXML Controller class
@@ -19,7 +25,7 @@ import javafx.scene.control.Label;
 public class GreetAndMeetInformationSceneController implements Initializable {
 
     @FXML
-    private Label greetAndMeetInfoLabel;
+    private TextArea greetAndMeetInfoTextArea;
 
     /**
      * Initializes the controller class.
@@ -30,7 +36,40 @@ public class GreetAndMeetInformationSceneController implements Initializable {
     }    
 
     @FXML
-    private void seeMeetAndgreetNotififaticationButtonOnClicked(ActionEvent event) {
+    private void seeMeetAndgreetInfoButtonOnClicked(ActionEvent event) {
+         ObjectInputStream ois = null;
+        ObservableList<EventSchedule> EventSchedulelist = FXCollections.observableArrayList();
+        try {
+           EventSchedule i;
+            ois = new ObjectInputStream(new FileInputStream("EventSchedule.bin"));
+
+            while (true) {
+                i = (EventSchedule) ois.readObject();
+                //if(i.)
+
+                // if(i.getInstrumentID()%2==0){
+                //    InstrumentList.add(i);
+                EventSchedulelist.add(i);
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex1) {
+            }
+        }
+
+        // Display feedback details in the TextArea
+        StringBuilder lyricAndMgsDetails = new StringBuilder();
+        for (EventSchedule mm : EventSchedulelist) {
+            lyricAndMgsDetails .append(mm.toString()).append("\n");
+        }
+
+        greetAndMeetInfoTextArea.setText(EventSchedulelist.toString());
     }
+    
     
 }
