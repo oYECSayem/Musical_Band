@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="641.0" prefWidth="800.0" style="-fx-background-color: aqua;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sayem_2221728_BandMember.FeedbackToFansActivitySceneController">
    <children>
-      <TextArea layoutX="78.0" layoutY="14.0" prefHeight="72.0" prefWidth="475.0" promptText="Fans special message" />
-      <TextArea layoutX="78.0" layoutY="105.0" prefHeight="72.0" prefWidth="475.0" promptText="Reply to  fan" />
-      <Button layoutX="226.0" layoutY="194.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" text="Submit Reply" />
-      <TextArea layoutX="78.0" layoutY="238.0" prefHeight="72.0" prefWidth="475.0" promptText="Song lyrics from fan" />
-      <Button layoutX="114.0" layoutY="319.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" text="Accept" />
+      <TextArea fx:id="fansSpecialMessageTA" layoutX="82.0" layoutY="44.0" prefHeight="72.0" prefWidth="475.0" promptText="Fans special message" />
+      <TextArea fx:id="replyFansTA" layoutX="82.0" layoutY="276.0" prefHeight="72.0" prefWidth="475.0" promptText="Reply to  fan" />
+      <Button layoutX="82.0" layoutY="364.0" mnemonicParsing="false" onAction="#submitReplyButton" prefHeight="31.0" prefWidth="148.0" text="Submit Reply" />
+      <TextArea fx:id="fansLyricsTA" layoutX="82.0" layoutY="143.0" prefHeight="72.0" prefWidth="475.0" promptText="Song lyrics from fan" />
+      <Button layoutX="230.0" layoutY="230.0" mnemonicParsing="false" onAction="#acceptMessageLyricsButton" prefHeight="31.0" prefWidth="218.0" text="Check Message and lyrics" />
+      <ComboBox fx:id="rateSongCB" layoutX="577.0" layoutY="164.0" prefHeight="31.0" prefWidth="209.0" promptText="Rate Song Lyrics" />
    </children>
 </AnchorPane>
