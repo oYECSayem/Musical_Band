@@ -80,67 +80,6 @@ public class Fan extends User implements Serializable {
         return sb.toString();
     }
     
-    public static void writeMgsList(ObservableList<LyricsAndSpecialMgs> mgsList) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("MgsList.bin"))) {
-            for (LyricsAndSpecialMgs mgs : mgsList) {
-                oos.writeObject(mgs);
-            }
-            System.out.println("Message list updated and written to MgsList.bin");
-        } catch (IOException e) {
-            System.out.println("Error writing updated message list to file");
-            e.printStackTrace();
-        }
-    }
-
-    public static void writeLyricsList(ObservableList<LyricsAndSpecialMgs> lyricsList) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("LyricsList.bin"))) {
-            for (LyricsAndSpecialMgs lyrics : lyricsList) {
-                oos.writeObject(lyrics);
-            }
-            System.out.println("Lyrics list updated and written to LyricsList.bin");
-        } catch (IOException e) {
-            System.out.println("Error writing updated lyrics list to file");
-            e.printStackTrace();
-        }
-    }
-
-    public static ObservableList<LyricsAndSpecialMgs> readMgsList() {
-        ObservableList<LyricsAndSpecialMgs> mgsList = FXCollections.observableArrayList();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("MgsList.bin"))) {
-            while (true) {
-                try {
-                    LyricsAndSpecialMgs mgs = (LyricsAndSpecialMgs) ois.readObject();
-                    mgsList.add(mgs);
-                } catch (EOFException e) {
-                    // End of file reached, exit the loop
-                    break;
-                }
-            }
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return mgsList;
-    }
-
-    public static ObservableList<LyricsAndSpecialMgs> readLyricsList() {
-        ObservableList<LyricsAndSpecialMgs> lyricsList = FXCollections.observableArrayList();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("LyricsList.bin"))) {
-            while (true) {
-                try {
-                    LyricsAndSpecialMgs lyrics = (LyricsAndSpecialMgs) ois.readObject();
-                    lyricsList.add(lyrics);
-                } catch (EOFException e) {
-                    // End of file reached, exit the loop
-                    break;
-                }
-            }
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return lyricsList;
-    }
-    
-    
     
     //----------------------------feedback write-----------------
     

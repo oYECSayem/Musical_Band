@@ -69,7 +69,7 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
     private ComboBox<Integer> instrumentIdComboBox;
     
     Alert success=new Alert(Alert.AlertType.INFORMATION,"Successfully Added the product");
-     Alert alert=new Alert(Alert.AlertType.WARNING," product exixt Already!");
+     Alert alert=new Alert(Alert.AlertType.WARNING," Instrument exixt Already!");
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
