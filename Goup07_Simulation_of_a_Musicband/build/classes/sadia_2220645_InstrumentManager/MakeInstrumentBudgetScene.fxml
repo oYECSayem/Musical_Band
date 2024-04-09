@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
+<AnchorPane id="AnchorPane" prefHeight="621.0" prefWidth="878.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_InstrumentManager.MakeInstrumentBudgetSceneController">
+   <children>
+      <Label layoutX="266.0" layoutY="14.0" prefHeight="38.0" prefWidth="284.0" text="Instrument Budget Plan" textFill="#bf0e75">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="instrumentBudgetPlanTableView" layoutX="43.0" layoutY="321.0" prefHeight="225.0" prefWidth="757.0">
+        <columns>
+          <TableColumn fx:id="newInstrumentNameCol" prefWidth="173.0" text="New Instrument Name" />
+          <TableColumn fx:id="modelCol" prefWidth="81.0" text="Model" />
+            <TableColumn fx:id="brandNameCol" prefWidth="138.0" text="Brand Name" />
+            <TableColumn fx:id="piceCol" prefWidth="99.0" text="Price" />
+            <TableColumn fx:id="qantityCol" prefWidth="126.0" text="Qantity" />
+            <TableColumn fx:id="totalPriceCol" minWidth="0.0" prefWidth="139.0" text="Total Price" />
+        </columns>
+      </TableView>
+      <Button layoutX="37.0" layoutY="258.0" mnemonicParsing="false" onAction="#addInstrumentToTheBudjetPlanButtonOnClicked" prefHeight="31.0" prefWidth="284.0" text="Add Instrument To the Budget Plan" />
+      <Button layoutX="49.0" layoutY="559.0" mnemonicParsing="false" onAction="#viewBudjetPlanButtonOnClicked" text="View the Budget Plan" />
+      <Button layoutX="641.0" layoutY="274.0" mnemonicParsing="false" onAction="#submitbudjetPlanButtonOnClicked" text="Submit budget PLan" />
+      <Line endX="3.0" endY="164.0" layoutX="554.0" layoutY="132.0" startX="3.0" startY="-84.0" />
+      <Label layoutX="627.0" layoutY="20.0" text="Submit BudgetPlan" textFill="#4512bc">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="detailstextArea" layoutX="590.0" layoutY="84.0" prefHeight="183.0" prefWidth="264.0" />
+      <Label layoutX="619.0" layoutY="52.0" prefHeight="31.0" prefWidth="219.0" text="Total Price And  Qantity:" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="611.0" layoutY="559.0" mnemonicParsing="false" onAction="#clearButtonOnClicked" text="Clear" />
+   </children>
 </AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TaxComplianceController">
+    <Button layoutX="20.0" layoutY="30.0" onAction="#showBusinessExpenses" text="Business Expenses" />
+    <Button layoutX="20.0" layoutY="104.0" onAction="#showTravelExpenses" text="Travel Expenses" />
+    <Button layoutX="20.0" layoutY="195.0" onAction="#showHomeOfficeDeduction" text="Home Office Deduction" />
+    <!-- Add more buttons for other tax deduction categories if needed -->
+    
+    <TableView fx:id="tableView" layoutX="200" prefHeight="420.0" prefWidth="528.0">
+      <columns>
+         <TableColumn fx:id="expenseColumn" prefWidth="142.0" text="Expense" />
+         <TableColumn fx:id="taxColumn" prefWidth="159.0" text="Tax" />
+         <TableColumn prefWidth="308.0" />
+      </columns></TableView>
+</AnchorPane>

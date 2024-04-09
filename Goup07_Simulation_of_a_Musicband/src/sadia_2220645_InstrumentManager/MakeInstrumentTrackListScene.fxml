@@ -5,20 +5,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="588.0" prefWidth="817.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="588.0" prefWidth="817.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_InstrumentManager.MakeInstrumentTrackListSceneController">
    <children>
       <Label layoutX="313.0" layoutY="14.0" text="Instrument List" textFill="#1f10c4">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="489.0" layoutY="60.0" prefHeight="21.0" prefWidth="105.0" text="Instrument ID:" />
-      <TextField fx:id="instrumentIdTextField" layoutX="605.0" layoutY="55.0" />
-      <TableView fx:id="instrumentListTableView" layoutX="60.0" layoutY="266.0" prefHeight="227.0" prefWidth="647.0">
+      <Label layoutX="489.0" layoutY="86.0" prefHeight="21.0" prefWidth="105.0" text="Instrument ID:" />
+      <TextField fx:id="instrumentIdTextField" layoutX="614.0" layoutY="81.0" />
+      <TableView fx:id="instrumentListTableView" layoutX="55.0" layoutY="308.0" prefHeight="227.0" prefWidth="647.0">
         <columns>
           <TableColumn fx:id="instrumentNameCol" prefWidth="177.0" text="Instrument Name" />
           <TableColumn fx:id="IdCol" prefWidth="69.0" text="ID" />
@@ -27,13 +28,17 @@
             <TableColumn fx:id="quantityCol" prefWidth="122.0" text="Quantity" />
         </columns>
       </TableView>
-      <Button layoutX="60.0" layoutY="523.0" mnemonicParsing="false" onAction="#showInstrumentListButtonOnClicked" text="Show Instrument List" />
-      <Label layoutX="407.0" layoutY="98.0" prefHeight="21.0" prefWidth="187.0" text="Instrument Serial Number:" />
-      <Label layoutX="537.0" layoutY="148.0" prefHeight="21.0" prefWidth="54.0" text="Model:" />
-      <Label layoutX="441.0" layoutY="190.0" prefHeight="21.0" prefWidth="150.0" text="Instrument Quantity:" />
-      <TextField fx:id="serialNumberTextField" layoutX="605.0" layoutY="93.0" />
-      <TextField fx:id="modelTextField" layoutX="605.0" layoutY="143.0" />
-      <TextField fx:id="quantityTextField" layoutX="605.0" layoutY="185.0" />
-      <ComboBox fx:id="instrumentnameComboBox" layoutX="71.0" layoutY="34.0" prefHeight="31.0" prefWidth="170.0" promptText="Instrument Name" />
+      <Button layoutX="55.0" layoutY="543.0" mnemonicParsing="false" onAction="#showInstrumentListButtonOnClicked" text="Show Instrument List" />
+      <Label layoutX="409.0" layoutY="134.0" prefHeight="21.0" prefWidth="187.0" text="Instrument Serial Number:" />
+      <Label layoutX="533.0" layoutY="174.0" prefHeight="21.0" prefWidth="54.0" text="Model:" />
+      <Label layoutX="444.0" layoutY="221.0" prefHeight="21.0" prefWidth="150.0" text="Instrument Quantity:" />
+      <TextField fx:id="serialNumberTextField" layoutX="614.0" layoutY="129.0" />
+      <TextField fx:id="modelTextField" layoutX="614.0" layoutY="169.0" />
+      <TextField fx:id="quantityTextField" layoutX="605.0" layoutY="216.0" />
+      <ComboBox fx:id="instrumentIdComboBox" layoutX="71.0" layoutY="34.0" onAction="#intumentIdComboBoxButtonOnClicked" prefHeight="31.0" prefWidth="170.0" promptText="Instrument ID" />
+      <Button layoutX="57.0" layoutY="267.0" mnemonicParsing="false" onAction="#addNewInstrumentButtonOnClicked" text="Add new Instrument" />
+      <Label layoutX="467.0" layoutY="55.0" prefHeight="21.0" prefWidth="134.0" text="Instrument Name:" />
+      <TextField fx:id="instrumentNameTextField" layoutX="605.0" layoutY="40.0" />
+      <TextArea fx:id="instrumentDetailsTextArea" layoutX="56.0" layoutY="74.0" prefHeight="182.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

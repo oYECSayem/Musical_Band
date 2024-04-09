@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="651.0" prefWidth="841.0" style="-fx-background-color: D8F5EB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_Fan.GiveFeedbacksSceneController">
+   <children>
+      <Label layoutX="265.0" layoutY="27.0" text="Give Your Valuable Feedback !" textFill="#2a059a">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="albumRadioButton" layoutX="74.0" layoutY="195.0" mnemonicParsing="false" text="Albums" textFill="#d70a0a">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="songsRaddioButton" layoutX="209.0" layoutY="195.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="93.0" text="Songs" textFill="#d30b0b">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="concertRadioButton" layoutX="349.0" layoutY="195.0" mnemonicParsing="false" text="Concerts" textFill="#dd0f0f">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="merchandiseRadioButton" layoutX="492.0" layoutY="195.0" mnemonicParsing="false" text="Merchandise" textFill="#d71111">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="74.0" layoutY="98.0" text="Enter Your Name:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTextField" layoutX="209.0" layoutY="93.0" />
+      <TextArea fx:id="writeFeedbacksTextArea" layoutX="63.0" layoutY="277.0" prefHeight="284.0" prefWidth="343.0" promptText="Write Here!" />
+      <Button layoutX="63.0" layoutY="568.0" mnemonicParsing="false" onAction="#submitFeedbackButtonOnClicked" text="Submit" />
+      <DatePicker fx:id="datePicker" layoutX="524.0" layoutY="93.0" />
+      <Label layoutX="38.0" layoutY="147.0" text="Please select the topics you would like to give your feedback and suggestions:" textFill="#791aa1">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="viewfeedbackDetailsTextArea1" layoutX="442.0" layoutY="277.0" prefHeight="276.0" prefWidth="343.0" promptText="Write Here!" />
+      <Button layoutX="447.0" layoutY="560.0" mnemonicParsing="false" onAction="#viewFeedbackButtonOnClicked" text="View" />
+      <Label layoutX="473.0" layoutY="98.0" text="Date:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
