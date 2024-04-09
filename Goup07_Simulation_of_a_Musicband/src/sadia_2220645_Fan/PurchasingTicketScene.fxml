@@ -3,10 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -42,7 +43,6 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <TextField fx:id="pinNumberTextField" layoutX="605.0" layoutY="174.0" />
       <ComboBox layoutX="51.0" layoutY="46.0" prefWidth="150.0" promptText="Select Qantity" />
       <Label layoutX="605.0" layoutY="136.0" prefHeight="21.0" prefWidth="111.0" text="Pin Number:">
          <font>
@@ -59,5 +59,8 @@
       <Button layoutX="26.0" layoutY="622.0" mnemonicParsing="false" onAction="#confirmpurchaseButtonOnClicked" text="Confirm Purchase" />
       <Button layoutX="667.0" layoutY="628.0" mnemonicParsing="false" onAction="#goToPreviousPageButtonOnClicked" text="Go to Previous Page" />
       <Button layoutX="26.0" layoutY="354.0" mnemonicParsing="false" onAction="#showDetailsButtonOnClicked" text="Show Details" />
+      <TextArea layoutX="41.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" promptText="Show purchased ticket details" />
+      <TextArea layoutX="391.0" layoutY="215.0" prefHeight="113.0" prefWidth="255.0" />
+      <PasswordField fx:id="pinNumberTextField" layoutX="580.0" layoutY="174.0" />
    </children>
 </AnchorPane>

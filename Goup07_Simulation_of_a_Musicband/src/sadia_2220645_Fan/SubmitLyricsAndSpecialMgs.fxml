@@ -38,7 +38,7 @@
       <TextArea fx:id="lyricsTextArea" layoutX="35.0" layoutY="144.0" prefHeight="178.0" prefWidth="309.0" promptText="Write here your song lyrics and submit to us!" />
       <Button layoutX="35.0" layoutY="545.0" mnemonicParsing="false" onAction="#submitMgsAndLyricsButtonOnClicked" text="Submit" />
       <Button layoutX="654.0" layoutY="560.0" mnemonicParsing="false" onAction="#receiveMgsButtonOnClicked" text="Receive " />
-      <TextArea fx:id="receiveMgsTextArea1" layoutX="450.0" layoutY="386.0" prefHeight="161.0" prefWidth="281.0" />
+      <TextArea fx:id="receiveMgsTextArea" layoutX="450.0" layoutY="386.0" prefHeight="161.0" prefWidth="281.0" />
       <Label layoutX="35.0" layoutY="116.0" prefHeight="21.0" prefWidth="318.0" text="Write Your Own Song Lyrics And submit us" textFill="#ab1689">
          <font>
             <Font name="System Bold Italic" size="15.0" />
