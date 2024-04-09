@@ -4,26 +4,28 @@
  */
 package sayem_2221728_BandMember;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import sadia_2220645_Fan.LyricsAndSpecialMgs;
+import static sayem_2221728_BandMember.BandMember.giveCollabrationSchedule;
 
-/**
- * FXML Controller class
- *
- * @author USER
- */
 public class GiveScheduleForCollabrationSceneController implements Initializable {
 
     @FXML
     private AnchorPane anchorPane;
-    @FXML
-    private TextField meetSessionsTF;
     @FXML
     private TextField eventTitlesTF;
     @FXML
@@ -36,13 +38,62 @@ public class GiveScheduleForCollabrationSceneController implements Initializable
     private TextField locationTF;
     @FXML
     private TextArea giveawayTA;
+    @FXML
+    private TextArea viewSchedueTA;
 
-    /**
-     * Initializes the controller class.
-     */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       // String eventTitle, String description, String date, String time, String location, String giveaway
+       
     }    
-    
+
+    @FXML
+    private void submitSchedule(ActionEvent event) {
+       String eventTitle = eventTitlesTF.getText();
+       String description = descriptionsTA.getText();
+       LocalDate date = datesDP.getValue();
+       String time = timesTF.getText();
+       String location = locationTF.getText();
+       String giveawayDetails = giveawayTA.getText();
+       EventSchedule eSc = new EventSchedule(eventTitle, description, date, time, location, giveawayDetails);
+       giveCollabrationSchedule(eSc);
+    }
+
+    @FXML
+    private void viewtSchedule(ActionEvent event) {
+        ObjectInputStream ois = null;
+        ObservableList<EventSchedule> EventSchedulelist = FXCollections.observableArrayList();
+        try {
+           EventSchedule i;
+            ois = new ObjectInputStream(new FileInputStream("EventSchedule.bin"));
+
+            while (true) {
+                i = (EventSchedule) ois.readObject();
+
+                // if(i.getInstrumentID()%2==0){
+                //    InstrumentList.add(i);
+                EventSchedulelist.add(i);
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex1) {
+            }
+        }
+
+        // Display feedback details in the TextArea
+        StringBuilder lyricAndMgsDetails = new StringBuilder();
+        for (EventSchedule mm : EventSchedulelist) {
+            lyricAndMgsDetails .append(mm.toString()).append("\n");
+        }
+
+        viewSchedueTA.setText(EventSchedulelist.toString());
+    }
 }
+    
+

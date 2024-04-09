@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import sadia_2220645_Fan.LyricsAndSpecialMgs;
 import static sayem_2221728_BandMember.BandMember.replyMessage;
 
 
@@ -43,38 +44,38 @@ public class FeedbackToFansActivitySceneController implements Initializable {
     @FXML
     private void acceptMessageLyricsButton(ActionEvent event) {
         ObjectInputStream ois = null;
-        ObservableList <Message> msgList = FXCollections.observableArrayList();
+        ObservableList<LyricsAndSpecialMgs> LyricsAndSpecialMgslist = FXCollections.observableArrayList();
         try {
-             Message i;
-             ois = new ObjectInputStream(new FileInputStream("Message.bin"));
-             
-            while(true){
-                i = (Message) ois.readObject();
-                
-               // if(i.getInstrumentID()%2==0){
+           LyricsAndSpecialMgs i;
+            ois = new ObjectInputStream(new FileInputStream("LyricsAndSpecialMgs.bin"));
+
+            while (true) {
+                i = (LyricsAndSpecialMgs) ois.readObject();
+
+                // if(i.getInstrumentID()%2==0){
                 //    InstrumentList.add(i);
-                
-                msgList.add(i);
+                LyricsAndSpecialMgslist.add(i);
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex1) {
             }
         }
-        catch(RuntimeException e){
-            e.printStackTrace();
-        }
-        catch (Exception ex) {
-            try {
-                if(ois!=null)
-                    ois.close();
-            } catch (IOException ex1) {  }           
+
+        // Display feedback details in the TextArea
+        StringBuilder lyricAndMgsDetails = new StringBuilder();
+        for (LyricsAndSpecialMgs mm : LyricsAndSpecialMgslist) {
+            lyricAndMgsDetails .append(mm.toString()).append("\n");
         }
 
-    // Display feedback details in the TextArea
-    StringBuilder messageDetails = new StringBuilder();
-    for (Message msg : msgList) {
-        messageDetails.append(msg.toString()).append("\n");
+        fansMessageLyricsTA.setText(lyricAndMgsDetails.toString());
     }
 
-    fansMessageLyricsTA.setText(messageDetails.toString());
-    }
 }
     
 
