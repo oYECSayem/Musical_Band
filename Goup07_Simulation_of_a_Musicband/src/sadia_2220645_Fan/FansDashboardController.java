@@ -36,6 +36,7 @@ public class FansDashboardController implements Initializable {
     private void submitSongsAndSpecialMgsButtonOnClicked(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SubmitLyricsAndSpecialMgs.fxml"));
          borderPane.setCenter(root);
+        
     }
 
     @FXML
