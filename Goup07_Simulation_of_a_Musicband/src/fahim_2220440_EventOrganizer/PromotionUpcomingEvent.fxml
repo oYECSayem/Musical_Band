@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="591.0" prefWidth="871.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+   <children>
+      <Button fx:id="addEventPageButton" layoutX="86.0" layoutY="539.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="144.0" text="Add Event Page" />
+      <Button fx:id="publishPageButton" layoutX="589.0" layoutY="539.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="144.0" text="Publish Page" />
+      <Label layoutX="42.0" layoutY="81.0" prefHeight="21.0" prefWidth="113.0" text="Concert Name:" />
+      <TextField fx:id="concertName" layoutX="162.0" layoutY="76.0" prefHeight="31.0" prefWidth="628.0" />
+      <Label layoutX="42.0" layoutY="140.0" prefHeight="21.0" prefWidth="113.0" text="Location:" />
+      <TextField fx:id="locationOfConcert" layoutX="162.0" layoutY="135.0" prefHeight="31.0" prefWidth="628.0" />
+      <Label layoutX="42.0" layoutY="311.0" prefHeight="21.0" prefWidth="113.0" text="About Event:" />
+      <Label layoutX="42.0" layoutY="197.0" prefHeight="21.0" prefWidth="113.0" text="Date:" />
+      <DatePicker fx:id="dateOfConcert" layoutX="163.0" layoutY="192.0" />
+      <TextField fx:id="timeOfConcert" layoutX="163.0" layoutY="254.0" />
+      <TextField fx:id="aboutEventDetails" layoutX="163.0" layoutY="306.0" prefHeight="31.0" prefWidth="628.0" />
+      <Label layoutX="42.0" layoutY="259.0" prefHeight="21.0" prefWidth="113.0" text="Time:" />
+      <Label layoutX="38.0" layoutY="366.0" prefHeight="21.0" prefWidth="120.0" text="Organizer Name:" />
+      <TextField fx:id="organizerName" layoutX="163.0" layoutY="361.0" prefHeight="31.0" prefWidth="628.0" />
+      <Label layoutX="38.0" layoutY="413.0" prefHeight="21.0" prefWidth="120.0" text="Organizer Phone:" />
+      <Label layoutX="38.0" layoutY="466.0" prefHeight="21.0" prefWidth="120.0" text="Organizer E-mail:" />
+      <TextField fx:id="organizerPhone" layoutX="163.0" layoutY="408.0" prefHeight="31.0" prefWidth="313.0" />
+      <TextField fx:id="organizerEmail" layoutX="163.0" layoutY="461.0" prefHeight="31.0" prefWidth="313.0" />
+      <Label layoutX="305.0" layoutY="14.0" prefHeight="46.0" prefWidth="313.0" text="Create Event Page">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

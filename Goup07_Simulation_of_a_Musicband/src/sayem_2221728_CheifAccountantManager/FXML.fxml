@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/16" fx:controller="your.controller.package.ControllerClassName" alignment="CENTER">
+    <top>
+        <Label text="Tax Compliance" style="-fx-font-size: 18px;" />
+    </top>
+
+    <center>
+        <TableView fx:id="transactionTable" prefWidth="400" prefHeight="300">
+            <columns>
+                <TableColumn text="Transaction Date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="date"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Description">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="description"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Amount">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="amount"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Add Transaction" onAction="#addTransaction"/>
+            <Button text="Remove Transaction" onAction="#removeTransaction"/>
+
+            <CheckBox text="Include Expenses"/>
+            <ComboBox fx:id="taxYearComboBox" promptText="Select Tax Year"/>
+            <RadioButton text="Monthly"/>
+            <RadioButton text="Annually" selected="true"/>
+            <Button text="Calculate Tax" onAction="#calculateTax"/>
+        </HBox>
+    </bottom>
+</BorderPane>

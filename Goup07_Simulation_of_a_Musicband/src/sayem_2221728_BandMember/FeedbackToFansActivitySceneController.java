@@ -9,7 +9,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -19,11 +21,13 @@ import javafx.scene.control.TextArea;
 public class FeedbackToFansActivitySceneController implements Initializable {
 
     @FXML
-    private TextArea fansSpecialMessageTA;
-    @FXML
     private TextArea replyFansTA;
     @FXML
     private TextArea fansLyricsTA;
+    @FXML
+    private ComboBox<?> rateSongCB;
+    @FXML
+    private TextField nameTF;
 
     /**
      * Initializes the controller class.
