@@ -189,7 +189,7 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
    
 
     @FXML
-   /* private void viewChartButtonOnClicked(ActionEvent event) throws IOException {
+    private void viewChartButtonOnClicked(ActionEvent event) throws IOException {
         Parent root=FXMLLoader.load(getClass().getResource("InstrumentTrackListChart.fxml"));
         Scene scene=new Scene(root);
         Stage stage=new Stage();
@@ -197,22 +197,6 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
         stage.setScene(scene);
         stage.show();
     }
-
-     
-    public ObservableList<Instrument> getInstrumentList() {
-        ObservableList<Instrument> newUpdatedInstrumentList = FXCollections.observableArrayList();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("NewUpdatedInstrument.bin"))) {
-            Instrument instrument;
-            while ((instrument = (Instrument) ois.readObject()) != null) {
-                newUpdatedInstrumentList.add(instrument);
-            }
-        } catch (EOFException eof) {
-            // End of file reached, ignore
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return newUpdatedInstrumentList;
-    }
     
     
-}*/
+}
