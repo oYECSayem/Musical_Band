@@ -24,6 +24,7 @@ import javafx.scene.control.ToggleGroup;
 import sadia_2220645_Fan.LyricsAndSpecialMgs;
 import static sadia_2220645_InstrumentManager.InstrumentManager.sendGuidelineAndManuals;
 import static sadia_2220645_InstrumentManager.InstrumentManager.sendMgs;
+import sayem_2221728_BandMember.Message;
 
 /**
  * FXML Controller class
@@ -192,17 +193,17 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
     @FXML
     private void ShowAndsendGuidelineAndManuaButtonOnClicked(ActionEvent event) {
         ObjectInputStream ois = null;
-        ObservableList<SetupGuidelinesAndManuals> GuidelinesAndManualslist = FXCollections.observableArrayList();
+        ObservableList<Message> Messagelist = FXCollections.observableArrayList();
         try {
-            SetupGuidelinesAndManuals i;
-            ois = new ObjectInputStream(new FileInputStream("GuidelineAndManuals.bin"));
+            Message i;
+            ois = new ObjectInputStream(new FileInputStream("TechnicalSupportMessage.bin"));
 
             while (true) {
-                i = (SetupGuidelinesAndManuals) ois.readObject();
+                i = (Message) ois.readObject();
 
                 // if(i.getInstrumentID()%2==0){
                 //    InstrumentList.add(i);
-                GuidelinesAndManualslist.add(i);
+                Messagelist.add(i);
             }
         } catch (RuntimeException e) {
             e.printStackTrace();
@@ -217,7 +218,7 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
 
         // Display feedback details in the TextArea
         StringBuilder GuidelinesAndManualDetails = new StringBuilder();
-        for (SetupGuidelinesAndManuals s : GuidelinesAndManualslist) {
+        for (Message s : Messagelist) {
              GuidelinesAndManualDetails.append(s.toString()).append("\n");
         }
 
