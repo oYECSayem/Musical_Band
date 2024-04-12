@@ -11,11 +11,11 @@ import java.time.LocalDate;
  *
  * @author USER
  */
-public class Message implements Serializable {
+public class Mgs implements Serializable {
     String name,Textdescription;
     LocalDate shcedule;
 
-    public Message(String name, String Textdescription, LocalDate shcedule) {
+    public Mgs(String name, String Textdescription, LocalDate shcedule) {
         this.name = name;
         this.Textdescription = Textdescription;
         this.shcedule = shcedule;
