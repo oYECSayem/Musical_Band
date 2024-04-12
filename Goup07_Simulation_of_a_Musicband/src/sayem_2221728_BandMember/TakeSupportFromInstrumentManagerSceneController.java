@@ -20,7 +20,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import sadia_2220645_InstrumentManager.Mgs;
 import sadia_2220645_InstrumentManager.SetupGuidelinesAndManuals;
+import static sayem_2221728_BandMember.BandMember.askForTechnicalSupport;
 
 /**
  * FXML Controller class
@@ -59,6 +61,11 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
 
     @FXML
     private void contactForTechnicalSupportButton(ActionEvent event) {
+        String senderName = nameTF.getText();
+        String text = technicalProblemTA.getText();
+        Message m1=new Message(senderName, text);
+        askForTechnicalSupport(m1);
+        technicalProblemTA.clear();
     }
 
 
@@ -100,19 +107,19 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
 
     @FXML
     private void recieveMessageButton(ActionEvent event) {
-       /* {
+       {
         ObjectInputStream ois = null;
-        ObservableList<sadia_2220645_InstrumentManager.Message> messagelist = FXCollections.observableArrayList();
+        ObservableList<Mgs> mgslist = FXCollections.observableArrayList();
         try {
-           Message i;
+           Mgs i;
             ois = new ObjectInputStream(new FileInputStream("InstrumentManagderMessages.bin"));
 
             while (true) {
-                i = (Message) ois.readObject();
+                i = (Mgs) ois.readObject();
 
                 // if(i.getInstrumentID()%2==0){
                 //    InstrumentList.add(i);
-                messagelist.add(i);
+                mgslist.add(i);
             }
         } catch (RuntimeException e) {
             e.printStackTrace();
@@ -126,13 +133,13 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
         }
 
         // Display feedback details in the TextArea
-        StringBuilder budgetDetails = new StringBuilder();
-        for (Budget mm : budgetlist) {
-            budgetDetails .append(mm.toString()).append("\n");
+        StringBuilder mgsDetails = new StringBuilder();
+        for (Mgs mm : mgslist) {
+            mgsDetails .append(mm.toString()).append("\n");
         }
 
-        recieveMessageTA.setText(budgetDetails.toString());
-    }*/
+        recieveMessageTA.setText(mgsDetails.toString());
+    }
     }
     
     
