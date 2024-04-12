@@ -68,7 +68,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+<<<<<<< Updated upstream
       <Label layoutX="72.0" layoutY="32.0" prefHeight="87.0" prefWidth="351.0" text="Welcome" textFill="#bae14f">
+=======
+      <Label layoutX="197.0" layoutY="23.0" prefHeight="39.0" prefWidth="351.0" text="Welcome" textFill="#191057">
+>>>>>>> Stashed changes
          <font>
             <Font name="Constantia Bold Italic" size="67.0" />
          </font>

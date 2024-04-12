@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane id="AnchorPane" prefHeight="659.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_bandPromoter.Create_NewController">
+   <children>
+      <TabPane layoutX="183.0" layoutY="33.0" prefHeight="659.0" prefWidth="824.0" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+            <Tab text="Uploading Dailey Updates">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="79.0" layoutY="92.0" style="-fx-background-color: #FFFFE5;" text=" Date: " />
+                        <DatePicker layoutX="194.0" layoutY="87.0" />
+                        <Label layoutX="79.0" layoutY="160.0" style="-fx-background-color: #FFFFE5;" text=" Description: " />
+                        <TextField alignment="TOP_LEFT" layoutX="194.0" layoutY="155.0" prefHeight="210.0" prefWidth="568.0" />
+                        <Button layoutX="380.0" layoutY="423.0" mnemonicParsing="false" text="Upload it" />
+                        <Button layoutX="624.0" layoutY="551.0" mnemonicParsing="false" onAction="#returnFromDailyUpdatesOnClick" text="Return to dashboard" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Create Event Promotional Post">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="103.0" layoutY="114.0" style="-fx-background-color: #FFFFE5;" text=" On Going Event: " />
+                        <ComboBox layoutX="295.0" layoutY="109.0" prefHeight="31.0" prefWidth="253.0" />
+                        <Label layoutX="103.0" layoutY="173.0" style="-fx-background-color: #FFFFE5;" text=" Event Description: " />
+                        <Label alignment="TOP_LEFT" layoutX="295.0" layoutY="173.0" prefHeight="147.0" prefWidth="438.0" style="-fx-background-color: #FFFFE5;" text="(No Event is Selected)" />
+                        <Label layoutX="103.0" layoutY="377.0" style="-fx-background-color: #FFFFE5;" text=" Your Promotional post: " />
+                        <TextField alignment="TOP_LEFT" layoutX="295.0" layoutY="372.0" prefHeight="127.0" prefWidth="439.0" />
+                        <Button layoutX="380.0" layoutY="529.0" mnemonicParsing="false" text="Notify Fan" />
+                        <Button layoutX="644.0" layoutY="560.0" mnemonicParsing="false" onAction="#returnFromCreateEventOnClick" text="Return to dashboard" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Create Campaign">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="105.0" layoutY="97.0" style="-fx-background-color: #FFFFE5;" text=" Campaign Date: " />
+                        <DatePicker layoutX="265.0" layoutY="92.0" />
+                        <Label layoutX="105.0" layoutY="156.0" style="-fx-background-color: #FFFFE5;" text=" Campaign Details: " />
+                        <TextField alignment="TOP_LEFT" layoutX="272.0" layoutY="151.0" prefHeight="159.0" prefWidth="450.0" />
+                        <Label layoutX="105.0" layoutY="346.0" style="-fx-background-color: #FFFFE5;" text=" Campaign Venue: " />
+                        <TextField alignment="TOP_LEFT" layoutX="272.0" layoutY="346.0" prefHeight="68.0" prefWidth="450.0" />
+                        <Button layoutX="380.0" layoutY="445.0" mnemonicParsing="false" text="Upload it" />
+                        <Button layoutX="623.0" layoutY="555.0" mnemonicParsing="false" onAction="#returnFromCampaignOnClick" text="Return to Dashboard" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Create Contest">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="76.0" layoutY="67.0" style="-fx-background-color: #FFFFE5;" text=" Enter your question 1: " />
+                        <Label layoutX="77.0" layoutY="155.0" style="-fx-background-color: #FFFFE5;" text=" Enter your option 1: " />
+                        <Label layoutX="77.0" layoutY="205.0" style="-fx-background-color: #FFFFE5;" text=" Enter your option 2: " />
+                        <Label layoutX="78.0" layoutY="249.0" style="-fx-background-color: #FFFFE5;" text=" Enter the right answer: " />
+                        <TextField alignment="TOP_LEFT" layoutX="262.0" layoutY="61.0" prefHeight="75.0" prefWidth="515.0" />
+                        <TextField layoutX="262.0" layoutY="150.0" prefHeight="31.0" prefWidth="425.0" />
+                        <TextField layoutX="262.0" layoutY="200.0" prefHeight="31.0" prefWidth="425.0" />
+                        <ComboBox layoutX="262.0" layoutY="244.0" prefWidth="150.0" />
+                        <Label layoutX="80.0" layoutY="310.0" style="-fx-background-color: #FFFFE5;" text=" Enter your question 1: " />
+                        <TextField alignment="TOP_LEFT" layoutX="262.0" layoutY="310.0" prefHeight="75.0" prefWidth="515.0" />
+                        <Label layoutX="77.0" layoutY="398.0" style="-fx-background-color: #FFFFE5;" text=" Enter your option 1: " />
+                        <TextField layoutX="262.0" layoutY="393.0" prefHeight="31.0" prefWidth="425.0" />
+                        <TextField layoutX="262.0" layoutY="439.0" prefHeight="31.0" prefWidth="425.0" />
+                        <Label layoutX="77.0" layoutY="444.0" style="-fx-background-color: #FFFFE5;" text=" Enter your option 2: " />
+                        <Label layoutX="78.0" layoutY="494.0" style="-fx-background-color: #FFFFE5;" text=" Enter the right answer: " />
+                        <ComboBox layoutX="262.0" layoutY="489.0" prefWidth="150.0" />
+                        <Line endX="430.0" layoutX="266.0" layoutY="292.0" startX="-100.0" />
+                        <Button layoutX="400.0" layoutY="543.0" mnemonicParsing="false" text="Post It" />
+                        <Button layoutX="641.0" layoutY="574.0" mnemonicParsing="false" onAction="#returnFromContestOnClick" text="Return To Dashboard" />
+                        <Button layoutX="93.0" layoutY="574.0" mnemonicParsing="false" text="See response" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

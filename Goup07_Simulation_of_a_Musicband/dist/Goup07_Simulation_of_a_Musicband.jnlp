@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< Updated upstream
     <jar href="Goup07_Simulation_of_a_Musicband.jar" size="20646" download="eager" />
+=======
+    <jar href="Goup07_Simulation_of_a_Musicband.jar" size="11609666" download="eager" />
+>>>>>>> Stashed changes
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="MainPkg.main"  name="Goup07_Simulation_of_a_Musicband" />
   <update check="always"/>

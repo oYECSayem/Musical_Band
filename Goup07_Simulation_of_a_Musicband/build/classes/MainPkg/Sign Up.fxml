@@ -39,7 +39,6 @@
          </font>
       </Label>
       <ComboBox fx:id="userTypeComboBox" layoutX="170.0" layoutY="312.0" prefHeight="27.0" prefWidth="510.0" promptText="Register as:" />
-      <Label layoutX="543.0" layoutY="519.0" text="Built and designed by fxml explorers" textFill="#123eff" underline="true" />
       <Label layoutX="85.0" layoutY="317.0" text="User Type" />
    </children>
 </AnchorPane>

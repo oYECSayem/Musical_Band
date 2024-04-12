@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="656.0" prefWidth="796.0" style="-fx-background-color: black;" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_bandPromoter.Event_Budget_ListController">
+   <children>
+      <Label layoutX="281.0" layoutY="39.0" text="Event Budget List" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="86.0" layoutY="521.0" style="-fx-background-color: white;" text=" Total Budget Need For The Event: " />
+      <ComboBox layoutX="281.0" layoutY="123.0" prefHeight="31.0" prefWidth="235.0" />
+      <TableView layoutX="94.0" layoutY="210.0" prefHeight="277.0" prefWidth="608.0">
+        <columns>
+          <TableColumn prefWidth="241.0" text="Requirements" />
+          <TableColumn prefWidth="121.0" text="Quantity" />
+            <TableColumn prefWidth="108.0" text="Budget" />
+            <TableColumn prefWidth="137.0" text="Total Budget" />
+        </columns>
+      </TableView>
+      <Label layoutX="103.0" layoutY="138.0" text="Enter your Event: " textFill="WHITE" />
+      <Label layoutX="389.0" layoutY="521.0" style="-fx-background-color: black;" text="(No Bugdet is here)" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="576.0" layoutY="597.0" mnemonicParsing="false" onAction="#returnOnClick" text="Return to Dashboard" />
+   </children>
+</AnchorPane>

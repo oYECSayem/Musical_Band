@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="516.0" prefWidth="751.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+   <children>
+      <Label layoutX="198.0" layoutY="31.0" prefHeight="21.0" prefWidth="368.0" text="Making Budget Plan">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <TableView layoutX="25.0" layoutY="84.0" prefHeight="200.0" prefWidth="686.0">
+        <columns>
+          <TableColumn prefWidth="89.0" text="Serial no." />
+            <TableColumn prefWidth="123.0" text="User Name" />
+          <TableColumn prefWidth="126.0" text="User ID" />
+            <TableColumn prefWidth="213.0" text="Budget event Name" />
+            <TableColumn prefWidth="147.0" text="Budget Amount" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
