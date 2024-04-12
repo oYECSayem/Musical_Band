@@ -4,6 +4,7 @@
  */
 package sadia_2220645_InstrumentManager;
 
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -84,7 +85,9 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
          
         
        
-    }    
+    } 
+    
+    
 
     @FXML
     private void addNewupdatedInstrumentButtonOnClicked(ActionEvent event) {
@@ -182,5 +185,18 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
         
       
     }
+
+   
+
+    @FXML
+    private void viewChartButtonOnClicked(ActionEvent event) throws IOException {
+        Parent root=FXMLLoader.load(getClass().getResource("InstrumentTrackListChart.fxml"));
+        Scene scene=new Scene(root);
+        Stage stage=new Stage();
+        stage.setTitle(" Chart");
+        stage.setScene(scene);
+        stage.show();
+    }
+    
     
 }

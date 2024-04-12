@@ -30,8 +30,7 @@
       </Label>
       <RadioButton fx:id="twitterRadioButton" layoutX="465.0" layoutY="157.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="85.0" text="Twitter" />
       <RadioButton fx:id="youTubeRadioButton" layoutX="599.0" layoutY="157.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="104.0" text="You Tube" />
-      <Label fx:id="resultLabel" layoutX="349.0" layoutY="201.0" prefHeight="291.0" prefWidth="447.0" style="-fx-background-color: FAB1F8;" />
       <Button layoutX="349.0" layoutY="519.0" mnemonicParsing="false" onAction="#showSocialMediaLinksButtonOnClicked" text="Show Social Media Links" />
-      <TextArea fx:id="allmeadialinksTextArea" layoutX="58.0" layoutY="200.0" prefHeight="284.0" prefWidth="244.0" />
+      <TextArea fx:id="allmeadialinksTextArea" layoutX="275.0" layoutY="192.0" prefHeight="302.0" prefWidth="502.0" />
    </children>
 </AnchorPane>

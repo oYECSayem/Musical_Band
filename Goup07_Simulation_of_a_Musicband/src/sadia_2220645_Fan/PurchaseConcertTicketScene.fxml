@@ -6,21 +6,21 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="availabilityCol" prefHeight="631.0" prefWidth="876.0" style="-fx-background-color: D8F5EB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_Fan.PurchaseConcertTicketSceneController">
    <children>
-      <TableView fx:id="ticketViewCol" layoutX="26.0" layoutY="307.0" prefHeight="234.0" prefWidth="800.0">
+      <TableView fx:id="ticketViewCol" layoutX="26.0" layoutY="307.0" prefHeight="234.0" prefWidth="735.0">
         <columns>
-          <TableColumn fx:id="ticketIdCol" prefWidth="75.0" text="Ticket ID" />
-          <TableColumn fx:id="concertDetailsCol" prefWidth="133.0" text="Concert Details" />
-            <TableColumn fx:id="ticketPriceCol" prefWidth="130.0" text="Ticket Type" />
-            <TableColumn fx:id="quantityCol" prefWidth="105.0" text="Ticket Price" />
-            <TableColumn fx:id="totalPriceCol" minWidth="9.0" prefWidth="112.0" text="Quantity" />
-            <TableColumn minWidth="9.0" prefWidth="112.0" text="Total Price" />
-            <TableColumn fx:id="concertDetailsCol1" prefWidth="133.0" text="Availability" />
+          <TableColumn fx:id="ticketIdCol" prefWidth="124.0" text="Ticket ID" />
+          <TableColumn fx:id="concertDetailsCol" prefWidth="145.0" text="Concert Details" />
+            <TableColumn fx:id="ticketPriceCol" prefWidth="127.0" text="Ticket Type" />
+            <TableColumn fx:id="quantityCol" prefWidth="109.0" text="Ticket Price" />
+            <TableColumn fx:id="totalPriceCol" minWidth="9.0" prefWidth="97.0" text="Quantity" />
+            <TableColumn minWidth="9.0" prefWidth="132.0" text="Total Price" />
         </columns>
       </TableView>
       <Button layoutX="26.0" layoutY="561.0" mnemonicParsing="false" onAction="#addConcertEventButonOnClicked" text="Add your concert Event" />
@@ -58,5 +58,9 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </RadioButton>
+      <Label layoutX="45.0" layoutY="110.0" prefHeight="21.0" prefWidth="100.0" text="Ticket ID:" />
+      <TextField fx:id="ticketIdTextField" layoutX="122.0" layoutY="105.0" />
+      <TextArea layoutX="169.0" layoutY="145.0" prefHeight="78.0" prefWidth="200.0" />
+      <Label layoutX="31.0" layoutY="168.0" prefHeight="21.0" prefWidth="118.0" text="Concert Details:" />
    </children>
 </AnchorPane>

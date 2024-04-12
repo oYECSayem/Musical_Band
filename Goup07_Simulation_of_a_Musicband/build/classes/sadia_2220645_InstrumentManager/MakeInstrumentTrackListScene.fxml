@@ -40,5 +40,6 @@
       <Label layoutX="467.0" layoutY="55.0" prefHeight="21.0" prefWidth="134.0" text="Instrument Name:" />
       <TextField fx:id="instrumentNameTextField" layoutX="605.0" layoutY="40.0" />
       <TextArea fx:id="instrumentDetailsTextArea" layoutX="56.0" layoutY="74.0" prefHeight="182.0" prefWidth="200.0" />
+      <Button layoutX="601.0" layoutY="543.0" mnemonicParsing="false" onAction="#viewChartButtonOnClicked" text="View Chart" />
    </children>
 </AnchorPane>

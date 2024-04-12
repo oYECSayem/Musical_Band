@@ -4,6 +4,7 @@
  */
 package sadia_2220645_InstrumentManager;
 
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -49,7 +50,6 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
     private TableColumn<DefectedInstrument, String> problemDescriptionCol;
     @FXML
     private TableColumn<DefectedInstrument, String> defectsCatagoryCol;
-    @FXML
     private ComboBox<Integer> defectedInstumentIdComboBox;
     @FXML
     private RadioButton minorDefectRadioButton;
@@ -72,7 +72,6 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
     
     
     ArrayList<DefectedInstrument> DefectedInstrumentList=new ArrayList<>();
-    @FXML
     private TextArea defectedInstrumentDetailsTextArea;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -91,8 +90,7 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
 
     }
 
-    @FXML
-    private void instrumentIdButtonOnClicked(ActionEvent event) {
+   /* private void instrumentIdButtonOnClicked(ActionEvent event) {
         Integer selecteddefectedInstrumentId=  defectedInstumentIdComboBox.getValue();
         for(DefectedInstrument di:DefectedInstrumentList){
             if (di.getDefectedInstrumentId()==selecteddefectedInstrumentId){
@@ -104,7 +102,7 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
                 
             }
         }
-    }
+    }*/
 
     @FXML
     private void addDefectedInstrumentButtonOnClicked(ActionEvent event) {
@@ -136,7 +134,7 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
         
         success.show();
         DefectedInstrumentList.add(i);
-        defectedInstumentIdComboBox.getItems().add(defectedInstrumentId);
+        //defectedInstumentIdComboBox.getItems().add(defectedInstrumentId);
         
         defectedInstrumentIDTextField.clear();
         defectedInstrumentNameTextField.clear();
@@ -152,7 +150,7 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
          //defectedInstrumentTableView.getItems().addAll(DefectedInstrumentList);
          
          
-          ObjectInputStream ois = null;
+        ObjectInputStream ois = null;
         ObservableList <DefectedInstrument> DefectedInstrumentInstrumentList = FXCollections.observableArrayList();
         try {
              DefectedInstrument i;
@@ -169,6 +167,8 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
         }
         catch(RuntimeException e){
             e.printStackTrace();
+        }catch (EOFException e) {
+            
         }
         catch (Exception ex) {
             try {
@@ -176,6 +176,8 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
                     ois.close();
             } catch (IOException ex1) {  }           
         }
+          
+          
 
         
        defectedInstrumentTableView.setItems( DefectedInstrumentInstrumentList);
@@ -185,16 +187,16 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
 
     @FXML
     private void maintananceAndRepairInfoScene(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MaintenanceAndRepairInformationScene.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MaintanaceAndRepairInfoScene.fxml"));
         Parent parent = loader.load();
 
         
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
 
-        Scene MaintenanceAndRepairInformationScene= new Scene(parent);
+        Scene MaintanaceAndRepairInfoScene= new Scene(parent);
 
-        currentStage.setScene(MaintenanceAndRepairInformationScene);
+        currentStage.setScene(MaintanaceAndRepairInfoScene);
         currentStage.show();
         
     }
