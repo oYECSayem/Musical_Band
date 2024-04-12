@@ -79,10 +79,7 @@ public class SubmitLyricsAndSpecialMgsController implements Initializable {
              
             while(true){
                 i = (Message) ois.readObject();
-                
-               // if(i.getInstrumentID()%2==0){
-                //    InstrumentList.add(i);
-                
+              
                 msgList.add(i);
             }
         }

@@ -35,7 +35,7 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextArea fx:id="detailstextArea" layoutX="590.0" layoutY="84.0" prefHeight="183.0" prefWidth="264.0" />
+      <TextArea fx:id="budjetDetailstextArea" layoutX="590.0" layoutY="84.0" prefHeight="183.0" prefWidth="264.0" />
       <Label layoutX="619.0" layoutY="52.0" prefHeight="31.0" prefWidth="219.0" text="Total Price And  Qantity:" textAlignment="JUSTIFY">
          <font>
             <Font name="System Bold" size="15.0" />
