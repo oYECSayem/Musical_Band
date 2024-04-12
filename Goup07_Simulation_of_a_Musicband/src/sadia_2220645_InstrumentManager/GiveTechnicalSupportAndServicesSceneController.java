@@ -155,6 +155,38 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
 
     @FXML
     private void receiveMgsButtonOnClicked(ActionEvent event) {
+        ObjectInputStream ois = null;
+        ObservableList<LyricsAndSpecialMgs> LyricsAndSpecialMgslist = FXCollections.observableArrayList();
+        try {
+            LyricsAndSpecialMgs i;
+            ois = new ObjectInputStream(new FileInputStream("LyricsAndSpecialMgs.bin"));
+
+            while (true) {
+                i = (LyricsAndSpecialMgs) ois.readObject();
+
+                // if(i.getInstrumentID()%2==0){
+                //    InstrumentList.add(i);
+                LyricsAndSpecialMgslist.add(i);
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex1) {
+            }
+        }
+
+        // Display feedback details in the TextArea
+        StringBuilder lyricAndMgsDetails = new StringBuilder();
+        for (LyricsAndSpecialMgs mm : LyricsAndSpecialMgslist) {
+            lyricAndMgsDetails.append(mm.toString()).append("\n");
+        }
+
+        //showAllMgsAndLyricesTextArea.setText(lyricAndMgsDetails.toString());
+    
     }
 
     @FXML
