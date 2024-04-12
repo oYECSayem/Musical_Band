@@ -13,8 +13,9 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <TextArea layoutX="64.0" layoutY="109.0" prefHeight="115.0" prefWidth="444.0" promptText="Recieve Feedback" />
-      <TextArea layoutX="64.0" layoutY="248.0" prefHeight="115.0" prefWidth="444.0" promptText="Response of Feedback" />
-      <Button layoutX="64.0" layoutY="393.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="178.0" text="submit response" />
+      <TextArea fx:id="recieveFeedbackTA" layoutX="64.0" layoutY="109.0" prefHeight="115.0" prefWidth="444.0" promptText="Recieve Feedback" />
+      <TextArea fx:id="responseFeedbackTA" layoutX="64.0" layoutY="294.0" prefHeight="115.0" prefWidth="444.0" promptText="Response of Feedback" />
+      <Button layoutX="64.0" layoutY="441.0" mnemonicParsing="false" onAction="#responseFeedback" prefHeight="31.0" prefWidth="178.0" text="submit response" />
+      <Button layoutX="64.0" layoutY="245.0" mnemonicParsing="false" onAction="#recieveFeedbackButton" prefHeight="31.0" prefWidth="178.0" text="View Feedback" />
    </children>
 </AnchorPane>

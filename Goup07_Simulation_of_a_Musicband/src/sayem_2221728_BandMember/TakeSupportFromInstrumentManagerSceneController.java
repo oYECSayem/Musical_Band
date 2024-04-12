@@ -14,6 +14,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
 /**
  * FXML Controller class
@@ -25,34 +26,42 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
     @FXML
     private TextArea technicalProblemTA;
     @FXML
-    private TextArea instrumentSetupGuidelinesTA;
-    @FXML
     private TextField nameTF;
     @FXML
-    private TextArea getSetUpGuidelineTA;
+    private ComboBox<String> bandMemberRoleCB;
     @FXML
-    private ComboBox<?> bandMemberRoleCB;
-    @FXML
-    private ComboBox<?> instrumentNameCB;
+    private ComboBox<String> instrumentNameCB;
     @FXML
     private RadioButton majorRB;
     @FXML
     private RadioButton minorRB;
+    @FXML
+    private ToggleGroup problemTypeRB;
+    @FXML
+    private TextArea recieveMessageTA;
+    @FXML
+    private TextArea viewGuidelineTA;
 
-    /**
-     * Initializes the controller class.
-     */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        bandMemberRoleCB.getItems().addAll("Vocal", "guitarist", 
+                "Bassiest","Drammer", "Keyboardiest" );
+        instrumentNameCB.getItems().addAll("Guitar", "Bass guitar",
+                "Keyboard", "Dram");
     }    
 
     @FXML
     private void contactForTechnicalSupportButton(ActionEvent event) {
     }
 
+
     @FXML
-    private void instrumentSetupGuidelinesButton(ActionEvent event) {
+    private void viewGuidelineButton(ActionEvent event) {
+    }
+
+    @FXML
+    private void recieveMessageButton(ActionEvent event) {
     }
     
 }
