@@ -57,14 +57,15 @@ public class MaintanaceAndRepairInfoSceneController implements Initializable {
     @FXML
     private TextField repairCostTextFiled;
 
-    Alert success= new Alert(Alert.AlertType.INFORMATION,"Add successfully!");
-    Alert alert = new Alert(Alert.AlertType.WARNING,"Please select an instrument from the table and enter the repair cost.");
-    
-    
+    Alert success = new Alert(Alert.AlertType.INFORMATION, "Add successfully!");
+    Alert alert = new Alert(Alert.AlertType.WARNING, "Please select an instrument from the table and enter the repair cost.");
+    Alert Invalid = new Alert(Alert.AlertType.WARNING, "Please enter a valid repair cost.");
+    Alert unfill = new Alert(Alert.AlertType.WARNING, "Please fillup the cost field!.");
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
+
         repairInstrumentIDCol.setCellValueFactory(new PropertyValueFactory<DefectedInstrument, Integer>("defectedInstrumentId"));
 
         repairInstrumentNameCol.setCellValueFactory(new PropertyValueFactory<DefectedInstrument, String>("defectedInstrumentName"));
@@ -73,55 +74,46 @@ public class MaintanaceAndRepairInfoSceneController implements Initializable {
 
         defectCatagoryCol.setCellValueFactory(new PropertyValueFactory<DefectedInstrument, String>("defectCatagory"));
 
-      
-    }    
+    }
 
     @FXML
     private void showRepairedInstrumentDetailsButtonOnClicked(ActionEvent event) {
-         
-          ObjectInputStream ois = null;
-        ObservableList <DefectedInstrument> DefectedInstrumentInstrumentList = FXCollections.observableArrayList();
+
+        ObjectInputStream ois = null;
+        ObservableList<DefectedInstrument> DefectedInstrumentInstrumentList = FXCollections.observableArrayList();
         try {
-             DefectedInstrument i;
-             ois = new ObjectInputStream(new FileInputStream("DefectedInstrument.bin"));
-             
-            while(true){
+            DefectedInstrument i;
+            ois = new ObjectInputStream(new FileInputStream("DefectedInstrument.bin"));
+
+            while (true) {
                 i = (DefectedInstrument) ois.readObject();
-                
-                if(i.getDefectCatagory().equals("Minor Defects")){
+
+                if (i.getDefectCatagory().equals("Minor Defects")) {
                     DefectedInstrumentInstrumentList.add(i);
                 }
-               
+
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex1) {
             }
         }
-        catch(RuntimeException e){
-            e.printStackTrace();
-        }
-        catch (Exception ex) {
-            try {
-                if(ois!=null)
-                    ois.close();
-            } catch (IOException ex1) {  }           
-        }
 
-        
-       repairInstrumentsTableView.setItems( DefectedInstrumentInstrumentList);
-       
-        
-        
+        repairInstrumentsTableView.setItems(DefectedInstrumentInstrumentList);
+
     }
-
-   
-    
 
     @FXML
     private void goTopreviousSceneButtonOnClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("DefectedInstrumentTrackListScene.fxml"));
         Parent parent = loader.load();
 
-        
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
 
         Scene DefectedInstrumentTrackListScene = new Scene(parent);
 
@@ -131,64 +123,73 @@ public class MaintanaceAndRepairInfoSceneController implements Initializable {
 
     @FXML
     private void addRepairedInstrumentDetailsButtonOnClicked(ActionEvent event) {
-         // Retrieve data from the selected TableView row
-        DefectedInstrument selectedInstrument = repairInstrumentsTableView.getSelectionModel().getSelectedItem();
+        // Retrieve data from the selected TableView row
+        //DefectedInstrument selectedInstrument = repairInstrumentsTableView.getSelectionModel().getSelectedItem();
         
-       // ObservableList<DefectedInstrument> selectedInstruments = repairInstrumentsTableView.getSelectionModel().getSelectedItems();
+        ObservableList<DefectedInstrument> selectedInstrument = repairInstrumentsTableView.getSelectionModel().getSelectedItems();
 
-      
-        // Retrieve data from the TextField
-        int repairInstrumentCost = Integer.parseInt(repairCostTextFiled.getText());
         
-       
-        if (selectedInstrument == null || repairCostTextFiled.equals("null")) {
-
+        if (selectedInstrument == null || selectedInstrument.isEmpty()) {
             alert.show();
-            return; 
+            return;
+        }
+        
+        
+
+        String repairCostText = repairCostTextFiled.getText().trim();
+        if (repairCostText.isEmpty()) {
+            unfill.show();
+            return;
         }
 
+       
+        int repairInstrumentCost;
+        try {
+            repairInstrumentCost = Integer.parseInt(repairCostText);
+        } catch (NumberFormatException e) {
+            Invalid.show();
+            return;
+        }
         
-
-        // Combine the retrieved data
+        
+        
         String combinedData = selectedInstrument.toString() + "\nRepair Cost:: " + repairInstrumentCost;
 
-        
-        
-         File f = null;
-        FileOutputStream fos = null;      
+        File f = null;
+        FileOutputStream fos = null;
         ObjectOutputStream oos = null;
 
         try {
             f = new File("RepairedInstruments.bin");
-            if(f.exists()){
-                fos = new FileOutputStream(f,true);
-                oos = new AppendableObjectOutputStream(fos);                
-            }
-            else{
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
                 fos = new FileOutputStream(f);
-                oos = new ObjectOutputStream(fos);               
+                oos = new ObjectOutputStream(fos);
             }
             oos.writeObject(combinedData);
-            // Remove the selected row(s) from the data model
-            repairInstrumentsTableView.getItems().removeAll(selectedInstrument);
-
 
         } catch (IOException ex) {
-            
+
         } finally {
             try {
-                if(oos != null) oos.close();
+                if (oos != null) {
+                    oos.close();
+                }
             } catch (IOException ex) {
-               // Logger.getLogger(Instrument.class.getName()).log(Level.SEVERE, null, ex);
+                // Logger.getLogger(Instrument.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-       success.show();
+
+        success.show();
+        repairCostTextFiled.clear();
+        repairInstrumentsTableView.getItems().removeAll(selectedInstrument);
     }
 
     @FXML
     private void showRepairedInstrumentExpanceButtonOnClicked(ActionEvent event) {
-         StringBuilder data = new StringBuilder();
+        StringBuilder data = new StringBuilder();
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("RepairedInstruments.bin"))) {
             while (true) {
                 try {
@@ -206,11 +207,5 @@ public class MaintanaceAndRepairInfoSceneController implements Initializable {
 
         expanceReciptTextArea.setText(data.toString());
     }
-        
-    }
-          
-        
 
-
-
-
+}

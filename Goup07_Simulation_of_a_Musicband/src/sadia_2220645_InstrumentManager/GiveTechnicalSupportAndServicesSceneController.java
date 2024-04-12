@@ -4,9 +4,15 @@
  */
 package sadia_2220645_InstrumentManager;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,6 +21,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import sadia_2220645_Fan.LyricsAndSpecialMgs;
+import static sadia_2220645_InstrumentManager.InstrumentManager.sendGuidelineAndManuals;
+import static sadia_2220645_InstrumentManager.InstrumentManager.sendMgs;
 
 /**
  * FXML Controller class
@@ -46,6 +55,8 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
     
     ToggleGroup tg;
     private ArrayList<SetupGuidelinesAndManuals> GuidelinesAndManualList=new ArrayList<>();
+    @FXML
+    private TextField mgsSenderNameTextField;
     
     
     
@@ -63,6 +74,7 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
        guidelineAndManualDetailsTextArea.setDisable(true);
        
        datepicker.setDisable(true);
+       mgsSenderNameTextField.setDisable(true);
        sendMgsTextArea.setDisable(true);
        
        
@@ -81,6 +93,7 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
 
             datepicker.setDisable(true);
             sendMgsTextArea.setDisable(true);
+            mgsSenderNameTextField.setDisable(true);
 
         }
     }
@@ -95,6 +108,7 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
        
        datepicker.setDisable(false);
        sendMgsTextArea.setDisable(false);
+       mgsSenderNameTextField.setDisable(false);
     }
     @FXML
     private void addSetupGuidelineAndManualButtonOnClicked(ActionEvent event) {
@@ -107,7 +121,9 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
         SetupGuidelinesAndManuals guidelineAndManual;
         guidelineAndManual=new SetupGuidelinesAndManuals(instrumentName, guidelines, manuals);
         
-        GuidelinesAndManualList.add(guidelineAndManual);
+        sendGuidelineAndManuals(guidelineAndManual);
+        
+        
         
         
         
@@ -127,6 +143,14 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
 
     @FXML
     private void sendMgsButtonOnclicked(ActionEvent event) {
+        String senderName=mgsSenderNameTextField.getText();
+        String mgsdescription=sendMgsTextArea.getText();
+        LocalDate schedule=datepicker.getValue();
+        
+        Message m;
+        m= new Message(senderName,mgsdescription,schedule);
+        sendMgs(m);
+        
     }
 
     @FXML
@@ -134,13 +158,41 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
     }
 
     @FXML
-    private void sendGuidelineAndManuaButtonOnClicked(ActionEvent event) {
+    private void ShowAndsendGuidelineAndManuaButtonOnClicked(ActionEvent event) {
+        ObjectInputStream ois = null;
+        ObservableList<SetupGuidelinesAndManuals> GuidelinesAndManualslist = FXCollections.observableArrayList();
+        try {
+            SetupGuidelinesAndManuals i;
+            ois = new ObjectInputStream(new FileInputStream("GuidelineAndManuals.bin"));
+
+            while (true) {
+                i = (SetupGuidelinesAndManuals) ois.readObject();
+
+                // if(i.getInstrumentID()%2==0){
+                //    InstrumentList.add(i);
+                GuidelinesAndManualslist.add(i);
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex1) {
+            }
+        }
+
+        // Display feedback details in the TextArea
+        StringBuilder GuidelinesAndManualDetails = new StringBuilder();
+        for (SetupGuidelinesAndManuals s : GuidelinesAndManualslist) {
+             GuidelinesAndManualDetails.append(s.toString()).append("\n");
+        }
+
+        guidelineAndManualDetailsTextArea.setText(GuidelinesAndManualDetails.toString());
     }
 
-   
+        
+    }
 
-    
-
-    
-    
-}
+  

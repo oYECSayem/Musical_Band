@@ -198,8 +198,64 @@ public class InstrumentManager extends User implements Serializable  {
         
     }
       
-      
-     
+      //------------------------------------------------------
+      public static void sendMgs(Message mgs ){
+         File f = null;
+        FileOutputStream fos = null;      
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("InstrumentManagderMessages.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new AppendableObjectOutputStream(fos);                
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);               
+            }
+            oos.writeObject(mgs);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Message.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Message.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
+    //--------------------------------------------------------------------
+      public static void sendGuidelineAndManuals(SetupGuidelinesAndManuals s ){
+         File f = null;
+        FileOutputStream fos = null;      
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("GuidelineAndManuals.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new AppendableObjectOutputStream(fos);                
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);               
+            }
+            oos.writeObject(s);
+
+        } catch (IOException ex) {
+            Logger.getLogger(SetupGuidelinesAndManuals.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(SetupGuidelinesAndManuals.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
     
 }
 
