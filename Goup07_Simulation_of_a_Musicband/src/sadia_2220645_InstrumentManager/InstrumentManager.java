@@ -14,6 +14,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -139,7 +140,7 @@ public class InstrumentManager extends User implements Serializable  {
      
      //--------------------- Budge plan file write------------------
      
-     public static void makeBudgetForIntrument(Instrument budget){
+     public static void makeBudgetForIntrument(Instrument s){
          File f = null;
         FileOutputStream fos = null;      
         ObjectOutputStream oos = null;
@@ -154,7 +155,7 @@ public class InstrumentManager extends User implements Serializable  {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);               
             }
-            oos.writeObject(budget);
+            oos.writeObject(s);
 
         } catch (IOException ex) {
             Logger.getLogger(Instrument.class.getName()).log(Level.SEVERE, null, ex);
@@ -198,9 +199,67 @@ public class InstrumentManager extends User implements Serializable  {
         
     }
       
-      
-     
+      //------------------------------------------------------
+      public static void sendMgs(Message mgs ){
+         File f = null;
+        FileOutputStream fos = null;      
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("InstrumentManagderMessages.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new AppendableObjectOutputStream(fos);                
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);               
+            }
+            oos.writeObject(mgs);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Message.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Message.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
+    //--------------------------------------------------------------------
+      public static void sendGuidelineAndManuals(SetupGuidelinesAndManuals s ){
+         File f = null;
+        FileOutputStream fos = null;      
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("GuidelineAndManuals.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new AppendableObjectOutputStream(fos);                
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);               
+            }
+            oos.writeObject(s);
+
+        } catch (IOException ex) {
+            Logger.getLogger(SetupGuidelinesAndManuals.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(SetupGuidelinesAndManuals.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
     
+      
+      
 }
 
 

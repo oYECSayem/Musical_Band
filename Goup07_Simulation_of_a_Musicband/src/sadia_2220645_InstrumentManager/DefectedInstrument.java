@@ -59,9 +59,17 @@ public class DefectedInstrument implements Serializable {
 
     @Override
     public String toString() {
-        return "DefectedInstrument{" + "DefectedInstrument Id=" + defectedInstrumentId + ", defectedInstrument Name=" + defectedInstrumentName +
-                ", Problem Description=" + problemDescription + ", Defect Catagory=" + defectCatagory + '}';
+        StringBuilder sb = new StringBuilder();
+       
+        sb.append("\ndefectedInstrumentId=").append(defectedInstrumentId);
+        sb.append(" \ndefectedInstrumentName=").append(defectedInstrumentName);
+        sb.append("\nproblemDescription=").append(problemDescription);
+        sb.append("\ndefectCatagory=").append(defectCatagory);
+        //sb.append('\n');
+        return sb.toString();
     }
+
+    
     
     
     public static boolean checkDefectedInstrumentExixtance(DefectedInstrument x) {

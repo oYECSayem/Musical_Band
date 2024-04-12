@@ -25,6 +25,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import static sadia_2220645_InstrumentManager.InstrumentManager.makeBudgetForIntrument;
 import static sadia_2220645_InstrumentManager.InstrumentManager.makeNewUpdatedInstrumentPurchasePlan;
 
 /**
@@ -65,7 +66,9 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
     
     Alert success= new Alert(Alert.AlertType.INFORMATION,"New updated Instrument Added Successfully!");
     Alert warning= new Alert(Alert.AlertType.WARNING,"Already added!");
-    Alert alert = new Alert(Alert.AlertType.WARNING, "No instruments selected.");  
+    Alert alert = new Alert(Alert.AlertType.WARNING, "No instruments selected.");
+    Alert duplicate = new Alert(Alert.AlertType.WARNING, "Instrument Added Already!.");  
+    
     
     @FXML
     private Label brandNameTe;
@@ -136,9 +139,6 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
             while(true){
                 i = (Instrument) ois.readObject();
                 
-               // if(i.getInstrumentID()%2==0){
-                //    InstrumentList.add(i);
-                
                  newUpdatedInstrumentList.add(i);
             }
         }
@@ -167,10 +167,31 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
     ObservableList<Instrument> selectedInstruments = newUpdatedInstrumentTableView.getSelectionModel().getSelectedItems();
 
     // Check if any instrument is selected
-    if (selectedInstruments.isEmpty()) {
+    /*if (selectedInstruments.isEmpty()) {
         alert.showAndWait();
         return;
+    }*/
+    
+    for (Instrument instrument : selectedInstruments) {
+        // Check if the instrument is already present in the table
+        boolean isDuplicate = false;
+        for (Instrument existingInstrument : newUpdatedInstrumentTableView.getItems()) {
+            if (existingInstrument.equals(instrument)) {
+                isDuplicate = true;
+                break;
+            }
+        }
+
+        if (!isDuplicate) {
+           
+            duplicate.showAndWait();
+        } else {
+            // Show alert for duplicate instrument
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Selected instrument is already added.");
+            alert.showAndWait();
+        }
     }
+
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("MakeInstrumentBudgetScene.fxml"));
     Parent root = loader.load();

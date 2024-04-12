@@ -4,11 +4,17 @@
  */
 package sadia_2220645_InstrumentManager;
 
+import MainPkg.AppendableObjectOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,6 +26,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import sadia_2220645_Fan.LyricsAndSpecialMgs;
 import static sadia_2220645_InstrumentManager.InstrumentManager.makeBudgetForIntrument;
 
 /**
@@ -48,7 +55,7 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
      Alert alert1 = new Alert(Alert.AlertType.WARNING, "No instruments selected.");
      Alert alert2 = new Alert(Alert.AlertType.INFORMATION, "Selected instruments added to the budget plan.");
     @FXML
-    private TextArea detailstextArea;
+    private TextArea budjetDetailstextArea;
 
 
     
@@ -75,10 +82,8 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
 
     @FXML
     private void addInstrumentToTheBudjetPlanButtonOnClicked(ActionEvent event) {
-        
         // Check if any instrument is selected
     if (selectedInstruments == null || selectedInstruments.isEmpty()) {
-       
         alert1.showAndWait();
         return;
     }
@@ -96,12 +101,9 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
         if (!isDuplicate) {
             // Save the instrument to the file
             makeBudgetForIntrument(instrument);
-
-            // Clear the table view before adding new items
-            instrumentBudgetPlanTableView.getItems().clear();
-
-            // Add the selected instruments to the table view
-            instrumentBudgetPlanTableView.getItems().addAll(selectedInstruments);
+            
+            // Show alert for adding instrument
+            alert2.showAndWait();
         } else {
             // Show alert for duplicate instrument
             Alert alert = new Alert(Alert.AlertType.WARNING, "Selected instrument is already added.");
@@ -109,10 +111,14 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
         }
     }
 
-    alert2.showAndWait();
+    // Clear the table view before adding new items
+    instrumentBudgetPlanTableView.getItems().clear();
 
-  
+    // Add the selected instruments to the table view
+    instrumentBudgetPlanTableView.getItems().addAll(selectedInstruments);
     }
+        
+     
 
     @FXML
     private void viewBudjetPlanButtonOnClicked(ActionEvent event) {
@@ -143,7 +149,7 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
         }
 
      // Clear the table view before adding new items
-    instrumentBudgetPlanTableView.getItems().clear();
+    //instrumentBudgetPlanTableView.getItems().clear();
     
     // Add items to the table view
     instrumentBudgetPlanTableView.setItems(instrumentbudgetplanlist);
@@ -151,7 +157,7 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
 
     @FXML
     private void clearButtonOnClicked(ActionEvent event) {
-        // Get the selected row(s)
+        
     ObservableList<Instrument> selectedInstruments = instrumentBudgetPlanTableView.getSelectionModel().getSelectedItems();
 
     // Remove the selected row(s) from the data model
@@ -162,26 +168,34 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
 
     @FXML
     private void submitbudjetPlanButtonOnClicked(ActionEvent event) {
-     
-        // Get the selected instrument
-        Instrument selectedInstrument = instrumentBudgetPlanTableView.getSelectionModel().getSelectedItem();
-        if (selectedInstrument != null) {
-            
-            detailstextArea.setText("\nName" + selectedInstrument.getName()
-                    + "\nModel" + selectedInstrument.getModel() + "\nPrice:" + selectedInstrument.getPrice()
-                    + "\nQuantity:" + selectedInstrument.getQantity()
-                    +"\nTotal Price:" +selectedInstrument.getPrice() * selectedInstrument.getQantity());
-        } else {
-            
-            Alert alert = new Alert(Alert.AlertType.WARNING, "No instrument selected.");
-            alert.showAndWait();
-        }
+            // Retrieve the data from the instrumentBudgetPlanTableView
+    ObservableList<Instrument> instrumentBudgetList = instrumentBudgetPlanTableView.getItems();
 
+    // Display the details in the TextArea
+    StringBuilder budgetDetails = new StringBuilder();
+    for (Instrument instrument : instrumentBudgetList) {
+        budgetDetails.append("Name: ").append(instrument.getName()).append("\n");
+        budgetDetails.append("Model: ").append(instrument.getModel()).append("\n");
+        budgetDetails.append("Quantity: ").append(instrument.getQantity()).append("\n");
+        budgetDetails.append("Cost per unit: ").append(instrument.getPrice()).append("\n");
+        budgetDetails.append("Total Cost: ").append(instrument.getPrice() * instrument.getQantity()).append("\n\n");
     }
+
+    // Set the text in the TextArea
+    budjetDetailstextArea.setText(budgetDetails.toString());
+        
+     
+    }
+        
+    }
+        
+    
+
+    
         
     
   
        
 
     
-}
+

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,22 +16,26 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <TableView fx:id="repairInstrumentsTableView" layoutX="55.0" layoutY="396.0" prefHeight="200.0" prefWidth="797.0">
+      <TableView fx:id="repairInstrumentsTableView" layoutX="60.0" layoutY="95.0" prefHeight="200.0" prefWidth="797.0">
         <columns>
-          <TableColumn fx:id="repairInstrumentNameCol" prefWidth="216.0" text="Repair Instrument Name" />
+          <TableColumn fx:id="repairInstrumentNameCol" prefWidth="216.0" text=" Instrument Name" />
           <TableColumn fx:id="repairInstrumentIDCol" minWidth="0.0" prefWidth="99.0" text=" ID" />
             <TableColumn fx:id="defectCatagoryCol" prefWidth="170.0" text="Defect Catagory" />
             <TableColumn fx:id="problemDescriptionCol" prefWidth="166.0" text="Problem Description" />
             <TableColumn fx:id="repairCostCol" prefWidth="145.0" text="Repair Cost" />
         </columns>
       </TableView>
-      <Button layoutX="80.0" layoutY="643.0" mnemonicParsing="false" onAction="#showRepairedInstrumentDetailsButtonOnClicked" text="View" />
-      <Button layoutX="55.0" layoutY="328.0" mnemonicParsing="false" onAction="#addRepairedInstrumentButtonOnClicked" text="ADD" />
-      <TextArea fx:id="expanceReciptTextArea" layoutX="629.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0" />
-      <Label layoutX="598.0" layoutY="76.0" prefHeight="51.0" prefWidth="263.0" text=" Maintanace Expance Recept" textFill="#d90226">
+      <Button layoutX="755.0" layoutY="310.0" mnemonicParsing="false" onAction="#showRepairedInstrumentDetailsButtonOnClicked" text="View List" />
+      <Button layoutX="22.0" layoutY="504.0" mnemonicParsing="false" onAction="#addRepairedInstrumentDetailsButtonOnClicked" text="ADD" />
+      <TextArea fx:id="expanceReciptTextArea" layoutX="86.0" layoutY="417.0" prefHeight="235.0" prefWidth="682.0" />
+      <Label layoutX="78.0" layoutY="360.0" prefHeight="51.0" prefWidth="263.0" text=" Maintanace Expance Receipt" textFill="#d90226">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
+      <Label layoutX="60.0" layoutY="325.0" text="Repair Cost:" />
+      <TextField fx:id="repairCostTextFiled" layoutX="154.0" layoutY="320.0" />
+      <Button layoutX="731.0" layoutY="673.0" mnemonicParsing="false" onAction="#goTopreviousSceneButtonOnClicked" text="Back To Previous Scene" />
+      <Button layoutX="99.0" layoutY="663.0" mnemonicParsing="false" onAction="#showRepairedInstrumentExpanceButtonOnClicked" text="Show Receipt" />
    </children>
 </AnchorPane>

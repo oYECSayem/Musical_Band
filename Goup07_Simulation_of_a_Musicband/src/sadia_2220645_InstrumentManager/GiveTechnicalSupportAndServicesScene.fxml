@@ -47,14 +47,14 @@
          </font>
       </Label>
       <TextArea fx:id="sendMgsTextArea" layoutX="30.0" layoutY="428.0" prefHeight="169.0" prefWidth="246.0" />
-      <Label layoutX="30.0" layoutY="63.0" prefHeight="27.0" prefWidth="187.0" text="Comunication Area" textFill="#c91e1e">
+      <Label layoutX="24.0" layoutY="50.0" prefHeight="27.0" prefWidth="187.0" text="Comunication Area" textFill="#c91e1e">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
       <Button layoutX="34.0" layoutY="608.0" mnemonicParsing="false" onAction="#sendMgsButtonOnclicked" text="Send Massage" />
-      <Button layoutX="34.0" layoutY="292.0" mnemonicParsing="false" onAction="#receiveMgsButtonOnClicked" text="Receive Massage" />
-      <Button layoutX="635.0" layoutY="602.0" mnemonicParsing="false" onAction="#sendGuidelineAndManuaButtonOnClicked" text="Send Guideline &amp; Manuals" />
+      <Button layoutX="26.0" layoutY="248.0" mnemonicParsing="false" onAction="#receiveMgsButtonOnClicked" text="Receive Massage" />
+      <Button layoutX="533.0" layoutY="608.0" mnemonicParsing="false" onAction="#ShowAndsendGuidelineAndManuaButtonOnClicked" prefHeight="31.0" prefWidth="272.0" text="View and Send Guideline &amp; Manuals" />
       <Line endX="111.0" endY="174.0" layoutX="268.0" layoutY="427.0" startX="111.0" startY="-245.0" />
       <TextArea fx:id="guidelineTextArea" layoutX="591.0" layoutY="167.0" prefHeight="69.0" prefWidth="261.0" />
       <Label layoutX="477.0" layoutY="272.0" prefHeight="21.0" prefWidth="85.0" text="Manual:">
@@ -64,7 +64,8 @@
       </Label>
       <TextArea fx:id="manualTextArea" layoutX="591.0" layoutY="248.0" prefHeight="69.0" prefWidth="261.0" />
       <Button layoutX="613.0" layoutY="334.0" mnemonicParsing="false" onAction="#addSetupGuidelineAndManualButtonOnClicked" text="Add Setup Guideline and Manual" />
-      <TextArea fx:id="receiveMgsTextArea" layoutX="24.0" layoutY="98.0" prefHeight="184.0" prefWidth="200.0" />
-      <Button layoutX="418.0" layoutY="602.0" mnemonicParsing="false" onAction="#showGuidelineAndManualButtonOnClicked" text="Show Guideline &amp; Manual" />
+      <TextArea fx:id="receiveMgsTextArea" layoutX="29.0" layoutY="92.0" prefHeight="151.0" prefWidth="261.0" />
+      <Label layoutX="31.0" layoutY="307.0" prefHeight="21.0" prefWidth="103.0" text="Sender Name:" />
+      <TextField fx:id="mgsSenderNameTextField" layoutX="134.0" layoutY="302.0" />
    </children>
 </AnchorPane>
