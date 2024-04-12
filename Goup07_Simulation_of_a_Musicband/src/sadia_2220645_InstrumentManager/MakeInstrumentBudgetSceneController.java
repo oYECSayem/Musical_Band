@@ -26,14 +26,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
-import sadia_2220645_Fan.LyricsAndSpecialMgs;
+
 import static sadia_2220645_InstrumentManager.InstrumentManager.makeBudgetForIntrument;
 
-/**
- * FXML Controller class
- *
- * @author USER
- */
+
 public class MakeInstrumentBudgetSceneController implements Initializable {
 
     @FXML
@@ -56,8 +52,13 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
      Alert alert2 = new Alert(Alert.AlertType.INFORMATION, "Selected instruments added to the budget plan.");
     @FXML
     private TextArea budjetDetailstextArea;
+    
+    
+    
 
-
+    public ObservableList<Instrument> getInstrumentBudgetList() {
+        return instrumentBudgetPlanTableView.getItems();
+    }
     
      
     @Override
@@ -173,6 +174,8 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
 
     // Display the details in the TextArea
     StringBuilder budgetDetails = new StringBuilder();
+    
+    
     for (Instrument instrument : instrumentBudgetList) {
         budgetDetails.append("Name: ").append(instrument.getName()).append("\n");
         budgetDetails.append("Model: ").append(instrument.getModel()).append("\n");
@@ -183,9 +186,10 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
 
     // Set the text in the TextArea
     budjetDetailstextArea.setText(budgetDetails.toString());
+    
         
-     
     }
+    
         
     }
         

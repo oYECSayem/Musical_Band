@@ -150,7 +150,9 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
         Mgs m;
         m= new Mgs(senderName,mgsdescription,schedule);
         sendMgstoBandMember(m);
-        
+        mgsSenderNameTextField.clear();
+        sendMgsTextArea.clear();
+        //datepicker
     }
 
     @FXML

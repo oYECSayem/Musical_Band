@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Line?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="834.0" style="-fx-background-color: D8F5EB;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="834.0" style="-fx-background-color: D8F5EB;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sadia_2220645_Fan.LatestNewsAndAlbumSceneController">
    <children>
       <ComboBox fx:id="latestNewsComboBox" layoutX="52.0" layoutY="21.0" prefHeight="31.0" prefWidth="166.0" promptText="Latest News" />
       <ComboBox fx:id="albumsComboBox" layoutX="475.0" layoutY="15.0" prefHeight="31.0" prefWidth="135.0" promptText="Albums" />
