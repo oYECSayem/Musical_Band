@@ -6,6 +6,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -38,7 +39,11 @@
          </font>
       </Label>
       <Label layoutX="45.0" layoutY="258.0" text="Problem Type:" />
-      <RadioButton fx:id="majorRB" layoutX="185.0" layoutY="258.0" mnemonicParsing="false" text="Major " />
-      <RadioButton fx:id="minorRB" layoutX="277.0" layoutY="258.0" mnemonicParsing="false" text="Minor" />
+      <RadioButton fx:id="majorRB" layoutX="185.0" layoutY="258.0" mnemonicParsing="false" text="Major ">
+         <toggleGroup>
+            <ToggleGroup fx:id="problemTypeRB" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="minorRB" layoutX="277.0" layoutY="258.0" mnemonicParsing="false" text="Minor" toggleGroup="$problemTypeRB" />
+      <Button layoutX="619.0" layoutY="604.0" mnemonicParsing="false" onAction="#viewGuidelineButton" prefHeight="31.0" prefWidth="136.0" text="view guideline" />
    </children>
 </AnchorPane>
