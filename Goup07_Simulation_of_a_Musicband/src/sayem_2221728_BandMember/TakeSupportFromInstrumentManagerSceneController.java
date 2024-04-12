@@ -22,6 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import sadia_2220645_InstrumentManager.Mgs;
 import sadia_2220645_InstrumentManager.SetupGuidelinesAndManuals;
+import static sayem_2221728_BandMember.BandMember.askForTechnicalSupport;
 
 /**
  * FXML Controller class
@@ -60,6 +61,11 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
 
     @FXML
     private void contactForTechnicalSupportButton(ActionEvent event) {
+        String senderName = nameTF.getText();
+        String text = technicalProblemTA.getText();
+        Message m1=new Message(senderName, text);
+        askForTechnicalSupport(m1);
+        technicalProblemTA.clear();
     }
 
 
