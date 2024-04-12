@@ -200,7 +200,7 @@ public class InstrumentManager extends User implements Serializable  {
     }
       
       //------------------------------------------------------
-      public static void sendMgs(Mgs mgs ){
+      public static void sendMgstoBandMember(Mgs mgs ){
          File f = null;
         FileOutputStream fos = null;      
         ObjectOutputStream oos = null;
