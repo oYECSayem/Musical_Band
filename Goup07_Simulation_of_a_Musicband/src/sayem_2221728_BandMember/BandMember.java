@@ -64,7 +64,7 @@ public class BandMember extends User implements Serializable {
         ObjectOutputStream oos = null;
 
         try {
-            f = new File("Message.bin");
+            f = new File("fanFeedBackMessage.bin");
             if(f.exists()){
                 fos = new FileOutputStream(f,true);
                 oos = new MainPkg.AppendableObjectOutputStream(fos);                
@@ -110,6 +110,34 @@ public class BandMember extends User implements Serializable {
                 if(oos != null) oos.close();
             } catch (IOException ex) {
                 Logger.getLogger(EventSchedule .class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
+    public static void askForTechnicalSupport(Message msg){
+        File f = null;
+        FileOutputStream fos = null;      
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("TechnicalSupportMessage.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new MainPkg.AppendableObjectOutputStream(fos);                
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);               
+            }
+            oos.writeObject(msg);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Message .class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Message .class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         

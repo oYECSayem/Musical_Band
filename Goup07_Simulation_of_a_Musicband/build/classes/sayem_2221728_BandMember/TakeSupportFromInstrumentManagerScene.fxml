@@ -19,16 +19,11 @@
          </font>
       </Label>
       <Button layoutX="463.0" layoutY="349.0" mnemonicParsing="false" onAction="#contactForTechnicalSupportButton" prefHeight="31.0" prefWidth="234.0" text="Contact for tecnical support" />
-      <Label layoutX="98.0" layoutY="397.0" prefHeight="21.0" prefWidth="468.0" text="get Instrument setup guidelines from technical support manager">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <TextArea fx:id="instrumentSetupGuidelinesTA" layoutX="45.0" layoutY="439.0" prefHeight="74.0" prefWidth="574.0" />
-      <Button layoutX="220.0" layoutY="529.0" mnemonicParsing="false" onAction="#instrumentSetupGuidelinesButton" prefHeight="31.0" prefWidth="252.0" text="Instrument setup guidelines" />
+      <TextArea fx:id="recieveMessageTA" layoutX="45.0" layoutY="439.0" prefHeight="74.0" prefWidth="574.0" promptText="Recieve Message" />
+      <Button layoutX="220.0" layoutY="529.0" mnemonicParsing="false" onAction="#recieveMessageButton" prefHeight="31.0" prefWidth="252.0" text="Recieve Message" />
       <Label layoutX="45.0" layoutY="141.0" text="Name:" />
       <TextField fx:id="nameTF" layoutX="110.0" layoutY="136.0" />
-      <TextArea fx:id="getSetUpGuidelineTA" layoutX="45.0" layoutY="571.0" prefHeight="97.0" prefWidth="574.0" promptText="Recive response here" style="-fx-background-color: lavender;" />
+      <TextArea fx:id="viewGuidelineTA" layoutX="45.0" layoutY="571.0" prefHeight="97.0" prefWidth="574.0" promptText="Recive setup guideline" style="-fx-background-color: lavender;" />
       <Label layoutX="502.0" layoutY="141.0" text="Band Member Role" />
       <ComboBox fx:id="bandMemberRoleCB" layoutX="690.0" layoutY="136.0" prefWidth="150.0" />
       <ComboBox fx:id="instrumentNameCB" layoutX="182.0" layoutY="195.0" prefWidth="150.0" />
