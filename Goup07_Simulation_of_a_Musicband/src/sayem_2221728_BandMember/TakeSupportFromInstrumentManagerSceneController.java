@@ -98,9 +98,9 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
     }
     
 
-    /*@FXML
+    @FXML
     private void recieveMessageButton(ActionEvent event) {
-        {
+       /* {
         ObjectInputStream ois = null;
         ObservableList<sadia_2220645_InstrumentManager.Message> messagelist = FXCollections.observableArrayList();
         try {
@@ -132,8 +132,8 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
         }
 
         recieveMessageTA.setText(budgetDetails.toString());
-    }
     }*/
+    }
     
     
     
