@@ -171,26 +171,7 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
         alert.showAndWait();
         return;
     }*/
-    
-    for (Instrument instrument : selectedInstruments) {
-        // Check if the instrument is already present in the table
-        boolean isDuplicate = false;
-        for (Instrument existingInstrument : newUpdatedInstrumentTableView.getItems()) {
-            if (existingInstrument.equals(instrument)) {
-                isDuplicate = true;
-                break;
-            }
-        }
-
-        if (!isDuplicate) {
-           
-            duplicate.showAndWait();
-        } else {
-            // Show alert for duplicate instrument
-            Alert alert = new Alert(Alert.AlertType.WARNING, "Selected instrument is already added.");
-            alert.showAndWait();
-        }
-    }
+   
 
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("MakeInstrumentBudgetScene.fxml"));

@@ -75,7 +75,7 @@ public class SubmitLyricsAndSpecialMgsController implements Initializable {
         ObservableList <Message> msgList = FXCollections.observableArrayList();
         try {
              Message i;
-             ois = new ObjectInputStream(new FileInputStream("Message.bin"));
+             ois = new ObjectInputStream(new FileInputStream("InstrumentBudgetPlan.bin"));
              
             while(true){
                 i = (Message) ois.readObject();

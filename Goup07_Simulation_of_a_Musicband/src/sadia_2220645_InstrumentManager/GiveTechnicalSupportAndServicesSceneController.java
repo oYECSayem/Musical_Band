@@ -147,8 +147,8 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
         String mgsdescription=sendMgsTextArea.getText();
         LocalDate schedule=datepicker.getValue();
         
-        Message m;
-        m= new Message(senderName,mgsdescription,schedule);
+        Mgs m;
+        m= new Mgs(senderName,mgsdescription,schedule);
         sendMgs(m);
         
     }
