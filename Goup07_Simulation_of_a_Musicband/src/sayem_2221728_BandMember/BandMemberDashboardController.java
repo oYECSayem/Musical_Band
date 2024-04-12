@@ -38,7 +38,7 @@ public class BandMemberDashboardController implements Initializable {
 
     @FXML
     private void approveBudgetButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ApproveBudget.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ApproveBudgetScene.fxml"));
          borderPane.setCenter(root);
     }
 
