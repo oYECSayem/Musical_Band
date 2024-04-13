@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Goup07_Simulation_of_a_Musicband.jnlp">
+  <information>
+    <title>Goup07_Simulation_of_a_Musicband</title>
+    <vendor>USER</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Goup07_Simulation_of_a_Musicband.jar" size="19134987" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="MainPkg.main"  name="Goup07_Simulation_of_a_Musicband" />
+  <update check="always"/>
+</jnlp>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <VBox>
+         <MenuBar>
+            <menus>
+               <Menu text="File">
+                  <items>
+                     <MenuItem fx:id="uploadMenuItem" onAction="#uploadReceipt" text="Upload Receipt" />
+                     <MenuItem fx:id="exitMenuItem" onAction="#exitApplication" text="Exit" />
+                  </items>
+               </Menu>
+               <Menu text="Receipts">
+                  <items>
+                     <MenuItem fx:id="addReceiptMenuItem" onAction="#showReceiptEntryForm" text="Add Receipt" />
+                     <MenuItem fx:id="deleteReceiptMenuItem" onAction="#deleteReceipt" text="Delete Receipt" />
+                  </items>
+               </Menu>
+            </menus>
+         </MenuBar>
+         <ToolBar>
+            <items>
+               <Label text="Add Receipt" />
+               <Button fx:id="addReceiptButton" mnemonicParsing="false" onAction="#showReceiptEntryForm" text="+" />
+               <Label text="Delete Receipt" />
+               <Button fx:id="deleteReceiptButton" mnemonicParsing="false" onAction="#deleteReceipt" text="-" />
+               <Label text="Refresh" />
+               <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refreshReceipts" text="Refresh" />
+               <Separator orientation="VERTICAL" />
+               <Label text="Search:" />
+               <TextField fx:id="searchField" />
+               <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchReceipts" text="Search" />
+            </items>
+         </ToolBar>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="receiptsTable">
+         <columns>
+            <TableColumn fx:id="receiptNumberCol" prefWidth="100.0" text="Receipt Number" />
+            <TableColumn fx:id="dateCol" prefWidth="100.0" text="Date" />
+            <TableColumn fx:id="vendorNameCol" prefWidth="150.0" text="Vendor Name" />
+            <TableColumn fx:id="amountCol" prefWidth="100.0" text="Amount" />
+            <TableColumn fx:id="descriptionCol" prefWidth="200.0" text="Description" />
+            <TableColumn fx:id="categoryCol" prefWidth="150.0" text="Category" />
+         </columns>
+      </TableView>
+   </center>
+</BorderPane>

@@ -1,0 +1,6 @@
+<BorderPane xmlns:fx="http://javafx.com/fxml" alignment="CENTER" fx:controller="sayem_2221728_CheifAccountantManager.TaxCompalienceSceneController">
+    <top>
+        <Label text="Tax Compliance" style="-fx-font-size: 18px;" />
+    </top>
+    <!-- Rest of your FXML content -->
+</BorderPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="958.0" prefWidth="1188.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sayem_2221728_CheifAccountantManager.CheifAccountantManagerDashBoardController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Actions">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#makingBudgetPlanSceneButton" text="Making Budget Plan" />
+                  <MenuItem mnemonicParsing="false" onAction="#overallMonthlyProfitButton" text="Overall Monthly Profit" />
+                  <MenuItem mnemonicParsing="false" onAction="#expenseTrackingSceneButton" text="Expense Tracking Scene" />
+                  <MenuItem mnemonicParsing="false" onAction="#makeMonthlySalesReportButton" text="Make Monthly Sales Report" />
+                  <MenuItem mnemonicParsing="false" onAction="#monitoringMonthlyRevenueSceneButton" text="Monitoring Monthly Revenue" />
+                  <MenuItem mnemonicParsing="false" onAction="#taxCompalienceSceneButton" text="Tax Compalience Scene" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="751.0" prefWidth="1249.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="728.0" fitWidth="1180.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/shutterstock_555713008.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
