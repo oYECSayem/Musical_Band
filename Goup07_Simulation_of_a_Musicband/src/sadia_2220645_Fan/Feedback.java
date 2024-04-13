@@ -61,7 +61,7 @@ public class Feedback implements Serializable {
 
     @Override
     public String toString() {
-        return  "\n\nName=" + name + "\n Topic=" + topic + "\n Description=" + description + "\nDate=" + date;
+        return  "\n\nName=" + name + "\nTopic=" + topic + "\nDescription=" + description + "\nDate=" + date;
     }
 
     

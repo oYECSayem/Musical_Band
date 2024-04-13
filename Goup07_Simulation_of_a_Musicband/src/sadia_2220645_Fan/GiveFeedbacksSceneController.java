@@ -116,6 +116,7 @@ public class GiveFeedbacksSceneController implements Initializable {
         nameTextField.clear();
         datePicker.setValue(null);
         songsRaddioButton.setSelected(false);
+        writeFeedbacksTextArea.clear();
        albumRadioButton.setSelected(false);
        concertRadioButton.setSelected(false);
        merchandiseRadioButton.setSelected(false);
