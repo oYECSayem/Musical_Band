@@ -74,8 +74,8 @@ public class LoginScController implements Initializable {
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);
             }
-            if (userType.equals("Chief accounting Officer")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Chief accounting Officer Dashboard.fxml"));
+            if (userType.equals("Chief Accountant Manager")) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sayem_2221728_CheifAccountantManager/CheifAccountantManagerDashBoard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);

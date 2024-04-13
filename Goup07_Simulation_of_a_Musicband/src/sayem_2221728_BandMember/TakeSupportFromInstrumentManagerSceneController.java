@@ -19,16 +19,13 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import sadia_2220645_InstrumentManager.Mgs;
 import sadia_2220645_InstrumentManager.SetupGuidelinesAndManuals;
 import static sayem_2221728_BandMember.BandMember.askForTechnicalSupport;
 
-/**
- * FXML Controller class
- *
- * @author USER
- */
+
 public class TakeSupportFromInstrumentManagerSceneController implements Initializable {
 
     @FXML
@@ -44,15 +41,16 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
     @FXML
     private RadioButton minorRB;
     @FXML
-    private ToggleGroup problemTypeRB;
-    @FXML
     private TextArea recieveMessageTA;
     @FXML
     private TextArea viewGuidelineTA;
 
-    
+    ToggleGroup tg;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        tg = new ToggleGroup();
+        minorRB.setToggleGroup(tg);
+        majorRB.setToggleGroup(tg);
         bandMemberRoleCB.getItems().addAll("Vocal", "guitarist", 
                 "Bassiest","Drammer", "Keyboardiest" );
         instrumentNameCB.getItems().addAll("Guitar", "Bass guitar",
@@ -61,12 +59,32 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
 
     @FXML
     private void contactForTechnicalSupportButton(ActionEvent event) {
-        String senderName = nameTF.getText();
+        String name = nameTF.getText();
+        String defectType = "";
+        if (minorRB.isSelected()){
+            defectType = "Minor defect";
+        }
+        if (majorRB.isSelected()){
+            defectType = "Major defect";
+        }
+        String instrumentName = instrumentNameCB.getValue();
+        String role = bandMemberRoleCB.getValue();
+        
+        //ObservableList<String> instrumentName = instrumentNameCB.getItems();
+
+        // Cast the selected toggle to RadioButton
+        //RadioButton selectedRadioButton = (RadioButton) problemTypeRB.getSelectedToggle();
+        //Toggle problemType = selectedRadioButton != null ? selectedRadioButton : minorRB; // Default to minor if none selected
+
+        //ObservableList<String> role = bandMemberRoleCB.getItems();
         String text = technicalProblemTA.getText();
-        Message m1=new Message(senderName, text);
+        TechnicalSupportMessage m1 = new TechnicalSupportMessage(name,  text, instrumentName, role, defectType);
         askForTechnicalSupport(m1);
         technicalProblemTA.clear();
+        nameTF.clear();
+        technicalProblemTA.clear();
     }
+
 
 
     @FXML
@@ -112,8 +130,7 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
         ObservableList<Mgs> mgslist = FXCollections.observableArrayList();
         try {
            Mgs i;
-            ois = new ObjectInputStream(new FileInputStream("InstrumentManagderMessages.bin"));
-
+            ois = new ObjectInputStream(new FileInputStream("InstrumentManagerMessages.bin"));
             while (true) {
                 i = (Mgs) ois.readObject();
 

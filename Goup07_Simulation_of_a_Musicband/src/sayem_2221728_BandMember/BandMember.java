@@ -114,13 +114,13 @@ public class BandMember extends User implements Serializable {
         }
         
     }
-    public static void askForTechnicalSupport(Message msg){
+    public static void askForTechnicalSupport(TechnicalSupportMessage msg){
         File f = null;
         FileOutputStream fos = null;      
         ObjectOutputStream oos = null;
 
         try {
-            f = new File("TechnicalSupportMessage.bin");
+            f = new File(".bin");
             if(f.exists()){
                 fos = new FileOutputStream(f,true);
                 oos = new MainPkg.AppendableObjectOutputStream(fos);                
@@ -132,12 +132,12 @@ public class BandMember extends User implements Serializable {
             oos.writeObject(msg);
 
         } catch (IOException ex) {
-            Logger.getLogger(Message .class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TechnicalSupportMessage .class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 if(oos != null) oos.close();
             } catch (IOException ex) {
-                Logger.getLogger(Message .class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(TechnicalSupportMessage .class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         
