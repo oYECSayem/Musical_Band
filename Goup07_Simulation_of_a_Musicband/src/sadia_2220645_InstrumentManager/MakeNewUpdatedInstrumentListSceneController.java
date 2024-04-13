@@ -25,7 +25,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import static sadia_2220645_InstrumentManager.InstrumentManager.makeBudgetForIntrument;
 import static sadia_2220645_InstrumentManager.InstrumentManager.makeNewUpdatedInstrumentPurchasePlan;
 
 /**
@@ -163,7 +162,7 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
 
     @FXML
     private void nextSceneForInstrumentPurchaseBudgetPlanButtonOnClicked(ActionEvent event) throws IOException {
-     // Get selected items from the table
+   
     ObservableList<Instrument> selectedInstruments = newUpdatedInstrumentTableView.getSelectionModel().getSelectedItems();
 
     // Check if any instrument is selected
@@ -171,8 +170,7 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
         alert.showAndWait();
         return;
     }*/
-   
-
+ 
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("MakeInstrumentBudgetScene.fxml"));
     Parent root = loader.load();

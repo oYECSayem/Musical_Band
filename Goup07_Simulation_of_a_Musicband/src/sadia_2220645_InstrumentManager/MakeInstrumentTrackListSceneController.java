@@ -125,8 +125,7 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
          }else{
             alert.show();
          }
-         //InstrumentManager.addInstrument(i);
-        
+         
        
                     
         
