@@ -55,6 +55,7 @@ public class MakingBudgetPlanSceneController implements Initializable {
 
     @FXML
     private void getTotalBudgetAmountButton(ActionEvent event) {
+        
     }
     
 }

@@ -4,14 +4,16 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="911.0" style="-fx-background-color: D8F5EB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="911.0" style="-fx-background-color: D8F5EB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_Fan.PurchasingMerchandiseSceneController">
    <children>
       <RadioButton fx:id="cashOnDeliveryRadioButton" layoutX="34.0" layoutY="176.0" mnemonicParsing="false" text="Cash On Delevery" />
       <RadioButton fx:id="onlinePaymentRadioButton" layoutX="31.0" layoutY="129.0" mnemonicParsing="false" text="Online Payment" />
@@ -62,7 +64,8 @@
       </CheckBox>
       <TextField fx:id="nameTextField" layoutX="637.0" layoutY="35.0" />
       <TextField fx:id="phoneNumTextField" layoutX="637.0" layoutY="75.0" />
-      <TextField fx:id="pinNumTextField" layoutX="637.0" layoutY="114.0" />
       <TextField fx:id="addressTextField" layoutX="581.0" layoutY="161.0" prefHeight="31.0" prefWidth="246.0" />
+      <TextArea layoutX="215.0" layoutY="147.0" prefHeight="131.0" prefWidth="200.0" />
+      <PasswordField fx:id="pinNumPasswordField" layoutX="649.0" layoutY="110.0" />
    </children>
 </AnchorPane>

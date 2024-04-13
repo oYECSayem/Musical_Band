@@ -26,7 +26,7 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="263.0" layoutY="53.0" prefHeight="21.0" prefWidth="340.0" text="Choose which service mode need to provide:">
+      <Label layoutX="323.0" layoutY="53.0" prefHeight="21.0" prefWidth="340.0" text="Choose which service mode need to provide:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
@@ -47,7 +47,7 @@
          </font>
       </Label>
       <TextArea fx:id="sendMgsTextArea" layoutX="30.0" layoutY="428.0" prefHeight="169.0" prefWidth="246.0" />
-      <Label layoutX="24.0" layoutY="50.0" prefHeight="27.0" prefWidth="187.0" text="Comunication Area" textFill="#c91e1e">
+      <Label layoutX="26.0" layoutY="50.0" prefHeight="27.0" prefWidth="272.0" text="FeedBack Comunication Area:" textFill="#c91e1e">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>

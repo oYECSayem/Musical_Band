@@ -21,9 +21,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import sadia_2220645_Fan.LyricsAndSpecialMgs;
+
 import static sadia_2220645_InstrumentManager.InstrumentManager.sendGuidelineAndManuals;
-import static sadia_2220645_InstrumentManager.InstrumentManager.sendMgs;
+import static sadia_2220645_InstrumentManager.InstrumentManager.sendMgstoBandMember;
 import sayem_2221728_BandMember.Message;
 
 /**
@@ -130,7 +130,6 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
         
     } 
     
-    @FXML
     private void showGuidelineAndManualButtonOnClicked(ActionEvent event) {
         
         StringBuilder SB = new StringBuilder();
@@ -150,48 +149,14 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
         
         Mgs m;
         m= new Mgs(senderName,mgsdescription,schedule);
-        sendMgs(m);
-        
+        sendMgstoBandMember(m);
+        mgsSenderNameTextField.clear();
+        sendMgsTextArea.clear();
+        //datepicker
     }
 
     @FXML
     private void receiveMgsButtonOnClicked(ActionEvent event) {
-        ObjectInputStream ois = null;
-        ObservableList<LyricsAndSpecialMgs> LyricsAndSpecialMgslist = FXCollections.observableArrayList();
-        try {
-            LyricsAndSpecialMgs i;
-            ois = new ObjectInputStream(new FileInputStream("LyricsAndSpecialMgs.bin"));
-
-            while (true) {
-                i = (LyricsAndSpecialMgs) ois.readObject();
-
-                // if(i.getInstrumentID()%2==0){
-                //    InstrumentList.add(i);
-                LyricsAndSpecialMgslist.add(i);
-            }
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        } catch (Exception ex) {
-            try {
-                if (ois != null) {
-                    ois.close();
-                }
-            } catch (IOException ex1) {
-            }
-        }
-
-        // Display feedback details in the TextArea
-        StringBuilder lyricAndMgsDetails = new StringBuilder();
-        for (LyricsAndSpecialMgs mm : LyricsAndSpecialMgslist) {
-            lyricAndMgsDetails.append(mm.toString()).append("\n");
-        }
-
-        //showAllMgsAndLyricesTextArea.setText(lyricAndMgsDetails.toString());
-    
-    }
-
-    @FXML
-    private void ShowAndsendGuidelineAndManuaButtonOnClicked(ActionEvent event) {
         ObjectInputStream ois = null;
         ObservableList<Message> Messagelist = FXCollections.observableArrayList();
         try {
@@ -222,8 +187,47 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
              GuidelinesAndManualDetails.append(s.toString()).append("\n");
         }
 
+
+
+        receiveMgsTextArea.setText(Messagelist.toString());
+    
+    }
+
+    @FXML
+    private void ShowAndsendGuidelineAndManuaButtonOnClicked(ActionEvent event) {
+        ObjectInputStream ois = null;
+        ObservableList<SetupGuidelinesAndManuals> GuidelinesAndManualslist = FXCollections.observableArrayList();
+        try {
+            SetupGuidelinesAndManuals i;
+            ois = new ObjectInputStream(new FileInputStream("GuidelineAndManuals.bin"));
+
+            while (true) {
+                i = (SetupGuidelinesAndManuals) ois.readObject();
+
+                // if(i.getInstrumentID()%2==0){
+                //    InstrumentList.add(i);
+                GuidelinesAndManualslist.add(i);
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex1) {
+            }
+        }
+
+        // Display feedback details in the TextArea
+        StringBuilder GuidelinesAndManualDetails = new StringBuilder();
+        for (SetupGuidelinesAndManuals s : GuidelinesAndManualslist) {
+             GuidelinesAndManualDetails.append(s.toString()).append("\n");
+        }
+
         guidelineAndManualDetailsTextArea.setText(GuidelinesAndManualDetails.toString());
     }
+        
 
         
     }
