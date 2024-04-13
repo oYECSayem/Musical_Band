@@ -4,8 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,39 +19,34 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="473.0" layoutY="76.0" prefHeight="28.0" prefWidth="145.0" text="Phone Number:">
+      <Label layoutX="471.0" layoutY="71.0" prefHeight="28.0" prefWidth="145.0" text="Phone Number:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="480.0" layoutY="36.0" text="Name:">
+      <Label layoutX="44.0" layoutY="234.0" text="CashMemo">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Label>
-      <Button layoutX="492.0" layoutY="360.0" mnemonicParsing="false" onAction="#showpurchaseMerchandiseDetailsButtonOnClicked" prefHeight="43.0" prefWidth="277.0" text="Show Purchase Merchandise Details" />
-      <TableView fx:id="purchasingItemsTableView" layoutX="41.0" layoutY="302.0" prefHeight="235.0" prefWidth="371.0">
-        <columns>
-          <TableColumn fx:id="orderIdCol" prefWidth="75.0" text="Order ID" />
-          <TableColumn fx:id="productNameCol" prefWidth="148.0" text="Product Name" />
-            <TableColumn fx:id="priceCol" prefWidth="89.0" text="Price" />
-            <TableColumn fx:id="quantityCol" prefWidth="98.0" text="Qantity" />
-            <TableColumn fx:id="totalPriceCol" prefWidth="112.0" text="Total Price" />
-            <TableColumn fx:id="paymentModeCol" prefWidth="131.0" text="Payment Mode" />
-            <TableColumn fx:id="phoneNumCol" prefWidth="155.0" text="Phone Number" />
-        </columns>
-      </TableView>
+      <Button layoutX="524.0" layoutY="502.0" mnemonicParsing="false" onAction="#showpurchaseMerchandiseDetailsButtonOnClicked" prefHeight="43.0" prefWidth="314.0" text="View Selected Purchase Merchandise Details" />
       <Label layoutX="474.0" layoutY="149.0" text="Address:">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <ComboBox fx:id="selectMobileBankOptionComboBox" layoutX="196.0" layoutY="61.0" prefHeight="31.0" prefWidth="238.0" promptText="Select Mobile Bank Option" />
-      <Button layoutX="452.0" layoutY="505.0" mnemonicParsing="false" onAction="#confirmOrderButtonOnClicked" text="Confirm Order" />
+      <ComboBox fx:id="selectMobileBankOptionComboBox" layoutX="194.0" layoutY="56.0" prefHeight="31.0" prefWidth="238.0" promptText="Select Mobile Bank Option" />
+      <Button layoutX="55.0" layoutY="576.0" mnemonicParsing="false" onAction="#confirmOrderButtonOnClicked" text="Confirm Order" />
       <TextField fx:id="nameTextField" layoutX="637.0" layoutY="35.0" />
       <TextField fx:id="phoneNumTextField" layoutX="637.0" layoutY="75.0" />
       <TextField fx:id="addressTextField" layoutX="568.0" layoutY="150.0" prefHeight="31.0" prefWidth="246.0" />
-      <TextArea fx:id="merchandiseInfoTextField" layoutX="549.0" layoutY="215.0" prefHeight="131.0" prefWidth="200.0" />
-      <TextArea fx:id="purchasedMerchandiseReceiptTextField" layoutX="581.0" layoutY="420.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="merchandiseInfoTextField" layoutX="520.0" layoutY="215.0" prefHeight="263.0" prefWidth="322.0" />
+      <TextArea fx:id="purchasedMerchandiseReceiptTextField" layoutX="44.0" layoutY="272.0" prefHeight="289.0" prefWidth="369.0" />
+      <Label layoutX="488.0" layoutY="41.0" text="Name:">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="623.0" layoutY="576.0" mnemonicParsing="false" onAction="#previousSceneButtonOnClicked" text="Back to Previous scene" />
    </children>
 </AnchorPane>

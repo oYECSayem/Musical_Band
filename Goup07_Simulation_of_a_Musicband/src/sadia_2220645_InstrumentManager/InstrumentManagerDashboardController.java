@@ -92,7 +92,18 @@ public class InstrumentManagerDashboardController implements Initializable {
     }
 
     @FXML
-    private void logOutButtonOnclicked(ActionEvent event) {
+    private void logOutButtonOnclicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainPkg/LoginSc.fxml"));
+        Parent parent = loader.load();
+
+        
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+
+        Scene LoginSc = new Scene(parent);
+
+        currentStage.setScene(LoginSc);
+        currentStage.show();
     }
     
 }

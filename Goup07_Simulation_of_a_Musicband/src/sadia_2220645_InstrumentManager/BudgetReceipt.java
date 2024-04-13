@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class BudgetReceipt implements Serializable {
 
-    String BudgetDescription;
+   private String BudgetDescription;
 
     public BudgetReceipt(String BudgetDescription) {
         this.BudgetDescription = BudgetDescription;

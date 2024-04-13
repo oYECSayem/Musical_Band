@@ -18,8 +18,8 @@ import java.util.logging.Logger;
  */
 public class CashMemo implements Serializable {
     
-    String name,adderss,merchandiseInfo,paymentMode;
-    int phoneNum;
+    private String name,adderss,merchandiseInfo,paymentMode;
+    private int phoneNum;
 
     public CashMemo(String name, String adderss, String merchandiseInfo, String paymentMode, int phoneNum) {
         this.name = name;
