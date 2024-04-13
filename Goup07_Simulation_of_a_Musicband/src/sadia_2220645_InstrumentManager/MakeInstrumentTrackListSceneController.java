@@ -65,7 +65,8 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
     private TextField instrumentNameTextField;
     
      ArrayList<Instrument> InstrumentList=new ArrayList<>();
-      ArrayList<Integer> InstrumentID=new ArrayList<>();
+      
+     //ArrayList<Integer> InstrumentID=new ArrayList<>();
     @FXML
     private TextField instrumentIdTextField;
     @FXML
@@ -73,9 +74,14 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
     @FXML
     private ComboBox<Integer> instrumentIdComboBox;
     
-    Alert success=new Alert(Alert.AlertType.INFORMATION,"Successfully Added the product");
-     Alert alert=new Alert(Alert.AlertType.WARNING," Instrument exixt Already!");
-    
+    Alert success = new Alert(Alert.AlertType.INFORMATION, "Successfully Added the product");
+    Alert alert = new Alert(Alert.AlertType.WARNING, " Instrument exixt Already!");
+    Alert unfilled = new Alert(Alert.AlertType.WARNING, "Please fillup Everying!");
+
+    Alert IDLength = new Alert(Alert.AlertType.WARNING, "ID must have 4 digits ");
+    Alert invalid = new Alert(Alert.AlertType.WARNING, "Invalid ID! ");
+    Alert invalquantity = new Alert(Alert.AlertType.WARNING, "Invalid Quantity! ");
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -96,87 +102,100 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
   
     @FXML
     private void addNewInstrumentButtonOnClicked(ActionEvent event) {
-        // int ID= Integer.parseInt(instrumentIdTextField.getText());
-        
-         //Instrument(String name, String serialNumber, String model, int InstrumentID, int qantity)
-       // InstrumentList.add(new Instrument(instrumentNameTextField.getText(),serialNumberTextField.getText(), modelTextField.getText(),
-        //        Integer.parseInt(instrumentIdTextField.getText()),Integer.parseInt(quantityTextField.getText())));
-        
-        
        
-       // InstrumentID.add(ID);
-        
-        //instrumentIdComboBox.getItems().add(ID);
         String name=instrumentNameTextField.getText();
         int  InstrumentID= Integer.parseInt(instrumentIdTextField.getText());
         String serialNumber=serialNumberTextField.getText();
          String model=modelTextField.getText();
-         
-        int qantity=Integer.parseInt(quantityTextField.getText());
+         int qantity = Integer.parseInt(quantityTextField.getText());
         
-        //Instrument(String name, String serialNumber, String model, int InstrumentID, int qantity
         
-        Instrument i=new Instrument(name, serialNumber,  model, InstrumentID, qantity);
-         
-        
-         if(!Instrument.checkInstrumentExixtance(i)){
-              addInstrument(i);
-               success.show();
-         }else{
-            alert.show();
-         }
-         
-       
-                    
-        
-    }
-    
-    @FXML
-    private void showInstrumentListButtonOnClicked(ActionEvent event) {
-        
-        //instrumentListTableView.getItems().addAll(InstrumentList);
-        
-         ObjectInputStream ois = null;
-        ObservableList <Instrument> InstrumentList = FXCollections.observableArrayList();
-        try {
-             Instrument i;
-             ois = new ObjectInputStream(new FileInputStream("Instrument.bin"));
-             
-            while(true){
-                i = (Instrument) ois.readObject();
-                
-               // if(i.getInstrumentID()%2==0){
-                //    InstrumentList.add(i);
-                
-                 InstrumentList.add(i);
-            }
-        }
-        catch(RuntimeException e){
-            e.printStackTrace();
-        }
-        catch (Exception ex) {
-            try {
-                if(ois!=null)
-                    ois.close();
-            } catch (IOException ex1) {  }           
-        }
 
+        String IDtext = instrumentIdTextField.getText();
+        String qantityText = quantityTextField.getText();
+
+        if (name.isEmpty() || IDtext.isEmpty() || serialNumber.isEmpty() || model.isEmpty() || qantityText.isEmpty()) {
+            unfilled.show();
+        } else {
+            try {
+                int instrumentId = Integer.parseInt(IDtext);
+                int quantity = Integer.parseInt(qantityText);
+                if (IDtext.length() != 4) {
+                    IDLength.show();
+                } else if (quantity <= 0) {
+                    invalquantity.show();
+                } else {
+                    
+                    Instrument instrument = new Instrument(name, serialNumber, model, instrumentId, quantity);
+
+                    if (!Instrument.checkInstrumentExixtance(instrument)) {
+                        // Add the instrument if it doesn't already exist
+                        addInstrument(instrument);
+                        success.show();
+                    } else {
+                        alert.show();
+                    }
+                }
+            }catch (NumberFormatException e) {
+
+                invalid.show();
+            }
+
+            /*Instrument instrument = new Instrument(name, serialNumber, model, instrumentId, quantity);
+            if (!Instrument.checkInstrumentExixtance(instrument)) {
+                        addInstrument(instrument);
+                        success.show();
+                    } else {
+                        alert.show();
+                    }*/
+        }
+    }
+
+        @FXML
+        private void showInstrumentListButtonOnClicked
+        (ActionEvent event
         
-        instrumentListTableView.setItems( InstrumentList);
-        
-         
+            ) {
+
+        //instrumentListTableView.getItems().addAll(InstrumentList);
+        ObjectInputStream ois = null;
+            ObservableList<Instrument> InstrumentList = FXCollections.observableArrayList();
+            try {
+                Instrument i;
+                ois = new ObjectInputStream(new FileInputStream("Instrument.bin"));
+
+                while (true) {
+                    i = (Instrument) ois.readObject();
+
+                    // if(i.getInstrumentID()%2==0){
+                    //    InstrumentList.add(i);
+                    InstrumentList.add(i);
+                }
+            } catch (RuntimeException e) {
+                e.printStackTrace();
+            } catch (Exception ex) {
+                try {
+                    if (ois != null) {
+                        ois.close();
+                    }
+                } catch (IOException ex1) {
+                }
+            }
+
+            instrumentListTableView.setItems(InstrumentList);
+
     }
 
     @FXML
     private void intumentIdComboBoxButtonOnClicked(ActionEvent event) {
-        
-          int scelecteID= instrumentIdComboBox.getValue();
-         for(Instrument i:InstrumentList){
-             if(i.getInstrumentID()==scelecteID){
-                 instrumentDetailsTextArea.setText("\nInstrument Name:"+i.getName()+"\nInstumentId:"+i.getInstrumentID()
-                         +"\nSerial Number:"+i.getSerialNumber()+"\nModel:"+i.getModel()+"\nQantity:"+i.getQantity());
-             
-             break;
+
+        int scelecteID = instrumentIdComboBox.getValue();
+        for (Instrument i : InstrumentList) {
+            if (i.getInstrumentID() == scelecteID) {
+                instrumentDetailsTextArea.setText("\nInstrument Name:" + i.getName() + "\nInstumentId:" + i.getInstrumentID()
+                        + "\nSerial Number:" + i.getSerialNumber() + "\nModel:" + i.getModel() + "\nQantity:" + i.getQantity());
+
+                break;
              }
          }
     }

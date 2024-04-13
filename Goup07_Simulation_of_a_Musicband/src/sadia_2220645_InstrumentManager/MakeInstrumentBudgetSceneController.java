@@ -26,6 +26,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import static sadia_2220645_InstrumentManager.BudgetReceipt.sendBudgetReceipt;
 
 import static sadia_2220645_InstrumentManager.InstrumentManager.makeBudgetForIntrument;
 
@@ -149,10 +150,6 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
             } catch (IOException ex1) {  }           
         }
 
-     // Clear the table view before adding new items
-    //instrumentBudgetPlanTableView.getItems().clear();
-    
-    // Add items to the table view
     instrumentBudgetPlanTableView.setItems(instrumentbudgetplanlist);
     }
 
@@ -169,10 +166,23 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
 
     @FXML
     private void submitbudjetPlanButtonOnClicked(ActionEvent event) {
-            // Retrieve the data from the instrumentBudgetPlanTableView
+        
+        
+    String budgetDetails=budjetDetailstextArea.getText();
+    BudgetReceipt r=new  BudgetReceipt(budgetDetails);
+    sendBudgetReceipt(r);
+    
+    
+    
+        
+    }
+
+    @FXML
+    private void addBudgetButtonOnClicked(ActionEvent event) {
+                // Retrieve the data from the instrumentBudgetPlanTableView
     ObservableList<Instrument> instrumentBudgetList = instrumentBudgetPlanTableView.getItems();
 
-    // Display the details in the TextArea
+   
     StringBuilder budgetDetails = new StringBuilder();
     
     
@@ -184,9 +194,9 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
         budgetDetails.append("Total Cost: ").append(instrument.getPrice() * instrument.getQantity()).append("\n\n");
     }
 
-    // Set the text in the TextArea
+   
     budjetDetailstextArea.setText(budgetDetails.toString());
-    
+       
         
     }
     
