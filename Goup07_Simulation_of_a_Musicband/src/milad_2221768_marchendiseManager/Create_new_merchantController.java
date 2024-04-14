@@ -41,14 +41,14 @@ public class Create_new_merchantController implements Initializable {
     private TextField productnameTextFeild;
     private TableView<Merchant> tableview;
     private TableColumn<Merchant, String> productNameTable;
-<<<<<<< HEAD
+
     
     //private TableColumn<Merchant, Integer> availableQuantityTable;
     
     @FXML
-=======
-    private TableColumn<Merchant, Integer> availableQuantityTable;
->>>>>>> c3b1dcd337245dcf0f76b3cbf7cc73a308e4bcae
+
+    //private TableColumn<Merchant, Integer> availableQuantityTable;
+
     private TableColumn<Merchant, Integer> investedpriceTable;
     private TableColumn<Merchant, Integer> sellingPriceTable;
     private TableColumn<Merchant, String> descriptionTable;
