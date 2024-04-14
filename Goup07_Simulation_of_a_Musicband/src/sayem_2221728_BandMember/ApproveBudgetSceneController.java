@@ -105,7 +105,7 @@ public class ApproveBudgetSceneController implements Initializable {
             } catch (IOException ex1) {  }           
         }
         
-         // Display feedback details in the TextArea
+        
         StringBuilder BudgetReceiptlistDetails = new StringBuilder();
         for (BudgetReceipt mm : BudgetReceiptlist ) {
             BudgetReceiptlistDetails.append(mm.toString()).append("\n");

@@ -120,7 +120,7 @@ public class BandMember extends User implements Serializable {
         ObjectOutputStream oos = null;
 
         try {
-            f = new File(".bin");
+            f = new File("TechnicalSupportMessage.bin");
             if(f.exists()){
                 fos = new FileOutputStream(f,true);
                 oos = new MainPkg.AppendableObjectOutputStream(fos);                
@@ -138,6 +138,34 @@ public class BandMember extends User implements Serializable {
                 if(oos != null) oos.close();
             } catch (IOException ex) {
                 Logger.getLogger(TechnicalSupportMessage .class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
+    public static void giveSocialMediaLink(SocialMedia sm){
+        File f = null;
+        FileOutputStream fos = null;      
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("SocialMedia.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new MainPkg.AppendableObjectOutputStream(fos);                
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);               
+            }
+            oos.writeObject(sm);
+
+        } catch (IOException ex) {
+            Logger.getLogger(SocialMedia .class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(SocialMedia .class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         

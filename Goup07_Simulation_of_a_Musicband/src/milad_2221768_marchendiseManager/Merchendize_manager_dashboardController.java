@@ -37,7 +37,7 @@ public class Merchendize_manager_dashboardController implements Initializable {
 
     @FXML
     private void viewMarchatFXMLOnClick(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("view_the_Merchants.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("View_the_Merchants.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -55,7 +55,7 @@ public class Merchendize_manager_dashboardController implements Initializable {
 
     @FXML
     private void salesTrackOnClick(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("sales_track.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Sales_track.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -73,7 +73,7 @@ public class Merchendize_manager_dashboardController implements Initializable {
 
     @FXML
     private void defectiveProductOnClick(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("defective_products_returned.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Defective_products_returned.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

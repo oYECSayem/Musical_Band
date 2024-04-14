@@ -42,11 +42,6 @@ public class BandMemberDashboardController implements Initializable {
          borderPane.setCenter(root);
     }
 
-    @FXML
-    private void uploadContentButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("UploadContent.fxml"));
-         borderPane.setCenter(root);
-    }
 
     @FXML
     private void instrumentTechnicalSupportButton(ActionEvent event) throws IOException {
@@ -76,5 +71,10 @@ public class BandMemberDashboardController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("TakeFeedbackAndImprovementSection.fxml"));
          borderPane.setCenter(root);
     }
-    
+
+    @FXML
+    private void SocialMediaLinkButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("SocialMediaScene.fxml"));
+         borderPane.setCenter(root);
+    }
 }
