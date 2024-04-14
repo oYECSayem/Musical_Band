@@ -4,8 +4,13 @@
  */
 package sadia_2220645_Fan;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import sayem_2221728_BandMember.SocialMedia;
 
 /**
  * FXML Controller class
@@ -76,6 +82,39 @@ public class FollowSocialMediaAccountSceneController implements Initializable {
 
     @FXML
     private void showSocialMediaLinksButtonOnClicked(ActionEvent event) {
+        ObjectInputStream ois = null;
+        ObservableList<SocialMedia> SocialMedialist = FXCollections.observableArrayList();
+        try {
+           SocialMedia i;
+            ois = new ObjectInputStream(new FileInputStream("SocialMedia.bin"));
+
+            while (true) {
+                i = (SocialMedia) ois.readObject();
+
+                // if(i.getFb()){
+                
+                SocialMedialist.add(i);
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex1) {
+            }
+        }
+
+        // Display feedback details in the TextArea
+        StringBuilder SocialMediaDetails = new StringBuilder();
+        for (SocialMedia mm : SocialMedialist) {
+           SocialMediaDetails .append(mm.toString()).append("\n");
+        }
+
+        allmeadialinksTextArea.setText(SocialMediaDetails.toString());
     }
+    
+    
     
 }

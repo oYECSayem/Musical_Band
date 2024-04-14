@@ -126,11 +126,17 @@ public class PurchasingMerchandiseSceneController implements Initializable {
         
         //-------read------------------
         
+        
+        
+    }
+    
+    @FXML
+    private void viewCashMemoButtonOnClicked(ActionEvent event) {
         ObjectInputStream ois = null;
         ObservableList <CashMemo> CashMemoList = FXCollections.observableArrayList();
         try {
              CashMemo i;
-             ois = new ObjectInputStream(new FileInputStream("Cart.bin"));
+             ois = new ObjectInputStream(new FileInputStream("CashMemo.bin"));
              
             while(true){
                 i = (CashMemo) ois.readObject();
@@ -156,6 +162,7 @@ public class PurchasingMerchandiseSceneController implements Initializable {
 
         purchasedMerchandiseReceiptTextField.setText(CashMemoDetails.toString());
         
+        
     }
 
     @FXML
@@ -173,6 +180,8 @@ public class PurchasingMerchandiseSceneController implements Initializable {
         currentStage.setScene(PurchaseMerchandiseScelectScene);
         currentStage.show();
     }
+
+    
     }
     
 

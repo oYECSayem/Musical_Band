@@ -54,8 +54,9 @@ public class PurchaseMerchandiseScelectSceneController implements Initializable 
     private TextArea selectedProducttextArea;
     @FXML
     private TextArea customizedOrderTextArea;
+   
     @FXML
-    private TextField quantityTextArea;
+    private TextField quantityTextField;
 
     /**
      * Initializes the controller class.
@@ -74,7 +75,7 @@ public class PurchaseMerchandiseScelectSceneController implements Initializable 
 
        ObservableList<Merchant> instrumentBudgetList = merchandiseTableView.getSelectionModel().getSelectedItems();
        
-       int quantity =Integer.parseInt(quantityTextArea.getText());
+       int quantity =Integer.parseInt(quantityTextField.getText());
 
    
        StringBuilder MerchantDetails = new StringBuilder();
@@ -86,15 +87,17 @@ public class PurchaseMerchandiseScelectSceneController implements Initializable 
         MerchantDetails.append("ID: ").append(merchant.getProductID()).append("\n");
         MerchantDetails.append("Price: ").append(merchant.getSellingPrice()).append("\n");
         MerchantDetails.append("Total Cost: ").append(merchant.getSellingPrice() *quantity).append("\n\n");
+        
     }
 
-     
-      selectedProducttextArea.setText(MerchantDetails.toString());
+     selectedProducttextArea.setText(MerchantDetails.toString());
+    
        
        String merchandiseInfo=selectedProducttextArea.getText();
        Cart c=new Cart(merchandiseInfo);
        addMerchandiseTotheCart(c);
-          
+       
+       quantityTextField.clear();
     
     }
 

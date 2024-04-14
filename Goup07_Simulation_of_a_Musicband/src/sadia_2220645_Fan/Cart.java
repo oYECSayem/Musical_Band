@@ -34,7 +34,8 @@ public class Cart implements Serializable {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\nselectedMerchandiseInfo:").append(selectedMerchandiseInfo);
+        sb.append("\n\n");
+        sb.append(selectedMerchandiseInfo);
         return sb.toString();
     }
 

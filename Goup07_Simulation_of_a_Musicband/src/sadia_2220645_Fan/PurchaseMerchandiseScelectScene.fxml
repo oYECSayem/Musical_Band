@@ -41,6 +41,6 @@
       <Button layoutX="469.0" layoutY="351.0" mnemonicParsing="false" text="Receive Massage" />
       <TextArea fx:id="selectedProducttextArea" layoutX="131.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" />
       <Button layoutX="40.0" layoutY="626.0" mnemonicParsing="false" onAction="#viewPoductTableButtonOnClicked" text="view product Table" />
-      <TextField fx:id="quantityTextArea" layoutX="144.0" layoutY="24.0" />
+      <TextField fx:id="quantityTextField" layoutX="144.0" layoutY="24.0" />
    </children>
 </AnchorPane>
