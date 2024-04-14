@@ -27,6 +27,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import milad_2221768_marchendiseManager.Merchant;
 import static sadia_2220645_Fan.Fan.Purchasemerchandise;
 
  
@@ -69,38 +70,38 @@ public class PurchasingMerchandiseSceneController implements Initializable {
     private void showpurchaseMerchandiseDetailsButtonOnClicked(ActionEvent event) {
         
         ObjectInputStream ois = null;
-        ObservableList<Cart> Cartlist = FXCollections.observableArrayList();
+        ObservableList <Cart> CartList = FXCollections.observableArrayList();
         try {
-            Cart i;
-            ois = new ObjectInputStream(new FileInputStream("CashMemo.bin"));
-
-            while (true) {
+             Cart i;
+             ois = new ObjectInputStream(new FileInputStream("Cart.bin"));
+             
+            while(true){
                 i = (Cart) ois.readObject();
-
-                // if(i.getInstrumentID()%2==0){
-                //    InstrumentList.add(i);
-                Cartlist.add(i);
-            }
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        } catch (Exception ex) {
-            try {
-                if (ois != null) {
-                    ois.close();
-                }
-            } catch (IOException ex1) {
+              
+                 CartList.add(i);
             }
         }
-
-        // Display feedback details in the TextArea
+        catch(RuntimeException e){
+            e.printStackTrace();
+        }
+        catch (Exception ex) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            } catch (IOException ex1) {  }           
+        }
+        
         StringBuilder CartDetails = new StringBuilder();
-        for (Cart mm : Cartlist) {
+        for (Cart mm :  CartList) {
             CartDetails.append(mm.toString()).append("\n");
         }
 
-        purchasedMerchandiseReceiptTextField.setText(CartDetails.toString());
-    
+
+        merchandiseInfoTextField.setText(CartDetails.toString());
+        
     }
+    
+    
 
     @FXML
     private void confirmOrderButtonOnClicked(ActionEvent event) {
@@ -121,6 +122,40 @@ public class PurchasingMerchandiseSceneController implements Initializable {
         CashMemo m=new CashMemo( name,address, merchantDetails, paymentMode, phoneNum) ;
         
         Purchasemerchandise(m);
+        
+        
+        //-------read------------------
+        
+        ObjectInputStream ois = null;
+        ObservableList <CashMemo> CashMemoList = FXCollections.observableArrayList();
+        try {
+             CashMemo i;
+             ois = new ObjectInputStream(new FileInputStream("Cart.bin"));
+             
+            while(true){
+                i = (CashMemo) ois.readObject();
+              
+               CashMemoList.add(i);
+            }
+        }
+        catch(RuntimeException e){
+            e.printStackTrace();
+        }
+        catch (Exception ex) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            } catch (IOException ex1) {  }           
+        }
+        
+        StringBuilder CashMemoDetails = new StringBuilder();
+        for (CashMemo mm : CashMemoList) {
+           CashMemoDetails.append(mm.toString()).append("\n");
+        }
+
+
+        purchasedMerchandiseReceiptTextField.setText(CashMemoDetails.toString());
+        
     }
 
     @FXML
