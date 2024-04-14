@@ -18,6 +18,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleGroup;
+
 import javafx.scene.layout.AnchorPane;
 import sayem_2221728_BandMember.SocialMedia;
 
@@ -39,13 +41,20 @@ public class FollowSocialMediaAccountSceneController implements Initializable {
     @FXML
     private RadioButton youTubeRadioButton;
     @FXML
-    private Label resultLabel;
-    @FXML
     private TextArea allmeadialinksTextArea;
 
+   private ToggleGroup tg=new ToggleGroup();
+    @FXML
+    private RadioButton facebookRadiobutton;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       
+        facebookRadiobutton.setToggleGroup(tg);
+        twitterRadioButton.setToggleGroup(tg);
+        instagramRadioButton.setToggleGroup(tg);
+        youTubeRadioButton.setToggleGroup(tg);
+
         bandMembarNameComboBox.getItems().addAll("Sayem","Milad","Sadia","Fahim");
        
     }    
@@ -82,6 +91,20 @@ public class FollowSocialMediaAccountSceneController implements Initializable {
 
     @FXML
     private void showSocialMediaLinksButtonOnClicked(ActionEvent event) {
+        
+        String socialMedia=" ";
+        if(facebookRadiobutton.isSelected()){
+            socialMedia="Facebook Link";
+        }if(twitterRadioButton.isSelected()){
+            socialMedia="Facebook Link";
+        }if(instagramRadioButton.isSelected()){
+            socialMedia="Facebook Link";
+        }if(youTubeRadioButton.isSelected()){
+            socialMedia="Facebook Link";
+        }
+            
+        
+        
         ObjectInputStream ois = null;
         ObservableList<SocialMedia> SocialMedialist = FXCollections.observableArrayList();
         try {
@@ -91,8 +114,6 @@ public class FollowSocialMediaAccountSceneController implements Initializable {
             while (true) {
                 i = (SocialMedia) ois.readObject();
 
-                // if(i.getFb()){
-                
                 SocialMedialist.add(i);
             }
         } catch (RuntimeException e) {
