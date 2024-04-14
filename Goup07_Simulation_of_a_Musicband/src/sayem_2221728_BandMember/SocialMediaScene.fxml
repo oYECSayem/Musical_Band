@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="419.0" prefWidth="801.0" style="-fx-background-color: aqua;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sayem_2221728_BandMember.SocialMediaSceneController">
+   <children>
+      <Label layoutX="286.0" layoutY="27.0" prefHeight="36.0" prefWidth="229.0" text="Social Media Link">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="81.0" prefHeight="21.0" prefWidth="48.0" text="Name:" />
+      <TextField fx:id="nameTF" layoutX="144.0" layoutY="76.0" />
+      <Label layoutX="64.0" layoutY="126.0" prefHeight="21.0" prefWidth="69.0" text="Facebook:" />
+      <Label layoutX="64.0" layoutY="170.0" prefHeight="21.0" prefWidth="69.0" text="Instagram:" />
+      <Label layoutX="64.0" layoutY="213.0" prefHeight="21.0" prefWidth="69.0" text="Youtube:" />
+      <Label layoutX="64.0" layoutY="254.0" prefHeight="21.0" prefWidth="62.0" text="Twitter:" />
+      <TextField fx:id="fbTF" layoutX="144.0" layoutY="121.0" />
+      <TextField fx:id="igTF" layoutX="144.0" layoutY="165.0" />
+      <TextField fx:id="ytTF" layoutX="144.0" layoutY="208.0" />
+      <TextField fx:id="twTF" layoutX="144.0" layoutY="249.0" />
+      <TextArea fx:id="socialMediaTA" layoutX="451.0" layoutY="70.0" prefHeight="200.0" prefWidth="273.0" />
+      <Button layoutX="63.0" layoutY="308.0" mnemonicParsing="false" onAction="#addSocialMediaButton" prefHeight="31.0" prefWidth="172.0" text="Add Social Media" />
+      <Button layoutX="451.0" layoutY="301.0" mnemonicParsing="false" onAction="#viewSocialMediaButton" prefHeight="31.0" prefWidth="172.0" text="View" />
+      <Line endX="32.0" endY="65.0" layoutX="364.0" layoutY="270.0" startX="32.0" startY="-207.0" />
+   </children>
+</AnchorPane>

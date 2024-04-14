@@ -16,7 +16,7 @@
                     <items>
                         <MenuItem onAction="#giveScheduleButton" text="Give Schedule for Collaboration" />
                         <MenuItem onAction="#approveBudgetButton" text="Approve Budget" />
-                        <MenuItem onAction="#uploadContentButton" text="Upload Content" />
+                        <MenuItem onAction="#SocialMediaLinkButton" text="Social Media Link" />
                         <MenuItem onAction="#instrumentTechnicalSupportButton" text="Instrument Technical Support" />
                         <MenuItem onAction="#lyricsWritingButton" text="Lyrics Writing" />
                         <MenuItem onAction="#contactWithOperationalManagerButton" text="Contact with Operational Manager" />
