@@ -5,24 +5,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="642.0" prefWidth="814.0" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="642.0" prefWidth="814.0" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_bandPromoter.Bandpromoter_dashboardController">
    <children>
       <Label blendMode="SCREEN" layoutX="231.0" layoutY="40.0" style="-fx-border-color: white;" text=" Band Promoter Dashboard " textFill="WHITE">
          <font>
             <Font name="System Italic" size="29.0" />
          </font>
       </Label>
-      <Button layoutX="123.0" layoutY="198.0" mnemonicParsing="false" text="Create New">
+      <Button layoutX="123.0" layoutY="198.0" mnemonicParsing="false" onAction="#createNewOnClick" text="Create New">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="123.0" layoutY="342.0" mnemonicParsing="false" text="View All">
+      <Button layoutX="123.0" layoutY="342.0" mnemonicParsing="false" onAction="#viewOnClick" text="View All">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="123.0" layoutY="488.0" mnemonicParsing="false" text="Communicate with Band Member">
+      <Button layoutX="123.0" layoutY="488.0" mnemonicParsing="false" onAction="#chatboxOnClick" text="Communicate with Band Member">
          <font>
             <Font size="18.0" />
          </font>
@@ -32,19 +32,19 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="123.0" layoutY="267.0" mnemonicParsing="false" text="Delete">
+      <Button layoutX="123.0" layoutY="267.0" mnemonicParsing="false" onAction="#deleteOnClick" text="Delete">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="123.0" layoutY="414.0" mnemonicParsing="false" text="Contest Overview">
+      <Button layoutX="123.0" layoutY="414.0" mnemonicParsing="false" onAction="#ContestOverviewOnClick" text="Contest Overview">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="518.0" layoutY="202.0" mnemonicParsing="false" text="Event Budget Creator" />
-      <Button layoutX="518.0" layoutY="271.0" mnemonicParsing="false" text="Event Budget List" />
-      <Button layoutX="518.0" layoutY="346.0" mnemonicParsing="false" text="Add Sponsor" />
-      <Button layoutX="518.0" layoutY="418.0" mnemonicParsing="false" text="Sponsor List" />
+      <Button layoutX="518.0" layoutY="202.0" mnemonicParsing="false" onAction="#eventBudgetCreatorOnClick" text="Event Budget Creator" />
+      <Button layoutX="518.0" layoutY="271.0" mnemonicParsing="false" onAction="#eventBudgetOnClick" text="Event Budget List" />
+      <Button layoutX="518.0" layoutY="346.0" mnemonicParsing="false" onAction="#sponsorOnClick" text="Add Sponsor" />
+      <Button layoutX="518.0" layoutY="418.0" mnemonicParsing="false" onAction="#sponsorListOnClick" text="Sponsor List" />
    </children>
 </AnchorPane>

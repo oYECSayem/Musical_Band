@@ -11,7 +11,7 @@ public class MainBandPromoter_Application_class extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Sponsor.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Bandpromoter_dashboard.fxml"));
         
         Scene scene = new Scene(root);
         

@@ -91,9 +91,7 @@ public class ApproveBudgetSceneController implements Initializable {
             while(true){
                 i = (BudgetReceipt) ois.readObject();
                 
-               // if(i.getInstrumentID()%2==0){
-                //    InstrumentList.add(i);
-                
+               
                   BudgetReceiptlist.add(i);
             }
         }

@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="690.0" prefWidth="848.0" style="-fx-background-color: black;" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" prefHeight="690.0" prefWidth="848.0" style="-fx-background-color: black;" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_bandPromoter.SponsorController">
    <children>
       <Label layoutX="342.0" layoutY="46.0" text="Sponsor Add" textFill="WHITE">
          <font>
@@ -24,7 +23,7 @@
       <TextField layoutX="342.0" layoutY="301.0" prefHeight="40.0" prefWidth="298.0" />
       <Label layoutX="100.0" layoutY="380.0" text="Sponsor fund: " textFill="WHITE" />
       <TextField layoutX="342.0" layoutY="371.0" prefHeight="40.0" prefWidth="298.0" />
-      <Button layoutX="610.0" layoutY="630.0" mnemonicParsing="false" text="Return to the Dashboard" />
+      <Button layoutX="610.0" layoutY="630.0" mnemonicParsing="false" onAction="#returnOnClick" text="Return to the Dashboard" />
       <Button layoutX="115.0" layoutY="541.0" mnemonicParsing="false" text="View Sponsor List" />
    </children>
 </AnchorPane>
