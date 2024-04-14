@@ -21,10 +21,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-
 import static sadia_2220645_InstrumentManager.InstrumentManager.sendGuidelineAndManuals;
 import static sadia_2220645_InstrumentManager.InstrumentManager.sendMgstoBandMember;
-import sayem_2221728_BandMember.Message;
+import sayem_2221728_BandMember.TechnicalSupportMessage;
 
 /**
  * FXML Controller class
@@ -158,13 +157,13 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
     @FXML
     private void receiveMgsButtonOnClicked(ActionEvent event) {
         ObjectInputStream ois = null;
-        ObservableList<Message> Messagelist = FXCollections.observableArrayList();
+        ObservableList<TechnicalSupportMessage> Messagelist = FXCollections.observableArrayList();
         try {
-            Message i;
+            TechnicalSupportMessage i;
             ois = new ObjectInputStream(new FileInputStream("TechnicalSupportMessage.bin"));
 
             while (true) {
-                i = (Message) ois.readObject();
+                i = (TechnicalSupportMessage) ois.readObject();
 
                 // if(i.getInstrumentID()%2==0){
                 //    InstrumentList.add(i);
@@ -183,7 +182,7 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
 
         // Display feedback details in the TextArea
         StringBuilder GuidelinesAndManualDetails = new StringBuilder();
-        for (Message s : Messagelist) {
+        for (TechnicalSupportMessage s : Messagelist) {
              GuidelinesAndManualDetails.append(s.toString()).append("\n");
         }
 
