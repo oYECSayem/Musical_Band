@@ -63,7 +63,7 @@ public class PurchaseMerchandiseScelectSceneController implements Initializable 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         nameCol.setCellValueFactory(new PropertyValueFactory<Merchant, String>("productName"));
-        idCol.setCellValueFactory(new PropertyValueFactory<Merchant, Integer>("quantity"));
+        idCol.setCellValueFactory(new PropertyValueFactory<Merchant, Integer>("productID"));
         priceCol.setCellValueFactory(new PropertyValueFactory<Merchant, Integer>("sellingPrice"));
         descriptionCol.setCellValueFactory(new PropertyValueFactory<Merchant, String>("description"));
 
@@ -83,7 +83,7 @@ public class PurchaseMerchandiseScelectSceneController implements Initializable 
     for (Merchant merchant : instrumentBudgetList) {
         MerchantDetails.append("Name: ").append(merchant.getProductName()).append("\n");
         MerchantDetails.append("Description:: ").append(merchant.getDescription()).append("\n");
-        MerchantDetails.append("ID: ").append(merchant.getQuantity()).append("\n");// NEED TO FIX
+        MerchantDetails.append("ID: ").append(merchant.getProductID()).append("\n");
         MerchantDetails.append("Price: ").append(merchant.getSellingPrice()).append("\n");
         MerchantDetails.append("Total Cost: ").append(merchant.getSellingPrice() *quantity).append("\n\n");
     }

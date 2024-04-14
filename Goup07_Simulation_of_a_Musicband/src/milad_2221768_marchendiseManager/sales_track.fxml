@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="634.0" prefWidth="917.0" style="-fx-background-color: #bfeae9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="634.0" prefWidth="917.0" style="-fx-background-color: #bfeae9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_marchendiseManager.Sales_trackController">
    <children>
       <Label layoutX="357.0" layoutY="34.0" text="Track Sales">
          <font>
@@ -39,5 +40,6 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Button layoutX="728.0" layoutY="589.0" mnemonicParsing="false" onAction="#returnToDashOnClick" text="Return To Dashboard" />
    </children>
 </AnchorPane>

@@ -7,29 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< Updated upstream
-
-<AnchorPane id="AnchorPane" prefHeight="589.0" prefWidth="742.0" styleClass="bodybg" stylesheets="@view_product_bg.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
-=======
 <AnchorPane id="AnchorPane" prefHeight="589.0" prefWidth="742.0" styleClass="bodybg" stylesheets="@bgOfMerchantise.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_marchendiseManager.View_the_MerchantsController">
->>>>>>> Stashed changes
    <children>
       <TableView fx:id="tableview" layoutX="54.0" layoutY="149.0" prefHeight="340.0" prefWidth="639.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
         <columns>
           <TableColumn fx:id="productNameColumn" prefWidth="203.0" text="Product Name" />
-          <TableColumn fx:id="availableQuantityColumn" minWidth="0.0" prefWidth="142.0" text="Available Quantity" />
+          <TableColumn fx:id="productIDColumn" minWidth="0.0" prefWidth="142.0" text="Product ID" />
             <TableColumn fx:id="descriptionColumn" prefWidth="232.0" text="Description" />
             <TableColumn fx:id="sellingPriceColumn" prefWidth="124.0" text="Price" />
         </columns>
       </TableView>
-<<<<<<< Updated upstream
-      <Button layoutX="68.0" layoutY="510.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="192.0" text="Select and View Product Details" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="534.0" layoutY="525.0" mnemonicParsing="false" text="Return to Dashboard" />
-      <Label layoutX="203.0" layoutY="35.0" text="View Merchant Products" textAlignment="CENTER">
-=======
       <Button layoutX="534.0" layoutY="525.0" mnemonicParsing="false" onAction="#returnToDashOnClick" text="Return to Dashboard" />
       <Label blendMode="SCREEN" layoutX="193.0" layoutY="31.0" text="View Merchant Products" textAlignment="CENTER" textFill="#76d8ff">
->>>>>>> Stashed changes
          <font>
             <Font name="System Bold Italic" size="30.0" />
          </font>

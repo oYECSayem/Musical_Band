@@ -30,12 +30,13 @@ public class View_the_MerchantsController implements Initializable {
     private TableView<Merchant> tableview;
     @FXML
     private TableColumn<Merchant, String> productNameColumn;
-    @FXML
-    private TableColumn<Merchant, Integer> availableQuantityColumn;
+    //private TableColumn<Merchant, Integer> availableQuantityColumn;
     @FXML
     private TableColumn<Merchant, String> descriptionColumn;
     @FXML
     private TableColumn<Merchant, Integer> sellingPriceColumn;
+    @FXML
+    private TableColumn<Merchant, Integer> productIDColumn;
     
 
     /**
@@ -44,7 +45,7 @@ public class View_the_MerchantsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         productNameColumn.setCellValueFactory(new PropertyValueFactory<Merchant, String>("productName"));
-        availableQuantityColumn.setCellValueFactory(new PropertyValueFactory<Merchant, Integer>("quantity"));
+        productIDColumn.setCellValueFactory(new PropertyValueFactory<Merchant, Integer>("productID"));
         sellingPriceColumn.setCellValueFactory(new PropertyValueFactory<Merchant, Integer>("sellingPrice"));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<Merchant, String>("description"));
     }    

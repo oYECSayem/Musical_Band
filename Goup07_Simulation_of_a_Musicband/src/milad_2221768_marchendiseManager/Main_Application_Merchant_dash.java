@@ -11,7 +11,7 @@ public class Main_Application_Merchant_dash extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Calculating _of_profit_or_loss.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Merchendize_manager_dashboard.fxml"));
         
         Scene scene = new Scene(root);
         
