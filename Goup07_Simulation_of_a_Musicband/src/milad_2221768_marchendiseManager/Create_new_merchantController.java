@@ -29,11 +29,10 @@ import static milad_2221768_marchendiseManager.Merchant.addMerchant;
  * @author User
  */
 public class Create_new_merchantController implements Initializable {
-    //private Stage stage;
-    //private Scene scene;
-    //private Parent root;
-    @FXML
-    private TextField quantityTextField;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    //private TextField quantityTextField;
     @FXML
     private TextField investedPriceTextFeild;
     @FXML
@@ -46,8 +45,9 @@ public class Create_new_merchantController implements Initializable {
     private TableView<Merchant> tableview;
     @FXML
     private TableColumn<Merchant, String> productNameTable;
-    @FXML
-    private TableColumn<Merchant, Integer> availableQuantityTable;
+    
+    //private TableColumn<Merchant, Integer> availableQuantityTable;
+    
     @FXML
     private TableColumn<Merchant, Integer> investedpriceTable;
     @FXML
@@ -60,6 +60,10 @@ public class Create_new_merchantController implements Initializable {
     //Alert error =new Alert(Alert.AlertType.INFORMATION,"Please Enter All the Information Correctly");
     
     //ArrayList<Merchant> merch = new ArrayList<>();
+    @FXML
+    private TextField productIDTextField;
+    @FXML
+    private TableColumn<Merchant, Integer> productIDTable;
     
     
 
@@ -68,7 +72,7 @@ public class Create_new_merchantController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         productNameTable.setCellValueFactory(new PropertyValueFactory<Merchant, String>("productName"));
-        availableQuantityTable.setCellValueFactory(new PropertyValueFactory<Merchant, Integer>("quantity"));
+        productIDTable.setCellValueFactory(new PropertyValueFactory<Merchant, Integer>("productID"));
         investedpriceTable.setCellValueFactory(new PropertyValueFactory<Merchant, Integer>("investedPrice"));
         sellingPriceTable.setCellValueFactory(new PropertyValueFactory<Merchant, Integer>("sellingPrice"));
         descriptionTable.setCellValueFactory(new PropertyValueFactory<Merchant, String>("description"));
@@ -77,26 +81,26 @@ public class Create_new_merchantController implements Initializable {
 
     @FXML
     private void returningDashBoardOnClick(ActionEvent event) throws IOException {
-        //root = FXMLLoader.load(getClass().getResource("Merchendize_manager_dashboard.fxml"));
-        //stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        //scene = new Scene(root);
-        //stage.setScene(scene);
-        //stage.show();
-        Parent root = null;
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Merchendize_manager_dashboard.fxml"));
-        root = (Parent) myLoader.load();
-        Scene myScene = new Scene(root);
+        root = FXMLLoader.load(getClass().getResource("Merchendize_manager_dashboard.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        //Parent root = null;
+        //FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Merchendize_manager_dashboard.fxml"));
+        //root = (Parent) myLoader.load();
+        //Scene myScene = new Scene(root);
 
-        Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        myStage.setScene(myScene);
-        myStage.show();
+        //Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        //myStage.setScene(myScene);
+        //myStage.show();
     }
 
     @FXML
     private void addProductArrayButton(ActionEvent event) {
         
         String name = productnameTextFeild.getText();
-        int quant = Integer.parseInt(quantityTextField.getText());
+        int quant = Integer.parseInt(productIDTextField.getText());
         int invest = Integer.parseInt(investedPriceTextFeild.getText());
         int selling = Integer.parseInt(sellingPriceTextFeild.getText());
         String descrip = descriptionTextFeild.getText();
@@ -110,11 +114,11 @@ public class Create_new_merchantController implements Initializable {
         //}
         
         Merchant m = new Merchant(name, quant, invest, selling, descrip);
-        addMerchant(m, name);
+        addMerchant(m);
         success.show();
         
         productnameTextFeild.clear();
-        quantityTextField.clear();
+        productIDTextField.clear();
         investedPriceTextFeild.clear();
         sellingPriceTextFeild.clear();
         descriptionTextFeild.clear();

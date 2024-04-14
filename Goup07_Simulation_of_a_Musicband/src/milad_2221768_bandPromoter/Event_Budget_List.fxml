@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="656.0" prefWidth="796.0" style="-fx-background-color: black;" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" prefHeight="656.0" prefWidth="796.0" style="-fx-background-color: black;" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_bandPromoter.Event_Budget_ListController">
    <children>
       <Label layoutX="281.0" layoutY="39.0" text="Event Budget List" textFill="WHITE">
          <font>
@@ -32,6 +31,6 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="576.0" layoutY="597.0" mnemonicParsing="false" text="Return to Dashboard" />
+      <Button layoutX="576.0" layoutY="597.0" mnemonicParsing="false" onAction="#returnOnClick" text="Return to Dashboard" />
    </children>
 </AnchorPane>

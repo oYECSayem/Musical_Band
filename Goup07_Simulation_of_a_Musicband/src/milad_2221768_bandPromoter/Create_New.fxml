@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane id="AnchorPane" prefHeight="659.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="659.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_bandPromoter.Create_NewController">
    <children>
       <TabPane layoutX="183.0" layoutY="33.0" prefHeight="659.0" prefWidth="824.0" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
@@ -23,7 +23,7 @@
                         <Label layoutX="79.0" layoutY="160.0" style="-fx-background-color: #FFFFE5;" text=" Description: " />
                         <TextField alignment="TOP_LEFT" layoutX="194.0" layoutY="155.0" prefHeight="210.0" prefWidth="568.0" />
                         <Button layoutX="380.0" layoutY="423.0" mnemonicParsing="false" text="Upload it" />
-                        <Button layoutX="624.0" layoutY="551.0" mnemonicParsing="false" text="Return to dashboard" />
+                        <Button layoutX="624.0" layoutY="551.0" mnemonicParsing="false" onAction="#returnFromDailyUpdatesOnClick" text="Return to dashboard" />
                      </children>
                   </AnchorPane>
               </content>
@@ -39,7 +39,7 @@
                         <Label layoutX="103.0" layoutY="377.0" style="-fx-background-color: #FFFFE5;" text=" Your Promotional post: " />
                         <TextField alignment="TOP_LEFT" layoutX="295.0" layoutY="372.0" prefHeight="127.0" prefWidth="439.0" />
                         <Button layoutX="380.0" layoutY="529.0" mnemonicParsing="false" text="Notify Fan" />
-                        <Button layoutX="644.0" layoutY="560.0" mnemonicParsing="false" text="Return to dashboard" />
+                        <Button layoutX="644.0" layoutY="560.0" mnemonicParsing="false" onAction="#returnFromCreateEventOnClick" text="Return to dashboard" />
                      </children>
                   </AnchorPane>
               </content>
@@ -55,7 +55,7 @@
                         <Label layoutX="105.0" layoutY="346.0" style="-fx-background-color: #FFFFE5;" text=" Campaign Venue: " />
                         <TextField alignment="TOP_LEFT" layoutX="272.0" layoutY="346.0" prefHeight="68.0" prefWidth="450.0" />
                         <Button layoutX="380.0" layoutY="445.0" mnemonicParsing="false" text="Upload it" />
-                        <Button layoutX="623.0" layoutY="555.0" mnemonicParsing="false" text="Return to Dashboard" />
+                        <Button layoutX="623.0" layoutY="555.0" mnemonicParsing="false" onAction="#returnFromCampaignOnClick" text="Return to Dashboard" />
                      </children>
                   </AnchorPane>
             </content>
@@ -82,7 +82,7 @@
                         <ComboBox layoutX="262.0" layoutY="489.0" prefWidth="150.0" />
                         <Line endX="430.0" layoutX="266.0" layoutY="292.0" startX="-100.0" />
                         <Button layoutX="400.0" layoutY="543.0" mnemonicParsing="false" text="Post It" />
-                        <Button layoutX="641.0" layoutY="574.0" mnemonicParsing="false" text="Return To Dashboard" />
+                        <Button layoutX="641.0" layoutY="574.0" mnemonicParsing="false" onAction="#returnFromContestOnClick" text="Return To Dashboard" />
                         <Button layoutX="93.0" layoutY="574.0" mnemonicParsing="false" text="See response" />
                      </children>
                   </AnchorPane>

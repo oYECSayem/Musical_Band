@@ -1,84 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< Updated upstream
-
-<AnchorPane id="AnchorPane" prefHeight="679.0" prefWidth="714.0" styleClass="bodybg" stylesheets="@dashboard_img.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label blendMode="SCREEN" layoutX="86.0" layoutY="129.0" text="Enter your product Name: " textFill="#d5e9f8">
-=======
 <AnchorPane id="AnchorPane" prefHeight="860.0" prefWidth="931.0" styleClass="bodybg" stylesheets="@bgOfMerchantise.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_marchendiseManager.Create_new_merchantController">
    <children>
       <Label blendMode="SRC_ATOP" layoutX="193.0" layoutY="129.0" text="Enter your product Name: " textFill="#e0ffff">
->>>>>>> Stashed changes
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-<<<<<<< Updated upstream
-      <Label blendMode="SCREEN" layoutX="86.0" layoutY="199.0" text="Enter available quantity:" textFill="#d5e9f8">
-=======
-      <Label blendMode="SRC_ATOP" layoutX="193.0" layoutY="199.0" text="Enter available quantity:" textFill="#e0ffff">
->>>>>>> Stashed changes
+      <Label blendMode="SRC_ATOP" layoutX="193.0" layoutY="199.0" text="Enter product ID:" textFill="#e0ffff">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-<<<<<<< Updated upstream
-      <TextField layoutX="362.0" layoutY="199.0" prefHeight="31.0" prefWidth="214.0" />
-      <Label blendMode="SCREEN" layoutX="89.0" layoutY="260.0" text="Enter your invested price:" textFill="#d5e9f8">
-=======
-      <TextField fx:id="quantityTextField" layoutX="530.0" layoutY="199.0" prefHeight="31.0" prefWidth="214.0" />
+      <TextField fx:id="productIDTextField" layoutX="530.0" layoutY="199.0" prefHeight="31.0" prefWidth="214.0" />
       <Label blendMode="SRC_ATOP" layoutX="196.0" layoutY="260.0" text="Enter your invested price:" textFill="#e0ffff">
->>>>>>> Stashed changes
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-<<<<<<< Updated upstream
-      <TextField layoutX="362.0" layoutY="260.0" prefHeight="31.0" prefWidth="214.0" />
-      <Label blendMode="SCREEN" layoutX="88.0" layoutY="329.0" text="Enter your selling price:" textFill="#d5e9f8">
-=======
       <TextField fx:id="investedPriceTextFeild" layoutX="530.0" layoutY="260.0" prefHeight="31.0" prefWidth="214.0" />
       <Label blendMode="SRC_ATOP" layoutX="195.0" layoutY="329.0" text="Enter your selling price:" textFill="#e0ffff">
->>>>>>> Stashed changes
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-<<<<<<< Updated upstream
-      <TextField layoutX="362.0" layoutY="328.0" prefHeight="31.0" prefWidth="214.0" />
-      <Label blendMode="SCREEN" layoutX="195.0" layoutY="40.0" text="CREATE YOUR PRODUCT" textFill="#d5e9f8">
-=======
       <TextField fx:id="sellingPriceTextFeild" layoutX="530.0" layoutY="328.0" prefHeight="31.0" prefWidth="214.0" />
       <Label blendMode="SRC_ATOP" layoutX="302.0" layoutY="40.0" text="CREATE YOUR PRODUCT" textFill="#e0ffff">
->>>>>>> Stashed changes
          <font>
             <Font name="Cambria Italic" size="31.0" />
          </font>
       </Label>
-      <ComboBox layoutX="362.0" layoutY="129.0" prefHeight="31.0" prefWidth="212.0" />
-      <Button layoutX="519.0" layoutY="423.0" mnemonicParsing="false" prefHeight="158.0" prefWidth="181.0" text="Add Product to the merchant" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="674.0" layoutY="376.0" mnemonicParsing="false" onAction="#addProductArrayButton" prefHeight="127.0" prefWidth="181.0" text="Add Product to the merchant" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-<<<<<<< Updated upstream
-      <Label blendMode="SCREEN" layoutX="88.0" layoutY="398.0" text="Enter product description:" textFill="#d5e9f8">
-=======
       <Label blendMode="SRC_ATOP" layoutX="120.0" layoutY="398.0" text="Enter product description:" textFill="#e0ffff">
->>>>>>> Stashed changes
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <TextField layoutX="88.0" layoutY="435.0" prefHeight="134.0" prefWidth="420.0" />
-      <Button layoutX="541.0" layoutY="616.0" mnemonicParsing="false" text="Return to Dashboard" />
+      <TextField fx:id="descriptionTextFeild" alignment="TOP_LEFT" layoutX="88.0" layoutY="435.0" prefHeight="134.0" prefWidth="536.0" />
+      <Button layoutX="758.0" layoutY="815.0" mnemonicParsing="false" onAction="#returningDashBoardOnClick" text="Return to Dashboard" />
+      <TextField fx:id="productnameTextFeild" layoutX="530.0" layoutY="129.0" prefHeight="31.0" prefWidth="214.0" />
+      <TableView fx:id="tableview" layoutX="88.0" layoutY="591.0" prefHeight="200.0" prefWidth="786.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0">
+        <columns>
+          <TableColumn fx:id="productNameTable" prefWidth="125.0" text="Product Name" />
+          <TableColumn fx:id="productIDTable" prefWidth="145.0" text="Product ID" />
+            <TableColumn fx:id="investedpriceTable" prefWidth="106.0" text="Invested Price" />
+            <TableColumn fx:id="sellingPriceTable" prefWidth="108.0" text="Selling Price" />
+            <TableColumn fx:id="descriptionTable" prefWidth="301.0" text="Description" />
+        </columns>
+      </TableView>
+      <Button layoutX="674.0" layoutY="521.0" mnemonicParsing="false" onAction="#showAllOnClick" prefHeight="48.0" prefWidth="181.0" text="Show All" />
    </children>
 </AnchorPane>

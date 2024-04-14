@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
 //import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +15,7 @@ import java.util.logging.Logger;
 
 public class Merchant implements Serializable{
     public String productName;
-    public int quantity;
+    public int productID;
     public int investedPrice;
     public int sellingPrice;
     public String description;
@@ -25,16 +24,16 @@ public class Merchant implements Serializable{
 
     public Merchant() {
         this.productName = null;
-        this.quantity = 0;
+        this.productID = 0;
         this.investedPrice = 0;
         this.sellingPrice = 0;
         this.description = null;
         //this.productNameList = new ArrayList<String>();
         //this.merchantList = FXCollections.observableArrayList();
     }
-    public Merchant(String productName, int quantity, int investedPrice, int sellingPrice, String description) {
+    public Merchant(String productName, int productID, int investedPrice, int sellingPrice, String description) {
         this.productName = productName;
-        this.quantity = quantity;
+        this.productID = productID;
         this.investedPrice = investedPrice;
         this.sellingPrice = sellingPrice;
         this.description = description;
@@ -51,12 +50,12 @@ public class Merchant implements Serializable{
     }
 
 
-    public int getQuantity() {
-        return quantity;
+    public int getProductID() {
+        return productID;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setProductID(int productID) {
+        this.productID = productID;
     }
 
     public int getInvestedPrice() {

@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="624.0" prefWidth="737.0" style="-fx-background-color: black;" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" prefHeight="624.0" prefWidth="737.0" style="-fx-background-color: black;" styleClass="bodybg" stylesheets="@bandpromoter_bg.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_bandPromoter.Event_Budget_CreatorController">
    <children>
       <Label layoutX="259.0" layoutY="38.0" text="Event Budget Creator" textFill="WHITE">
          <font>
@@ -25,6 +24,6 @@
       <TextField layoutX="266.0" layoutY="313.0" prefHeight="31.0" prefWidth="206.0" />
       <Button layoutX="282.0" layoutY="399.0" mnemonicParsing="false" text="Input it to the event list" />
       <Button layoutX="151.0" layoutY="490.0" mnemonicParsing="false" text="View the List" />
-      <Button layoutX="515.0" layoutY="558.0" mnemonicParsing="false" text="Return to the dashboard" />
+      <Button layoutX="515.0" layoutY="558.0" mnemonicParsing="false" onAction="#returnToDashOnClick" text="Return to the dashboard" />
    </children>
 </AnchorPane>

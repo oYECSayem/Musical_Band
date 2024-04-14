@@ -9,12 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< Updated upstream
-
-<AnchorPane id="AnchorPane" prefHeight="902.0" prefWidth="974.0" styleClass="bodybg" stylesheets="@view_product_bg.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
-=======
 <AnchorPane id="AnchorPane" prefHeight="902.0" prefWidth="974.0" styleClass="bodybg" stylesheets="@bgOfMerchantise.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_marchendiseManager.Orders_on_progressController">
->>>>>>> Stashed changes
    <children>
       <TableView layoutX="57.0" layoutY="191.0" prefHeight="375.0" prefWidth="860.0">
         <columns>
@@ -49,13 +44,8 @@
             <Font size="18.0" />
          </font>
       </Button>
-<<<<<<< Updated upstream
-      <Button layoutX="758.0" layoutY="846.0" mnemonicParsing="false" text="Return to Dashboard" />
-      <Label layoutX="264.0" layoutY="26.0" text="Orders on Progress">
-=======
       <Button layoutX="758.0" layoutY="846.0" mnemonicParsing="false" onAction="#returnToDashOnClick" text="Return to Dashboard" />
       <Label layoutX="264.0" layoutY="26.0" text="Orders on Progress" textFill="#9efff4">
->>>>>>> Stashed changes
          <font>
             <Font name="Calibri Italic" size="58.0" />
          </font>
