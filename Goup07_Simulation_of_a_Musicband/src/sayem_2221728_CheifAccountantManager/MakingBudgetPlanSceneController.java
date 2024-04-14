@@ -27,8 +27,6 @@ public class MakingBudgetPlanSceneController implements Initializable {
     @FXML
     private TableColumn<?, ?> dateColumn;
     @FXML
-    private TableColumn<?, ?> categoryColumn;
-    @FXML
     private TableColumn<?, ?> taxesColumn;
     @FXML
     private TableColumn<?, ?> amountColumn;
@@ -39,7 +37,11 @@ public class MakingBudgetPlanSceneController implements Initializable {
     @FXML
     private Label makingBudgetAmountLabel;
     @FXML
-    private TextArea calculationBudgetTA;
+    private TableColumn<?, ?> budgetIDColumn;
+    @FXML
+    private TableColumn<?, ?> budgetEventColumn;
+    @FXML
+    private TextArea calculateBudgetTA;
 
     /**
      * Initializes the controller class.
@@ -56,6 +58,10 @@ public class MakingBudgetPlanSceneController implements Initializable {
     @FXML
     private void getTotalBudgetAmountButton(ActionEvent event) {
         
+    }
+
+    @FXML
+    private void calculateBudgetSummeryButton(ActionEvent event) {
     }
     
 }

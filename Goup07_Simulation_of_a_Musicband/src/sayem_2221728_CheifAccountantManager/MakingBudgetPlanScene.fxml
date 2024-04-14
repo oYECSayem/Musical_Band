@@ -16,7 +16,7 @@
             <Font name="Arial Bold" size="26.0" />
          </font>
       </Label>
-      <TableView layoutX="65.0" layoutY="118.0" prefHeight="225.0" prefWidth="938.0">
+      <TableView fx:id="makingBudgetPlanTV" layoutX="65.0" layoutY="118.0" prefHeight="225.0" prefWidth="938.0">
         <columns>
           <TableColumn fx:id="dateColumn" prefWidth="184.0" text="Date" />
             <TableColumn fx:id="budgetIDColumn" prefWidth="184.0" text="Budget ID" />
@@ -31,7 +31,8 @@
       <Label fx:id="makingBudgetAmountLabel" layoutX="65.0" layoutY="397.0" prefHeight="21.0" prefWidth="251.0" style="-fx-background-color: lavender;" />
       <Label layoutX="622.0" layoutY="397.0" prefHeight="21.0" prefWidth="251.0" style="-fx-background-color: lavender;" />
       <Button layoutX="632.0" layoutY="353.0" mnemonicParsing="false" onAction="#getTotalBudgetAmountButton" text="Get budget total amount below" />
-      <TextArea fx:id="calculationBudgetTA" layoutX="199.0" layoutY="529.0" prefHeight="125.0" prefWidth="553.0" />
-      <Label layoutX="343.0" layoutY="463.0" prefHeight="21.0" prefWidth="289.0" text="Calculation budget summary below" />
+      <TextArea fx:id="calculateBudgetTA" layoutX="199.0" layoutY="529.0" prefHeight="125.0" prefWidth="553.0" />
+      <Label layoutX="343.0" layoutY="463.0" prefHeight="21.0" prefWidth="289.0" />
+      <Button layoutX="361.0" layoutY="469.0" mnemonicParsing="false" onAction="#calculateBudgetSummeryButton" text="Calculation budget summary below" />
    </children>
 </AnchorPane>
