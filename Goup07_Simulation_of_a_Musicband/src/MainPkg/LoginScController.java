@@ -37,8 +37,8 @@ public class LoginScController implements Initializable {
                 "Chief Accountant Manager", "Band Member", "Merchandise Manager",
                  "Band Promoter", "Event Organizer", "Operational Manager");
         //defaultIdpass
-        //userIdTextField.setText("admin");
-        //passwordTextField.setText("12345678");
+        userIdTextField.setText("sa");
+        passwordTextField.setText("sa");
     }
 
 
