@@ -149,6 +149,12 @@ public class MakeInstrumentTrackListSceneController implements Initializable {
                         alert.show();
                     }*/
         }
+        
+        instrumentNameTextField.clear();
+        instrumentIdTextField.clear();
+        serialNumberTextField.clear();
+        modelTextField.clear();
+        quantityTextField.clear();
     }
 
         @FXML
