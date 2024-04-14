@@ -15,7 +15,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -24,6 +26,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sadia_2220645_Fan.LyricsAndSpecialMgs;
 import sadia_2220645_InstrumentManager.BudgetReceipt;
+import static sayem_2221728_BandMember.BandMember.giveApprovedBudgetToAccountant;
 
 /**
  * FXML Controller class
@@ -70,15 +73,62 @@ public class ApproveBudgetSceneController implements Initializable {
 
     @FXML
     private void addBudgetInTableButton(ActionEvent event) {
-        LocalDate date = dateTF.getValue();
-        int budgetID = Integer.parseInt(budgetIDTF.getText());
-        String budgetEvent = budgetEventTF.getText();
-        float taxes = Float.parseFloat(taxesTF.getText());
-        float amount = Float.parseFloat(amountTF.getText());
-
-        budget = new Budget(date, budgetID, budgetEvent, taxes, amount);
-        budgetTableView.getItems().add(budget);
+    LocalDate date = dateTF.getValue();
+    int budgetID;
+    float taxes;
+    float amount;
+    
+    // Check for empty fields
+    if (dateTF.getValue() == null || budgetIDTF.getText().isEmpty() || 
+        budgetEventTF.getText().isEmpty() || taxesTF.getText().isEmpty() ||
+        amountTF.getText().isEmpty()) {
+        // If any of the fields are empty, show the alert
+        Alert unfill = new Alert(Alert.AlertType.WARNING);
+        unfill.setTitle("Warning");
+        unfill.setHeaderText(null);
+        unfill.setContentText("Please fill in all fields.");
+        unfill.showAndWait();
+        return;
     }
+    
+    // Parse numeric fields
+    try {
+        budgetID = Integer.parseInt(budgetIDTF.getText());
+        taxes = Float.parseFloat(taxesTF.getText());
+        amount = Float.parseFloat(amountTF.getText());
+    } catch (NumberFormatException e) {
+        // If parsing fails, show an error alert and return
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText("Please enter valid numeric values for Budget ID, Taxes, and Amount.");
+        alert.showAndWait();
+        return;
+    }
+
+    // If all checks pass, add the budget to the table
+    budget = new Budget(dateTF.getValue(), budgetID, budgetEventTF.getText(), taxes, amount);
+    budgetTableView.getItems().add(budget);
+    giveApprovedBudgetToAccountant(budget);
+    
+    // Show success alert
+    Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+    successAlert.setTitle("Success");
+    successAlert.setHeaderText(null);
+    successAlert.setContentText("Budget information has been successfully added to the table.");
+    
+    // Add a "Success" button
+    ButtonType successButton = new ButtonType("Success");
+    successAlert.getButtonTypes().setAll(successButton);
+    
+    // Show the alert and wait for the user to click the "Success" button
+    successAlert.showAndWait().ifPresent(buttonType -> {
+        if (buttonType == successButton) {
+            // Do something if the "Success" button is clicked
+            System.out.println("Success button clicked!");
+        }
+    });
+}
 
     @FXML
     private void showOthersBudgetInfoButton(ActionEvent event) {
