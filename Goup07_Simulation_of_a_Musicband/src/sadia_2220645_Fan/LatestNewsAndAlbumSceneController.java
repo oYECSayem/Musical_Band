@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import sadia_2220645_InstrumentManager.BudgetReceipt;
-import sadia_2220645_InstrumentManager.Instrument;
+
 
 public class LatestNewsAndAlbumSceneController implements Initializable {
 
