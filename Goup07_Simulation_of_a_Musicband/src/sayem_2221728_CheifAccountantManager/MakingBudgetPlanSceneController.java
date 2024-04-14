@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package sayem_2221728_CheifAccountantManager;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,23 +10,22 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import sayem_2221728_BandMember.Budget;
 
-/**
- * FXML Controller class
- *
- * @author USER
- */
+
 public class MakingBudgetPlanSceneController implements Initializable {
 
     @FXML
     private AnchorPane showBudgetAmountLabel;
     @FXML
-    private TableColumn<?, ?> dateColumn;
+    private TableColumn<Budget, LocalDate> dateColumn;
     @FXML
-    private TableColumn<?, ?> taxesColumn;
+    private TableColumn<Budget, Float> taxesColumn;
     @FXML
-    private TableColumn<?, ?> amountColumn;
+    private TableColumn<Budget, Float> amountColumn;
     @FXML
     private RadioButton monthlyRB;
     @FXML
@@ -37,22 +33,27 @@ public class MakingBudgetPlanSceneController implements Initializable {
     @FXML
     private Label makingBudgetAmountLabel;
     @FXML
-    private TableColumn<?, ?> budgetIDColumn;
+    private TableColumn<Budget, Integer> budgetIDColumn;
     @FXML
-    private TableColumn<?, ?> budgetEventColumn;
+    private TableColumn<Budget, String> budgetEventColumn;
     @FXML
     private TextArea calculateBudgetTA;
 
-    /**
-     * Initializes the controller class.
-     */
+    ToggleGroup tg;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        dateColumn.setCellValueFactory(new PropertyValueFactory<Budget, LocalDate>("date"));
+        budgetIDColumn.setCellValueFactory(new PropertyValueFactory<Budget, Integer>("ID"));
+        budgetEventColumn.setCellValueFactory(new PropertyValueFactory<Budget, String>("event"));
+        taxesColumn.setCellValueFactory(new PropertyValueFactory<Budget, Float>("taxes"));
+        amountColumn.setCellValueFactory(new PropertyValueFactory<Budget, Float>("amount"));
+        monthlyRB.setToggleGroup(tg);
+        annuallyRB.setToggleGroup(tg);
     }    
 
     @FXML
     private void addEntryButton(ActionEvent event) {
+        
     }
 
     @FXML

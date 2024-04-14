@@ -120,7 +120,7 @@ public class BandMember extends User implements Serializable {
         ObjectOutputStream oos = null;
 
         try {
-            f = new File(".bin");
+            f = new File("TechnicalSupportMessage.bin");
             if(f.exists()){
                 fos = new FileOutputStream(f,true);
                 oos = new MainPkg.AppendableObjectOutputStream(fos);                
