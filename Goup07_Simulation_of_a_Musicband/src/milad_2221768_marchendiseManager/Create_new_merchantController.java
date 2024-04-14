@@ -37,22 +37,20 @@ public class Create_new_merchantController implements Initializable {
     private TextField investedPriceTextFeild;
     @FXML
     private TextField sellingPriceTextFeild;
-    @FXML
     private TextField descriptionTextFeild;
-    @FXML
     private TextField productnameTextFeild;
-    @FXML
     private TableView<Merchant> tableview;
-    @FXML
     private TableColumn<Merchant, String> productNameTable;
+<<<<<<< HEAD
     
     //private TableColumn<Merchant, Integer> availableQuantityTable;
     
     @FXML
+=======
+    private TableColumn<Merchant, Integer> availableQuantityTable;
+>>>>>>> c3b1dcd337245dcf0f76b3cbf7cc73a308e4bcae
     private TableColumn<Merchant, Integer> investedpriceTable;
-    @FXML
     private TableColumn<Merchant, Integer> sellingPriceTable;
-    @FXML
     private TableColumn<Merchant, String> descriptionTable;
     
     Alert success=new Alert(Alert.AlertType.INFORMATION,"Successfully Added the product");
@@ -79,7 +77,6 @@ public class Create_new_merchantController implements Initializable {
         
     }    
 
-    @FXML
     private void returningDashBoardOnClick(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Merchendize_manager_dashboard.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -96,7 +93,6 @@ public class Create_new_merchantController implements Initializable {
         //myStage.show();
     }
 
-    @FXML
     private void addProductArrayButton(ActionEvent event) {
         
         String name = productnameTextFeild.getText();
@@ -125,7 +121,6 @@ public class Create_new_merchantController implements Initializable {
        
     }
 
-    @FXML
     private void showAllOnClick(ActionEvent event) {
         ObjectInputStream ois = null;
         ObservableList <Merchant> MerchantList = FXCollections.observableArrayList();
