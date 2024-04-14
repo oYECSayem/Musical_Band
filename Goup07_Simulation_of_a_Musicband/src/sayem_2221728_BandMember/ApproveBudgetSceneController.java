@@ -23,6 +23,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sadia_2220645_Fan.LyricsAndSpecialMgs;
+import sadia_2220645_InstrumentManager.BudgetReceipt;
 
 /**
  * FXML Controller class
@@ -83,41 +84,43 @@ public class ApproveBudgetSceneController implements Initializable {
 
     @FXML
     private void showOthersBudgetInfoButton(ActionEvent event) {
-        {
         ObjectInputStream ois = null;
-        ObservableList<Budget> budgetlist = FXCollections.observableArrayList();
+        ObservableList <BudgetReceipt> BudgetReceiptlist = FXCollections.observableArrayList();
         try {
-           Budget i;
-            ois = new ObjectInputStream(new FileInputStream("InstrumentBudgetPlan.bin"));
-
-            while (true) {
-                i = (Budget) ois.readObject();
-
-                // if(i.getInstrumentID()%2==0){
+             BudgetReceipt i;
+             ois = new ObjectInputStream(new FileInputStream("BudgetReceipt.bin"));
+             
+            while(true){
+                i = (BudgetReceipt) ois.readObject();
+                
+               // if(i.getInstrumentID()%2==0){
                 //    InstrumentList.add(i);
-                budgetlist.add(i);
+                
+                  BudgetReceiptlist.add(i);
             }
-        } catch (RuntimeException e) {
+        }
+        catch(RuntimeException e){
             e.printStackTrace();
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             try {
-                if (ois != null) {
+                if(ois!=null)
                     ois.close();
-                }
-            } catch (IOException ex1) {
-            }
+            } catch (IOException ex1) {  }           
+        }
+        
+         // Display feedback details in the TextArea
+        StringBuilder BudgetReceiptlistDetails = new StringBuilder();
+        for (BudgetReceipt mm : BudgetReceiptlist ) {
+            BudgetReceiptlistDetails.append(mm.toString()).append("\n");
         }
 
-        // Display feedback details in the TextArea
-        StringBuilder budgetDetails = new StringBuilder();
-        for (Budget mm : budgetlist) {
-            budgetDetails .append(mm.toString()).append("\n");
-        }
+        othersBudgetInfoTA.setText(BudgetReceiptlistDetails.toString());
 
-        othersBudgetInfoTA.setText(budgetDetails.toString());
+        //othersBudgetInfoTA.setText(budgetDetails.toString());
     }
-    }
+}
 
 
     
-}
+
