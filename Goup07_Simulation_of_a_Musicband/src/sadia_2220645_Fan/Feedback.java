@@ -17,8 +17,8 @@ import java.time.LocalDate;
  */
 public class Feedback implements Serializable {
     
-    String name, topic, description;
-    LocalDate date;
+    private String name, topic, description;
+    private LocalDate date;
 
     public Feedback(String name, String topic, String description, LocalDate date) {
         this.name = name;

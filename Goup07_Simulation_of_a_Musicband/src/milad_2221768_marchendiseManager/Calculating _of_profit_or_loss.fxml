@@ -7,8 +7,12 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< Updated upstream
 
 <AnchorPane id="AnchorPane" prefHeight="844.0" prefWidth="936.0" styleClass="bodybg" stylesheets="@view_product_bg.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+=======
+<AnchorPane id="AnchorPane" prefHeight="844.0" prefWidth="936.0" styleClass="bodybg" stylesheets="@bgOfMerchantise.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_marchendiseManager.Calculating_of_profit_or_lossController">
+>>>>>>> Stashed changes
    <children>
       <Label layoutX="300.0" layoutY="22.0" style="-fx-background-color: white;" text="Calculating of Profit Or Loss">
          <font>

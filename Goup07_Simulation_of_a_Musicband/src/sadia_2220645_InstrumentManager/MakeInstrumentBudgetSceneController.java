@@ -61,6 +61,13 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
         return instrumentBudgetPlanTableView.getItems();
     }
     
+    // Method to set selected instruments
+     public void setSelectedInstruments(ObservableList<Instrument> selectedInstruments) {
+        this.selectedInstruments = selectedInstruments;
+        
+       
+    }
+    
      
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -75,16 +82,11 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
         //totalPriceCol.setCellValueFactory(new PropertyValueFactory<Instrument, Integer>("totalPrice"));
     }
 
-    // Method to set selected instruments
-    public void setSelectedInstruments(ObservableList<Instrument> selectedInstruments) {
-        this.selectedInstruments = selectedInstruments;
-        
-       //instrumentBudgetPlanTableView.getItems().addAll(selectedInstruments);
-    }
+    
 
     @FXML
     private void addInstrumentToTheBudjetPlanButtonOnClicked(ActionEvent event) {
-        // Check if any instrument is selected
+        
     if (selectedInstruments == null || selectedInstruments.isEmpty()) {
         alert1.showAndWait();
         return;
@@ -101,13 +103,12 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
         }
 
         if (!isDuplicate) {
-            // Save the instrument to the file
+            
             makeBudgetForIntrument(instrument);
             
-            // Show alert for adding instrument
             alert2.showAndWait();
         } else {
-            // Show alert for duplicate instrument
+            
             Alert alert = new Alert(Alert.AlertType.WARNING, "Selected instrument is already added.");
             alert.showAndWait();
         }
@@ -158,7 +159,7 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
         
     ObservableList<Instrument> selectedInstruments = instrumentBudgetPlanTableView.getSelectionModel().getSelectedItems();
 
-    // Remove the selected row(s) from the data model
+    // Remove the selected row
      instrumentBudgetPlanTableView.getItems().removeAll(selectedInstruments);
         
        
