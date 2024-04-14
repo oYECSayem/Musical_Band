@@ -57,8 +57,6 @@ public class ApproveBudgetSceneController implements Initializable {
     @FXML
     private TableView<Budget> budgetTableView;
     Budget budget;
-    @FXML
-    private Button showOthersBudgetInfoButton;
 
     
     @Override
