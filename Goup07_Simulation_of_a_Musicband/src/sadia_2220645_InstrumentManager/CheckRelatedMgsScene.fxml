@@ -7,10 +7,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="579.0" prefWidth="705.0" style="-fx-background-color: F1DEFA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" prefHeight="579.0" prefWidth="705.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_InstrumentManager.CheckRelatedMgsSceneController">
    <children>
-      <Label fx:id="receiveMgsLabel" layoutX="180.0" layoutY="28.0" prefHeight="244.0" prefWidth="283.0" style="-fx-background-color: pink;" />
       <Button layoutX="59.0" layoutY="102.0" mnemonicParsing="false" onAction="#receiveMgsButtonOnClicked" text="Receive Mgs" />
       <TextArea fx:id="sendMgsTextArea" layoutX="180.0" layoutY="297.0" prefHeight="255.0" prefWidth="283.0" />
       <Button layoutX="69.0" layoutY="380.0" mnemonicParsing="false" onAction="#sendMgsButtonOnClicked" text="Send Mgs" />
@@ -29,5 +27,6 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
+      <TextArea fx:id="receiveMgsTextArea1" layoutX="180.0" layoutY="33.0" prefHeight="255.0" prefWidth="283.0" />
    </children>
 </AnchorPane>

@@ -34,16 +34,13 @@ public class LoginScController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         userTypeComboBox.getItems().addAll("Fan", "Instrument Manager",
-                "Chief Accountant Manager", "Instrument Manager", "Merchandise Manager",
+                "Chief Accountant Manager", "Band Member", "Merchandise Manager",
                  "Band Promoter", "Event Organizer", "Operational Manager");
         //defaultIdpass
-        userIdTextField.setText("admin");
-        passwordTextField.setText("12345678");
+        //userIdTextField.setText("admin");
+        //passwordTextField.setText("12345678");
     }
 
-    @FXML
-    private void forgotPasswordButtonOnClick(ActionEvent event) {
-    }
 
     @FXML
     private void loginButtonOnClick(ActionEvent event) throws IOException {
@@ -64,10 +61,9 @@ public class LoginScController implements Initializable {
 
             Stage currentStage = (Stage) login.getScene().getWindow();
             if (userType.equals("Band Member")) {
-                //SceneChange newScene= new SceneChange();
-                //newScene.Scenechanger(currentStage, "User_1_MainDashboard.fxml");
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Band Member Dashboard.fxml"));
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sayem_2221728_BandMember/BandMemberDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);
@@ -91,13 +87,13 @@ public class LoginScController implements Initializable {
                 currentStage.setScene(scene);
             }
             if (userType.equals("Fan")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Fan Dashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sadia_2220645_Fan/FansDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);
             }
             if (userType.equals("Instrument Manager")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Instrument Manager Dashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sadia_2220645_InstrumentManager/InstrumentManagerDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);

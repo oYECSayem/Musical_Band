@@ -1,0 +1,80 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
+package sayem_2221728_BandMember;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.layout.BorderPane;
+
+/**
+ * FXML Controller class
+ *
+ * @author USER
+ */
+public class BandMemberDashboardController implements Initializable {
+
+    @FXML
+    private BorderPane borderPane;
+
+   
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+    }    
+
+    @FXML
+    private void giveScheduleButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("GiveScheduleForCollabrationScene.fxml"));
+         borderPane.setCenter(root);
+    }
+
+    @FXML
+    private void approveBudgetButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ApproveBudget.fxml"));
+         borderPane.setCenter(root);
+    }
+
+    @FXML
+    private void uploadContentButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("UploadContent.fxml"));
+         borderPane.setCenter(root);
+    }
+
+    @FXML
+    private void instrumentTechnicalSupportButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("TakeSupportFromInstrumentManagerScene.fxml"));
+         borderPane.setCenter(root);
+    }
+
+    @FXML
+    private void lyricsWritingButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("FeedbackToFansActivityScene.fxml"));
+         borderPane.setCenter(root);
+    }
+
+    @FXML
+    private void contactWithOperationalManagerButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("CommunicateWithOperationalManagerAndBandPromoter.fxml"));
+         borderPane.setCenter(root);
+    }
+
+    @FXML
+    private void communicationWithFansButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("FeedbackToFansActivityScene.fxml"));
+         borderPane.setCenter(root);
+    }
+    @FXML
+    private void feedbackAndImprovemantButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("TakeFeedbackAndImprovementSection.fxml"));
+         borderPane.setCenter(root);
+    }
+    
+}
