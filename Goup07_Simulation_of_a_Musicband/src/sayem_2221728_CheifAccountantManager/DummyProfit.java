@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sayem_2221728_CheifAccountantManager;
 
 import java.time.LocalDate;
 
-/**
- *
- * @author USER
- */
+
 public class DummyProfit {
     LocalDate date;
     String eventName;
@@ -49,12 +42,12 @@ public class DummyProfit {
         this.expense = expense;
     }
 
-    public float getEarningAmount() {
+    public float getIncome() {
         return income;
     }
 
-    public void setEarningAmount(float earningAmount) {
-        this.income = earningAmount;
+    public void setIncome(float income) {
+        this.income = income;
     }
 
     public float getProfit() {
@@ -67,7 +60,7 @@ public class DummyProfit {
 
     @Override
     public String toString() {
-        return "DummyProfit{" + "date=" + date + ", eventName=" + eventName + ", expense=" + expense + ", earningAmount=" + income + ", profit=" + profit + '}';
+        return "DummyProfit{" + "date=" + date + ", eventName=" + eventName + ", expense=" + expense + ", income=" + income + ", profit=" + profit + '}';
     }
     
 }

@@ -74,12 +74,6 @@ public class OverallMonthlyProfitController implements Initializable {
         profitColumn.setCellValueFactory(new PropertyValueFactory<DummyProfit, Float>("profit"));
     }    
 
-    @FXML
-    private void calculateProfitOnaction(ActionEvent event) {
-        float profit = Float.parseFloat(incomeTF.getText()) - Float.parseFloat(expenseTF.getText());
-        profitAmountTA.setText(Float.toString(profit));
-    }
-
 
     @FXML
     private void showMonthlyProfitChartButton(ActionEvent event) {
@@ -133,5 +127,13 @@ public class OverallMonthlyProfitController implements Initializable {
         DummyProfit dp = new DummyProfit(date, eventName, expense, income, profit);
         overallMonthlyProfitTV.getItems().add(dp);
     }
-    
+
+    @FXML
+    private void calculateProfitButton(ActionEvent event) {
+        
+        float profit = Float.parseFloat(incomeTF.getText()) - Float.parseFloat(expenseTF.getText());
+        profitAmountTA.setText(Float.toString(profit));
+    }
 }
+
+    
