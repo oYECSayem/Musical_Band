@@ -6,19 +6,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="551.0" prefWidth="861.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" prefHeight="683.0" prefWidth="1024.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="createPollButton" layoutX="71.0" layoutY="357.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="260.0" text="Create Poll" />
+      <Button fx:id="createPollButton" layoutX="65.0" layoutY="502.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="260.0" text="Create Poll" />
       <ComboBox fx:id="selectConcertComboBox" layoutX="171.0" layoutY="49.0" prefHeight="31.0" prefWidth="170.0" />
       <Label layoutX="37.0" layoutY="54.0" prefHeight="21.0" prefWidth="124.0" text="Select Concert:" />
-      <Label layoutX="37.0" layoutY="136.0" prefHeight="21.0" prefWidth="136.0" text="Question" />
-      <TextField fx:id="questionForPolls" layoutX="37.0" layoutY="171.0" prefHeight="31.0" prefWidth="316.0" />
-      <Label layoutX="37.0" layoutY="225.0" prefHeight="21.0" prefWidth="136.0" text="Options" />
-      <Button fx:id="addOptionButtonForPolls" layoutX="37.0" layoutY="268.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="113.0" text="Add Option" />
-      <Button fx:id="deleteButtonForPolls" layoutX="243.0" layoutY="268.0" mnemonicParsing="false" text="Delete Option" />
+      <Label layoutX="37.0" layoutY="161.0" prefHeight="21.0" prefWidth="136.0" text="Question" />
+      <TextField fx:id="questionForPolls" layoutX="37.0" layoutY="202.0" prefHeight="31.0" prefWidth="316.0" />
+      <Label layoutX="37.0" layoutY="277.0" prefHeight="21.0" prefWidth="136.0" text="Options" />
+      <Button fx:id="addOptionButtonForPolls" layoutX="37.0" layoutY="326.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="113.0" text="Add Option" />
+      <Button fx:id="deleteButtonForPolls" layoutX="240.0" layoutY="326.0" mnemonicParsing="false" text="Delete Option" />
       <Button fx:id="addCommentSectionButton" layoutX="487.0" layoutY="171.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="260.0" text="Add Comment Section" />
       <Button fx:id="addRatingButton" layoutX="487.0" layoutY="246.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="260.0" text="Add Rating " />
-      <Label layoutX="37.0" layoutY="108.0" prefHeight="21.0" prefWidth="124.0" text="Polls:" />
+      <Label layoutX="37.0" layoutY="129.0" prefHeight="21.0" prefWidth="124.0" text="Polls:" />
    </children>
 </AnchorPane>
