@@ -1,23 +1,21 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_EventOrganizer/UpdateOfEventController.java</file>
-            <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_OperatinalManager/EvaluateBandMemberPerformanceController.java</file>
-            <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_EventOrganizer/PromotionUpcomingEventController.java</file>
+            <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_EventOrganizer/FeedBackAndFeaturesController.java</file>
             <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_OperatinalManager/PromotionAndMarketingController.java</file>
-            <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_OperatinalManager/MakingTourManagementPlanController.java</file>
             <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_EventOrganizer/RsvpPageController.java</file>
             <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_OperatinalManager/LogisticsCoordinationController.java</file>
-            <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_EventOrganizer/ManageBudgetAndExpensesController.java</file>
             <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_OperatinalManager/TeamManagementController.java</file>
             <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_EventOrganizer/ManageBudgetAndExpenses.java</file>
             <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_OperatinalManager/ContractNegotiationController.java</file>
             <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_EventOrganizer/TicketPlatformViewOfEventOrganizerController.java</file>
+            <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_OperatinalManager/EvaluateBandMemberPerformanceController.java</file>
+            <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_EventOrganizer/PromotionUpcomingEventController.java</file>
+            <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_OperatinalManager/MakingTourManagementPlanController.java</file>
+            <file>file:/E:/Musical_Band/Goup07_Simulation_of_a_Musicband/src/fahim_2220440_EventOrganizer/ManageBudgetAndExpensesController.java</file>
         </group>
     </open-files>
 </project-private>
-=======
->>>>>>> 78515b2580eb762e156fd485ce3c5a674ea53644
