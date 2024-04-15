@@ -6,6 +6,8 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -38,7 +40,7 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></RadioButton>
-      <TextArea fx:id="guidelineAndManualDetailsTextArea" layoutX="456.0" layoutY="410.0" prefHeight="184.0" prefWidth="349.0" />
+      <TextArea fx:id="guidelineAndManualDetailsTextArea" layoutX="456.0" layoutY="410.0" prefHeight="184.0" prefWidth="400.0" />
       <Label layoutX="38.0" layoutY="349.0" prefHeight="21.0" prefWidth="238.0" text="Give offline Service shedule:" />
       <DatePicker fx:id="datepicker" layoutX="34.0" layoutY="386.0" />
       <Label layoutX="467.0" layoutY="376.0" prefHeight="21.0" prefWidth="272.0" text="Setup Guideline &amp; Manual Details:" textFill="#b52020">
@@ -67,5 +69,10 @@
       <TextArea fx:id="receiveMgsTextArea" layoutX="29.0" layoutY="92.0" prefHeight="151.0" prefWidth="261.0" />
       <Label layoutX="31.0" layoutY="307.0" prefHeight="21.0" prefWidth="103.0" text="Sender Name:" />
       <TextField fx:id="mgsSenderNameTextField" layoutX="134.0" layoutY="302.0" />
+      <ImageView fitHeight="87.0" fitWidth="145.0" layoutX="700.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/wired-gradient-955-demand.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
