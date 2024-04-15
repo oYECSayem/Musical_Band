@@ -19,7 +19,7 @@
         <ComboBox fx:id="monthComboBox" layoutX="34.0" layoutY="69.0" prefHeight="31.0" prefWidth="162.0" promptText="Select month" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="69.0" />
         <TextField fx:id="yearTextField" layoutX="199.0" layoutY="69.0" promptText="Year" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="69.0" />
         
-        <TableView fx:id="overallMonthlyProfitTV" layoutX="34.0" layoutY="419.0" prefHeight="212.0" prefWidth="825.0" AnchorPane.bottomAnchor="111.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="419.0">
+        <TableView fx:id="overallMonthlyProfitTV" layoutX="40.0" layoutY="430.0" prefHeight="174.0" prefWidth="792.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="71.0" AnchorPane.topAnchor="430.0">
             <columns>
                 <TableColumn fx:id="dateColumn" prefWidth="171.0" text="Date">
                     <cellValueFactory>
@@ -56,8 +56,8 @@
       <TextField fx:id="eventNameTF" layoutX="128.0" layoutY="167.0" />
       <TextField fx:id="incomeTF" layoutX="128.0" layoutY="208.0" />
       <TextField fx:id="expenseTF" layoutX="128.0" layoutY="253.0" onAction="#calculateProfitOnaction" />
-      <Label layoutX="54.0" layoutY="327.0" prefHeight="21.0" prefWidth="177.0" style="-fx-background-color: pink;" text="Profit = Income - Expense" />
-      <TextArea fx:id="profitAmountTA" layoutX="34.0" layoutY="358.0" prefHeight="34.0" prefWidth="232.0" promptText="Profit amount" />
+      <Label layoutX="54.0" layoutY="308.0" prefHeight="21.0" prefWidth="177.0" style="-fx-background-color: pink;" text="Profit = Income - Expense" />
+      <TextArea fx:id="profitAmountTA" layoutX="40.0" layoutY="337.0" prefHeight="34.0" prefWidth="232.0" promptText="Profit amount" />
       <Button layoutX="54.0" layoutY="649.0" mnemonicParsing="false" onAction="#calculateTotalProfitButton" prefHeight="31.0" prefWidth="177.0" text="Calculate Total profit" />
       <TextArea fx:id="totalProfitAmountTA" layoutX="251.0" layoutY="641.0" prefHeight="31.0" prefWidth="232.0" promptText="Total Profit amount" />
       <Button layoutX="550.0" layoutY="649.0" mnemonicParsing="false" onAction="#showMonthlyProfitChartButton" prefHeight="31.0" prefWidth="258.0" text="show monthly profit chart ratio" />
@@ -69,5 +69,6 @@
       <Line endX="44.0" endY="-273.0" layoutX="402.0" layoutY="351.0" startX="44.0" startY="40.0" />
       <TextArea fx:id="expenseEarningInfoTA" layoutX="510.0" layoutY="78.0" prefHeight="240.0" prefWidth="317.0" promptText="Show info from Band member" />
       <Button layoutX="550.0" layoutY="337.0" mnemonicParsing="false" onAction="#getInExpenseEarningInfoButton" prefHeight="31.0" prefWidth="218.0" text="Get info from Band member" />
+      <Button layoutX="40.0" layoutY="392.0" mnemonicParsing="false" onAction="#addToTableButton" prefHeight="31.0" prefWidth="177.0" text="Add to table" />
     </children>
 </AnchorPane>

@@ -122,5 +122,16 @@ public class OverallMonthlyProfitController implements Initializable {
     @FXML
     private void calculateTotalProfitButton(ActionEvent event) {
     }
+
+    @FXML
+    private void addToTableButton(ActionEvent event) {
+        LocalDate date = dateDP.getValue();
+        String eventName = eventNameTF.getText();
+        float expense = Float.parseFloat(expenseTF.getText());
+        float income = Float.parseFloat(incomeTF.getText());
+        float profit = Float.parseFloat(profitAmountTA.getText());
+        DummyProfit dp = new DummyProfit(date, eventName, expense, income, profit);
+        overallMonthlyProfitTV.getItems().add(dp);
+    }
     
 }

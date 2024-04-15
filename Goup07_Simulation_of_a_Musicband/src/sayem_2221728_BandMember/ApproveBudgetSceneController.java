@@ -73,52 +73,56 @@ public class ApproveBudgetSceneController implements Initializable {
 
     @FXML
     private void addBudgetInTableButton(ActionEvent event) {
-    LocalDate date = dateTF.getValue();
-    int budgetID;
-    float taxes;
-    float amount;
-    
-  
-    if (dateTF.getValue() == null || budgetIDTF.getText().isEmpty() || 
-        budgetEventTF.getText().isEmpty() || taxesTF.getText().isEmpty() ||
-        amountTF.getText().isEmpty()) {
-        // If any of the fields are empty, show the alert
-        Alert unfill = new Alert(Alert.AlertType.WARNING);
-        unfill.setTitle("Warning");
-        unfill.setHeaderText(null);
-        unfill.setContentText("Please fill in all fields.");
-        unfill.showAndWait();
-        return;
-    }
-    
-    
-    try {
-        budgetID = Integer.parseInt(budgetIDTF.getText());
-        taxes = Float.parseFloat(taxesTF.getText());
-        amount = Float.parseFloat(amountTF.getText());
-    } catch (NumberFormatException e) {
         
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        alert.setContentText("Please enter valid numeric values for Budget ID, Taxes, and Amount.");
-        alert.showAndWait();
-        return;
-    }
+        LocalDate date = dateTF.getValue();
+        int budgetID;
+        float taxes;
+        float amount;
 
-    
-    budget = new Budget(dateTF.getValue(), Integer.parseInt(budgetIDTF.getText()), 
-            budgetEventTF.getText(),Float.parseFloat(taxesTF.getText()), Float.parseFloat(amountTF.getText()));
-    budgetTableView.getItems().add(budget);
-    giveApprovedBudgetToAccountant(budget);
-    
-    
-    Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-    successAlert.setTitle("Success");
-    successAlert.setHeaderText(null);
-    successAlert.setContentText("Budget information has been successfully added to the table.");
-    successAlert.showAndWait();
-    return;
+
+        if (dateTF.getValue() == null || budgetIDTF.getText().isEmpty() || 
+            budgetEventTF.getText().isEmpty() || taxesTF.getText().isEmpty() ||
+            amountTF.getText().isEmpty()) {
+            // If any of the fields are empty, show the alert
+            Alert unfill = new Alert(Alert.AlertType.WARNING);
+            unfill.setTitle("Warning");
+            unfill.setHeaderText(null);
+            unfill.setContentText("Please fill in all fields.");
+            unfill.showAndWait();
+            return;
+        }
+
+
+        try {
+            budgetID = Integer.parseInt(budgetIDTF.getText());
+            taxes = Float.parseFloat(taxesTF.getText());
+            amount = Float.parseFloat(amountTF.getText());
+        } catch (NumberFormatException e) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please enter valid numeric values for Budget ID, Taxes, and Amount.");
+            alert.showAndWait();
+            return;
+        }
+
+
+        budget = new Budget(dateTF.getValue(), Integer.parseInt(budgetIDTF.getText()), 
+                budgetEventTF.getText(),Float.parseFloat(taxesTF.getText()), Float.parseFloat(amountTF.getText()));
+        budgetTableView.getItems().add(budget);
+        giveApprovedBudgetToAccountant(budget);
+        budgetIDTF.clear();
+        budgetEventTF.clear();
+        taxesTF.clear();
+        amountTF.clear();
+        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+        successAlert.setTitle("Success");
+        successAlert.setHeaderText(null);
+        successAlert.setContentText("Budget information has been successfully added to the table.");
+        successAlert.showAndWait();
+        return;
+        
     
 }
 

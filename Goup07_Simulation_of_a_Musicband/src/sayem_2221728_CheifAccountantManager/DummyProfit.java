@@ -17,11 +17,11 @@ public class DummyProfit {
     float income;
     float profit;
 
-    public DummyProfit(LocalDate date, String eventName, float expense, float earningAmount, float profit) {
+    public DummyProfit(LocalDate date, String eventName, float expense, float income, float profit) {
         this.date = date;
         this.eventName = eventName;
         this.expense = expense;
-        this.income = earningAmount;
+        this.income = income;
         this.profit = profit;
     }
 
