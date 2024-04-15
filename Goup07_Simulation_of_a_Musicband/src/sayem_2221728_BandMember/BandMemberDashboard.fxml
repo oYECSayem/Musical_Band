@@ -16,7 +16,6 @@
                     <items>
                         <MenuItem onAction="#giveScheduleButton" text="Give Schedule for Collaboration" />
                         <MenuItem onAction="#approveBudgetButton" text="Approve Budget" />
-                        <MenuItem onAction="#uploadContentButton" text="Upload Content" />
                         <MenuItem onAction="#instrumentTechnicalSupportButton" text="Instrument Technical Support" />
                         <MenuItem onAction="#lyricsWritingButton" text="Lyrics Writing" />
                         <MenuItem onAction="#contactWithOperationalManagerButton" text="Contact with Operational Manager" />
@@ -29,7 +28,7 @@
                         <!-- Placeholder for any notification-related actions -->
                     </items>
                 </Menu>
-                <Menu text="Extras">
+                <Menu onAction="#logOutButton">
                     <items>
                         <!-- Placeholder for any extra actions -->
                     </items>

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -115,7 +116,16 @@ public class OverallMonthlyProfitController implements Initializable {
 
     @FXML
     private void calculateTotalProfitButton(ActionEvent event) {
+        float totalProfit = 0.0f;
+        ObservableList<DummyProfit> items = overallMonthlyProfitTV.getItems();
+
+        for (DummyProfit item : items) {
+            totalProfit += item.getProfit();
     }
+    
+    totalProfitAmountTA.setText(Float.toString(totalProfit));
+}
+
 
     @FXML
     private void addToTableButton(ActionEvent event) {
@@ -126,6 +136,7 @@ public class OverallMonthlyProfitController implements Initializable {
         float profit = Float.parseFloat(profitAmountTA.getText());
         DummyProfit dp = new DummyProfit(date, eventName, expense, income, profit);
         overallMonthlyProfitTV.getItems().add(dp);
+        if (dateDP.getValue() == null|| eventNameTF.getText().isEmpty()){}
     }
 
     @FXML
