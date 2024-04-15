@@ -57,7 +57,7 @@ public class PurchasingMerchandiseSceneController implements Initializable {
     private TextArea purchasedMerchandiseReceiptTextField;
     
     Alert Unfilled=new Alert(Alert.AlertType.WARNING,"Please fillup 11 digit Phone Number!");
-    Alert success=new Alert(Alert.AlertType.INFORMATION,"Successfully Added");
+    Alert success=new Alert(Alert.AlertType.INFORMATION,"Purchase Successfully Done! ");
     Alert empty=new Alert(Alert.AlertType.ERROR,"Please Fillup Everything! ");
     Alert InvalidPhoneNum=new Alert(Alert.AlertType.WARNING,"Invalid Phone Number! ");
 
@@ -145,6 +145,7 @@ public class PurchasingMerchandiseSceneController implements Initializable {
             }else{
                 CashMemo m = new CashMemo(name, address, merchantDetails, paymentMode, phoneNumber);
                 Purchasemerchandise(m);
+                success.show();
             }
 
         } catch (NumberFormatException e) {
