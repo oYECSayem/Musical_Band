@@ -11,8 +11,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -76,5 +79,20 @@ public class BandMemberDashboardController implements Initializable {
     private void SocialMediaLinkButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SocialMediaScene.fxml"));
          borderPane.setCenter(root);
+    }
+
+    @FXML
+    private void logOutButton(ActionEvent event)  throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainPkg/LoginSc.fxml"));
+        Parent parent = loader.load();
+
+        
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+
+        Scene LoginSc = new Scene(parent);
+
+        currentStage.setScene(LoginSc);
+        currentStage.show();
     }
 }

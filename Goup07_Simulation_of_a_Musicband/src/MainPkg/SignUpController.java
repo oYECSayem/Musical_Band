@@ -70,33 +70,74 @@ public class SignUpController implements Initializable {
 
     @FXML
     private void createAccountButtonOnClick(ActionEvent event) {
-        String fullName=newNameTextField.getText();
+        String fullName = newNameTextField.getText();
         String userName = newUserNameTextField.getText();
-        String phoneNumber = newUserPhoneNumberTextField.getText();       
+        String phoneNumber = newUserPhoneNumberTextField.getText();
         String password = newPasswordTextField.getText();
         String confirmPassword = confirmPasswordTextField.getText();
-        LocalDate dob = newUserDob.getValue();       
-        User newUser = new User(fullName,userName, phoneNumber, password, dob);
+        LocalDate dob = newUserDob.getValue();
+        if (newNameTextField.getText().isEmpty()|| newUserNameTextField.getText().isEmpty()|| 
+            newUserPhoneNumberTextField.getText().isEmpty()|| newPasswordTextField.getText().isEmpty()||
+            confirmPasswordTextField.getText().isEmpty()||newUserDob.getValue()==null){
+            Alert unfill = new Alert(Alert.AlertType.WARNING);
+            unfill.setTitle("Warning");
+            unfill.setHeaderText(null);
+            unfill.setContentText("Please fill in all fields.");
+            unfill.showAndWait();
+            return;
+        }
+        
+
+        
+        if (!isValidPassword(password)) {
+            showAlert("Error", "Invalid Password",
+                    "Password must be 8 characters long and contain at least one letter and one number.");
+            return; 
+        }
+
+        
+        if (!isValidPhoneNumber(phoneNumber)) {
+            showAlert("Error", "Invalid Phone Number",
+                    "Phone number not valid");
+            return; 
+        }
+
+        
+        if (!password.equals(confirmPassword)) {
+            showAlert("Error", "Password Mismatch", "Passwords do not match.");
+            return; 
+        }
+
+        
+        User newUser = new User(fullName, userName, phoneNumber, password, dob);
         Boolean success = SignUpFile.SignUpFileWrite(newUser, userTypeComboBox.getValue());
-        if(success){
-            System.out.println(success);
+        if (success) {
             Alert a = new Alert(AlertType.CONFIRMATION);
             a.setHeaderText("Confirmed");
             a.setContentText("SignUp is Complete");
             a.showAndWait();
+        } else {
+            showAlert("Error", "Sign Up Incomplete", "Your sign-up was unsuccessful. Please try again.");
         }
-       else{
-            System.out.println(success);
-            Alert a = new Alert(AlertType.ERROR);
-            a.setHeaderText("ERROR");
-            a.setContentText("Your SignUp is Incomplete.TRY AGAIN");
-            a.showAndWait();
-        }
+
+       
         newNameTextField.clear();
         newUserNameTextField.clear();
-        newUserPhoneNumberTextField.clear();       
+        newUserPhoneNumberTextField.clear();
         newPasswordTextField.clear();
         confirmPasswordTextField.clear();
         newUserDob.setValue(null);
+    }
+
+    private boolean isValidPassword(String password) {
+        
+        return password.length() >= 8 && password.matches(".*\\d.*") && password.matches(".*[a-zA-Z].*");
+    }
+
+    private boolean isValidPhoneNumber(String phoneNumber) {
+        
+        return phoneNumber.length() == 11 && Character.isDigit(phoneNumber.charAt(0)) &&
+                Character.getNumericValue(phoneNumber.charAt(2)) >= 3 &&
+                Character.getNumericValue(phoneNumber.charAt(2)) <= 9;
     }
 }

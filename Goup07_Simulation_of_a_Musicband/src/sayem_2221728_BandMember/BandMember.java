@@ -170,4 +170,32 @@ public class BandMember extends User implements Serializable {
         }
         
     }
+    public static void giveApprovedBudgetToAccountant(Budget bg){
+        File f = null;
+        FileOutputStream fos = null;      
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("Budget.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new MainPkg.AppendableObjectOutputStream(fos);                
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);               
+            }
+            oos.writeObject(bg);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Budget .class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Budget .class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
 }
