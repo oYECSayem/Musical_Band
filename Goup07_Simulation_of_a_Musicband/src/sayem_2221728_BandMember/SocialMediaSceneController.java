@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import sadia_2220645_Fan.LyricsAndSpecialMgs;
@@ -48,6 +49,15 @@ public class SocialMediaSceneController implements Initializable {
         String ig = igTF.getText();
         String yt = ytTF.getText();
         String tw =twTF.getText();
+        if (nameTF.getText().isEmpty()|| fbTF.getText().isEmpty()|| igTF.getText().isEmpty()||
+            ytTF.getText().isEmpty()||twTF.getText().isEmpty()){
+            Alert unfill = new Alert(Alert.AlertType.WARNING);
+            unfill.setTitle("Warning");
+            unfill.setHeaderText(null);
+            unfill.setContentText("Please fill in all fields.");
+            unfill.showAndWait();
+            return;
+        }
         SocialMedia sm = new SocialMedia(name, fb, ig, yt, tw);
         giveSocialMediaLink(sm);
     }

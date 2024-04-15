@@ -78,7 +78,7 @@ public class ApproveBudgetSceneController implements Initializable {
     float taxes;
     float amount;
     
-    // Check for empty fields
+  
     if (dateTF.getValue() == null || budgetIDTF.getText().isEmpty() || 
         budgetEventTF.getText().isEmpty() || taxesTF.getText().isEmpty() ||
         amountTF.getText().isEmpty()) {
@@ -91,44 +91,35 @@ public class ApproveBudgetSceneController implements Initializable {
         return;
     }
     
-    // Parse numeric fields
-    /*try {
+    
+    try {
         budgetID = Integer.parseInt(budgetIDTF.getText());
         taxes = Float.parseFloat(taxesTF.getText());
         amount = Float.parseFloat(amountTF.getText());
     } catch (NumberFormatException e) {
-        // If parsing fails, show an error alert and return
+        
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText(null);
         alert.setContentText("Please enter valid numeric values for Budget ID, Taxes, and Amount.");
         alert.showAndWait();
         return;
-    }*/
+    }
 
-    // If all checks pass, add the budget to the table
+    
     budget = new Budget(dateTF.getValue(), Integer.parseInt(budgetIDTF.getText()), 
             budgetEventTF.getText(),Float.parseFloat(taxesTF.getText()), Float.parseFloat(amountTF.getText()));
     budgetTableView.getItems().add(budget);
     giveApprovedBudgetToAccountant(budget);
     
-    // Show success alert
+    
     Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
     successAlert.setTitle("Success");
     successAlert.setHeaderText(null);
     successAlert.setContentText("Budget information has been successfully added to the table.");
+    successAlert.showAndWait();
+    return;
     
-    // Add a "Success" button
-    ButtonType successButton = new ButtonType("Success");
-    successAlert.getButtonTypes().setAll(successButton);
-    
-    // Show the alert and wait for the user to click the "Success" button
-    successAlert.showAndWait().ifPresent(buttonType -> {
-        if (buttonType == successButton) {
-            // Do something if the "Success" button is clicked
-            System.out.println("Success button clicked!");
-        }
-    });
 }
 
     @FXML
