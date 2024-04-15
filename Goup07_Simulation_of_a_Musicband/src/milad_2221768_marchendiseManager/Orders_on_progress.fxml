@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
@@ -11,44 +12,53 @@
 
 <AnchorPane id="AnchorPane" prefHeight="902.0" prefWidth="974.0" styleClass="bodybg" stylesheets="@bgOfMerchantise.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_marchendiseManager.Orders_on_progressController">
    <children>
-      <TableView layoutX="57.0" layoutY="191.0" prefHeight="375.0" prefWidth="860.0">
-        <columns>
-          <TableColumn prefWidth="145.0" text="Product name" />
-          <TableColumn prefWidth="110.0" text="Quantity" />
-            <TableColumn prefWidth="168.0" text="Customer Name" />
-            <TableColumn prefWidth="288.0" text="Customer Address" />
-            <TableColumn prefWidth="148.0" text="Phone number" />
-        </columns>
-      </TableView>
-      <Label layoutX="57.0" layoutY="622.0" style="-fx-background-color: #e5dddb;" text="Customers Customization on demand messege:">
+      <Label layoutX="57.0" layoutY="683.0" style="-fx-background-color: #e5dddb;" text="Customers Customization on demand messege:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="470.0" layoutY="596.0" prefHeight="79.0" prefWidth="446.0" style="-fx-background-color: #e5dddb;" text="NO MESSEGE HAS BEEN SENT" textFill="#431f1f" wrapText="true" />
-      <Line endX="-100.0" endY="195.0" layoutX="547.0" layoutY="583.0" startX="-100.0" />
-      <TextField alignment="TOP_LEFT" layoutX="470.0" layoutY="696.0" prefHeight="79.0" prefWidth="446.0" />
-      <Label layoutX="57.0" layoutY="722.0" style="-fx-background-color: #e5dddb;" text="Enter your reply messege:">
+      <Line endX="-100.0" endY="195.0" layoutX="549.0" layoutY="651.0" startX="-100.0" />
+      <TextField alignment="TOP_LEFT" layoutX="472.0" layoutY="755.0" prefHeight="60.0" prefWidth="453.0" />
+      <Label layoutX="56.0" layoutY="775.0" style="-fx-background-color: #e5dddb;" text="Enter your reply messege:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="858.0" layoutY="792.0" mnemonicParsing="false" text="SEND" />
-      <Button layoutX="57.0" layoutY="111.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="204.0" text="Select and Accept the order" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="710.0" layoutY="111.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="205.0" text="Select and decline the order" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="758.0" layoutY="846.0" mnemonicParsing="false" onAction="#returnToDashOnClick" text="Return to Dashboard" />
+      <Button layoutX="673.0" layoutY="831.0" mnemonicParsing="false" text="SEND" />
+      <Button layoutX="759.0" layoutY="857.0" mnemonicParsing="false" onAction="#returnToDashOnClick" text="Return to Dashboard" />
       <Label layoutX="264.0" layoutY="26.0" text="Orders on Progress" textFill="#9efff4">
          <font>
             <Font name="Calibri Italic" size="58.0" />
          </font>
       </Label>
+      <TextArea fx:id="orderTextArea" layoutX="56.0" layoutY="179.0" prefHeight="238.0" prefWidth="417.0" />
+      <Button layoutX="171.0" layoutY="131.0" mnemonicParsing="false" onAction="#viewTheOrderOnClick" text="View All The Orders" />
+      <TextArea layoutX="473.0" layoutY="654.0" prefHeight="86.0" prefWidth="446.0" />
+      <TableView fx:id="tableView" layoutX="510.0" layoutY="179.0" prefHeight="238.0" prefWidth="437.0">
+        <columns>
+          <TableColumn fx:id="productIDcolumn" prefWidth="110.0" text="ProductID" />
+          <TableColumn fx:id="nameColumn" prefWidth="111.0" text="Name" />
+            <TableColumn fx:id="investedPriceColumn" prefWidth="110.0" text="Invested Price" />
+            <TableColumn fx:id="sellingPriceColumn" prefWidth="105.0" text="Selling Price" />
+        </columns>
+      </TableView>
+      <Button layoutX="679.0" layoutY="104.0" mnemonicParsing="false" onAction="#viewTheproductDetailsOnClick" prefHeight="67.0" prefWidth="159.0" text="View All the Product information" textAlignment="CENTER" wrapText="true" />
+      <Label layoutX="70.0" layoutY="431.0" style="-fx-background-color: #e5dddb;" text="Enter Customer Name:" />
+      <Label layoutX="68.0" layoutY="470.0" style="-fx-background-color: #e5dddb;" text="Enter Customer Adress:" />
+      <Label layoutX="66.0" layoutY="511.0" style="-fx-background-color: #e5dddb;" text="Enter Customer Phone Number:" />
+      <TextField fx:id="customersNameTextFeild" layoutX="286.0" layoutY="426.0" prefHeight="14.0" prefWidth="187.0" />
+      <TextField fx:id="adressTextFeild" layoutX="286.0" layoutY="465.0" />
+      <TextField fx:id="PhoneNumberTextFeild" layoutX="286.0" layoutY="506.0" />
+      <Label layoutX="510.0" layoutY="431.0" style="-fx-background-color: #e5dddb;" text="Product Name:" />
+      <Label layoutX="510.0" layoutY="470.0" style="-fx-background-color: #e5dddb;" text="Product ID;" />
+      <Label layoutX="510.0" layoutY="511.0" style="-fx-background-color: #e5dddb;" text="Quantity:" />
+      <Label layoutX="70.0" layoutY="549.0" style="-fx-background-color: #e5dddb;" text="Price:" />
+      <TextField fx:id="productNameTextFeild1" layoutX="651.0" layoutY="426.0" prefHeight="14.0" prefWidth="187.0" />
+      <TextField fx:id="productIDTextFeild" layoutX="651.0" layoutY="465.0" prefHeight="14.0" prefWidth="187.0" />
+      <TextField fx:id="quantityTextFeild" layoutX="651.0" layoutY="506.0" prefHeight="14.0" prefWidth="187.0" />
+      <TextField fx:id="priceTextFeild1111" layoutX="286.0" layoutY="544.0" prefHeight="14.0" prefWidth="187.0" />
+      <Button layoutX="428.0" layoutY="585.0" mnemonicParsing="false" onAction="#trackSalesButton" text="Track the Sales" />
+      <Label layoutX="510.0" layoutY="549.0" style="-fx-background-color: #e5dddb;" text="Invested Price:" />
+      <TextField fx:id="investedPriceTextFeild11111" layoutX="651.0" layoutY="544.0" prefHeight="14.0" prefWidth="187.0" />
    </children>
 </AnchorPane>
