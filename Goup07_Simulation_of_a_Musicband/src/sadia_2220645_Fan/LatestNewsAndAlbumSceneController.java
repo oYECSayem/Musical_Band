@@ -38,7 +38,7 @@ public class LatestNewsAndAlbumSceneController implements Initializable {
 
     @FXML
     private void showNewsButtonOnClicked(ActionEvent event) {
-        /*ObjectInputStream ois = null;
+     /* ObjectInputStream ois = null;
         ObservableList <Latestnews> LatestnewsList = FXCollections.observableArrayList();
         try {
              Latestnews i;
