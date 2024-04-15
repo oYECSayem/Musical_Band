@@ -88,7 +88,7 @@ public class InstrumentManagerDashboardController implements Initializable {
 
     @FXML
     private void instrumentBudgetButtonOnClicked(ActionEvent event) throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource(" MakeInstrumentBudgetScene.fxml"));
+         Parent root = FXMLLoader.load(getClass().getResource("MakeInstrumentBudgetScene.fxml"));
          borderPane.setCenter(root);
         
     }

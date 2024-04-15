@@ -200,5 +200,21 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
         currentStage.show();
         
     }
+
+    @FXML
+    private void homepageButtonOnClicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("InstrumentManagerDashboard.fxml"));
+        Parent parent = loader.load();
+
+        
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+
+        Scene InstrumentManagerDashboard= new Scene(parent);
+
+        currentStage.setScene(InstrumentManagerDashboard);
+        currentStage.show();
+        
+    }
     
 }

@@ -9,8 +9,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 
 /**
@@ -21,13 +19,7 @@ import javafx.scene.control.TextArea;
 public class CheckRelatedMgsSceneController implements Initializable {
 
     @FXML
-    private TextArea sendMgsTextArea;
-    @FXML
-    private RadioButton checkRecivedRdioButton;
-    @FXML
-    private RadioButton checkCanceledRadioButton;
-    @FXML
-    private TextArea receiveMgsTextArea1;
+    private TextArea checkTextArea;
 
     /**
      * Initializes the controller class.
@@ -38,11 +30,7 @@ public class CheckRelatedMgsSceneController implements Initializable {
     }    
 
     @FXML
-    private void receiveMgsButtonOnClicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void sendMgsButtonOnClicked(ActionEvent event) {
+    private void viewCheckMgsButtonOnClicked(ActionEvent event) {
     }
     
 }

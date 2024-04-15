@@ -69,6 +69,11 @@
                   <MenuItem mnemonicParsing="false" onAction="#FeedbackButtonOnClicked" text="FeedBack" />
                </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="HomePage">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#goToHomePageButtonOnClicked" text="Go to HomePage" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

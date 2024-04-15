@@ -98,6 +98,12 @@ public class FansDashboardController implements Initializable {
         currentStage.setScene(LoginSc);
         currentStage.show();
     }
+
+    @FXML
+    private void goToHomePageButtonOnClicked(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("FansDashboard.fxml"));
+         borderPane.setCenter(root);
+    }
     
 
     
