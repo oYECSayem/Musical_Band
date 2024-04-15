@@ -11,7 +11,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="950.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="950.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_InstrumentManager.MaintenanceAndRepairInformationSceneController">
+>>>>>>> 78515b2580eb762e156fd485ce3c5a674ea53644
    <children>
       <Label layoutX="247.0" layoutY="11.0" prefHeight="37.0" prefWidth="320.0" text="Maintanance And Repair Iformation" textFill="#4b11d3">
          <font>
@@ -51,5 +55,9 @@
          </font>
       </Label>
       <TextField fx:id="repairInstrumentIdTextField" layoutX="229.0" layoutY="120.0" />
+<<<<<<< HEAD
+=======
+      <Button layoutX="615.0" layoutY="592.0" mnemonicParsing="false" onAction="#previousSceneButtonOnClicked" text="Go back to Prevoius Seeen" />
+>>>>>>> 78515b2580eb762e156fd485ce3c5a674ea53644
    </children>
 </AnchorPane>

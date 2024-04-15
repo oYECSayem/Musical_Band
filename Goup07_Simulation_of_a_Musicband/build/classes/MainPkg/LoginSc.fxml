@@ -4,12 +4,18 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="521.0" prefWidth="713.0" style="-fx-background-color: C7D4FA; -fx-background-color: ;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPkg.LoginScController">
    <children>
       <Label layoutX="175.0" layoutY="206.0" prefHeight="27.0" prefWidth="91.0" text="User ID" textFill="#252121">
@@ -77,3 +83,87 @@
       </Label>
    </children>
 </AnchorPane>
+=======
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="928.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPkg.LoginScController">
+   <left>
+      <AnchorPane prefHeight="663.0" prefWidth="312.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="16.0" layoutY="40.0" text="Aerosmith Music Brand" textFill="#dd1919">
+               <font>
+                  <Font name="Constantia Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="51.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/source.gif" />
+               </image>
+            </ImageView>
+            <Label layoutX="45.0" layoutY="422.0" text="Join us now!!" textFill="#b92727">
+               <font>
+                  <Font name="Elephant" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="696.0" prefWidth="608.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="187.0" prefHeight="27.0" prefWidth="91.0" text="User ID" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="234.0" prefHeight="27.0" prefWidth="91.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userIdTextField" layoutX="216.0" layoutY="195.0" opacity="0.65" prefHeight="39.0" prefWidth="230.0" style="-fx-background-radius: 88;">
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="userTypeComboBox" layoutX="212.0" layoutY="142.0" opacity="0.75" prefHeight="39.0" prefWidth="237.0" promptText="Select User Type" style="-fx-background-radius: 88;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <Button fx:id="login" layoutX="177.0" layoutY="314.0" mnemonicParsing="false" onAction="#loginButtonOnClick" opacity="0.75" prefHeight="39.0" prefWidth="309.0" text="Login" textFill="#1609ff">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="signupButton" layoutX="48.0" layoutY="477.0" mnemonicParsing="false" onAction="#signUpButtonOnClick" opacity="0.75" prefHeight="35.0" prefWidth="142.0" text="Sign Up" textFill="#0d00ff">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="173.0" layoutY="53.0" prefHeight="64.0" prefWidth="315.0" text="Welcome" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="54.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Label>
+            <Text fill="WHITE" layoutX="64.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New to our app?">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="passwordTextField" layoutX="226.0" layoutY="248.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
+>>>>>>> 78515b2580eb762e156fd485ce3c5a674ea53644
