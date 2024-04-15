@@ -69,7 +69,6 @@ public class BandMemberDashboardController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("FeedbackToFansActivityScene.fxml"));
          borderPane.setCenter(root);
     }
-    @FXML
     private void feedbackAndImprovemantButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("TakeFeedbackAndImprovementSection.fxml"));
          borderPane.setCenter(root);
@@ -96,5 +95,11 @@ public class BandMemberDashboardController implements Initializable {
 
     @FXML
     private void uploadContentButton(ActionEvent event) {
+    }
+
+    @FXML
+    private void giveEarningAndExpenseInfoToAccountantButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("GiveExpenseAndEarningInformationToAccountantScene.fxml"));
+         borderPane.setCenter(root);
     }
 }

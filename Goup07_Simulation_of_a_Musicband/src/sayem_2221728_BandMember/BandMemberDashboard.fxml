@@ -21,7 +21,7 @@
                         <MenuItem onAction="#lyricsWritingButton" text="Lyrics Writing" />
                         <MenuItem onAction="#contactWithOperationalManagerButton" text="Contact with Operational Manager" />
                         <MenuItem onAction="#communicationWithFansButton" text="Communication with Fans" />
-                        <MenuItem onAction="#feedbackAndImprovemantButton" text="Feedback and Improvement" />
+                        <MenuItem onAction="#giveEarningAndExpenseInfoToAccountantButton" text="Give Expense and earning info to Accountant" />
                     </items>
                 </Menu>
                 <Menu text="Notifications">
