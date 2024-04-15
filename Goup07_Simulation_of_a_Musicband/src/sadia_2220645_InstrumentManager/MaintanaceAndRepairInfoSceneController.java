@@ -136,7 +136,7 @@ public class MaintanaceAndRepairInfoSceneController implements Initializable {
         
         
 
-        String repairCostText = repairCostTextFiled.getText().trim();
+        String repairCostText = repairCostTextFiled.getText();
         if (repairCostText.isEmpty()) {
             unfill.show();
             return;

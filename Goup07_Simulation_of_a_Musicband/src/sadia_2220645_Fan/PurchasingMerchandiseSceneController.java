@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
@@ -54,6 +55,11 @@ public class PurchasingMerchandiseSceneController implements Initializable {
     private TextArea merchandiseInfoTextField;
     @FXML
     private TextArea purchasedMerchandiseReceiptTextField;
+    
+    Alert Unfilled=new Alert(Alert.AlertType.WARNING,"Please fillup 11 digit Phone Number!");
+    Alert success=new Alert(Alert.AlertType.INFORMATION,"Successfully Added");
+    Alert empty=new Alert(Alert.AlertType.ERROR,"Please Fillup Everything! ");
+    Alert InvalidPhoneNum=new Alert(Alert.AlertType.WARNING,"Invalid Phone Number! ");
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -119,11 +125,45 @@ public class PurchasingMerchandiseSceneController implements Initializable {
         int phoneNum=Integer.parseInt(phoneNumTextField.getText());
         String merchantDetails=merchandiseInfoTextField.getText();
         
-        CashMemo m=new CashMemo( name,address, merchantDetails, paymentMode, phoneNum) ;
-        
-        Purchasemerchandise(m);
-        
-        
+        //CashMemo m = new CashMemo(name, address, merchantDetails, paymentMode, phoneNum);
+
+        String phonenumText = phoneNumTextField.getText();
+        try {
+            int phoneNumber = Integer.parseInt(phonenumText);
+            if (phonenumText.isEmpty() || phonenumText.length() != 11) {
+                InvalidPhoneNum.show();
+            } else if (name.isEmpty()) {
+                empty.show();
+            }else if(address.isEmpty()){
+                empty.show();
+            }else if(merchantDetails.isEmpty()){
+                empty.show();
+            }else if(paymentMode.isEmpty()){
+                empty.show();
+            }else if(phonenumText.isEmpty()&& name.isEmpty() && address.isEmpty() && merchantDetails.isEmpty()&& paymentMode.isEmpty()){
+                empty.show();
+            }else{
+                CashMemo m = new CashMemo(name, address, merchantDetails, paymentMode, phoneNumber);
+                Purchasemerchandise(m);
+            }
+
+        } catch (NumberFormatException e) {
+            InvalidPhoneNum.show();
+        }try{
+            //
+        }catch(RuntimeException e){
+              
+        }
+
+        //Purchasemerchandise(m);
+
+        nameTextField.clear();
+        addressTextField.clear();
+        phoneNumTextField.clear();
+        merchandiseInfoTextField.clear();
+        cashOnDeliveryRadioButton.setSelected(false);
+        onlinePaymentRadioButton.setSelected(false);
+       mobileBankingRadioButton.setSelected(false);
         //-------read------------------
         
         

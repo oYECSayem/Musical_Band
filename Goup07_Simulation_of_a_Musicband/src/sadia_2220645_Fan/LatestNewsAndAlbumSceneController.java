@@ -38,38 +38,6 @@ public class LatestNewsAndAlbumSceneController implements Initializable {
     @FXML
     private void showNewsButtonOnClicked(ActionEvent event) {
         
-        ObjectInputStream ois = null;
-        ObservableList <BudgetReceipt> BudgetReceiptlist = FXCollections.observableArrayList();
-        try {
-             BudgetReceipt i;
-             ois = new ObjectInputStream(new FileInputStream("BudgetReceipt.bin"));
-             
-            while(true){
-                i = (BudgetReceipt) ois.readObject();
-                
-               // if(i.getInstrumentID()%2==0){
-                //    InstrumentList.add(i);
-                
-                  BudgetReceiptlist.add(i);
-            }
-        }
-        catch(RuntimeException e){
-            e.printStackTrace();
-        }
-        catch (Exception ex) {
-            try {
-                if(ois!=null)
-                    ois.close();
-            } catch (IOException ex1) {  }           
-        }
-        
-         // Display feedback details in the TextArea
-        StringBuilder BudgetReceiptlistDetails = new StringBuilder();
-        for (BudgetReceipt mm : BudgetReceiptlist ) {
-            BudgetReceiptlistDetails.append(mm.toString()).append("\n");
-        }
-
-        latestNewsTextArea.setText(BudgetReceiptlistDetails.toString());
         
     }
 
