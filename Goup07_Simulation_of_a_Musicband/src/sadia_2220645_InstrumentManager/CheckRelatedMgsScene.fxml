@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="563.0" prefWidth="795.0" style="-fx-background-color: F1DEFA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sadia_2220645_InstrumentManager.CheckRelatedMgsSceneController">
+<AnchorPane id="AnchorPane" prefHeight="563.0" prefWidth="795.0" style="-fx-background-color: F1DEFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadia_2220645_InstrumentManager.CheckRelatedMgsSceneController">
    <children>
       <Label layoutX="243.0" layoutY="24.0" text="Check Related Message">
          <font>
