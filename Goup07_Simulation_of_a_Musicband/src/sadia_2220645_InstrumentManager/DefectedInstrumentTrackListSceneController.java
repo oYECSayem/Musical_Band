@@ -69,6 +69,9 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
     
     Alert success=new Alert(Alert.AlertType.INFORMATION,"Successfully Added the product");
     Alert alert=new Alert(Alert.AlertType.WARNING," Instrument exixt Already!");
+    Alert IDAlert=new Alert(Alert.AlertType.WARNING,"Invalid ID!");
+    Alert invalidID=new Alert(Alert.AlertType.WARNING,"ID length should not exceed 5 digits!");
+    Alert unfilled=new Alert(Alert.AlertType.WARNING,"Please Fill up EveryThing!");
     
     
     ArrayList<DefectedInstrument> DefectedInstrumentList=new ArrayList<>();
@@ -106,34 +109,54 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
 
     @FXML
     private void addDefectedInstrumentButtonOnClicked(ActionEvent event) {
-        int defectedInstrumentId=Integer.parseUnsignedInt(defectedInstrumentIDTextField.getText());
-        String defectedInstrumentName=defectedInstrumentNameTextField.getText();
-        String problemDescription=defectsDescriptionTextArea.getText();
-        
+        //int defectedInstrumentId=Integer.parseUnsignedInt(defectedInstrumentIDTextField.getText());
+        String defectedInstrumentName = defectedInstrumentNameTextField.getText();
+        String problemDescription = defectsDescriptionTextArea.getText();
+
         DefectedInstrument i;
-        
-        String defectCatagory=" ";
-        if(minorDefectRadioButton.isSelected()){
-            defectCatagory="Minor Defects";
-            
-        }else if(majorDefectsRadioButton.isSelected()){
-             defectCatagory="Major Defects";
+
+        String defectedInstrumentIdtxt = defectedInstrumentIDTextField.getText();
+        try {
+            int defectedInstrumentId = Integer.parseUnsignedInt(defectedInstrumentIDTextField.getText());
+            if (defectedInstrumentIdtxt.length() > 5) {
+                IDAlert.show();
+            }else if (defectedInstrumentIdtxt.isEmpty()) {
+                 unfilled.show();
+            } else if (defectedInstrumentName.isEmpty()) {
+                unfilled.show();
+            } else if (problemDescription.isEmpty()) {
+                unfilled.show();
+            } else {
+                String defectCatagory = " ";
+                if (minorDefectRadioButton.isSelected()) {
+                    defectCatagory = "Minor Defects";
+
+                } else if (majorDefectsRadioButton.isSelected()) {
+                    defectCatagory = "Major Defects";
+                }
+
+                i = new DefectedInstrument(defectedInstrumentId, defectedInstrumentName, problemDescription, defectCatagory);
+
+                if (!DefectedInstrument.checkDefectedInstrumentExixtance(i)) {
+                    makeDefactedIntrumentList(i);
+
+                    success.show();
+                } else {
+                    alert.show();
+                }
+
+            }
+
+        } catch (NumberFormatException e) {
+            invalidID.show();
         }
+
         
-        i=new DefectedInstrument(defectedInstrumentId,defectedInstrumentName,problemDescription,defectCatagory);
-        
-         if(!DefectedInstrument.checkDefectedInstrumentExixtance(i)){
-             makeDefactedIntrumentList(i);
-        
-               success.show();
-         }else{
-            alert.show();
-         }
         
        
         
-        success.show();
-        DefectedInstrumentList.add(i);
+        //success.show();
+       // DefectedInstrumentList.add(i);
         //defectedInstumentIdComboBox.getItems().add(defectedInstrumentId);
         
         defectedInstrumentIDTextField.clear();

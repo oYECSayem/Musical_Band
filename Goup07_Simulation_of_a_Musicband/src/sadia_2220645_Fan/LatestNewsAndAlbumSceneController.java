@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import sadia_2220645_InstrumentManager.BudgetReceipt;
+import sayem_2221728_BandMember.Message;
 
 
 public class LatestNewsAndAlbumSceneController implements Initializable {
@@ -37,6 +38,35 @@ public class LatestNewsAndAlbumSceneController implements Initializable {
 
     @FXML
     private void showNewsButtonOnClicked(ActionEvent event) {
+        /*ObjectInputStream ois = null;
+        ObservableList <Latestnews> LatestnewsList = FXCollections.observableArrayList();
+        try {
+             Latestnews i;
+             ois = new ObjectInputStream(new FileInputStream("Latestnews.bin"));
+             
+            while(true){
+                i = (Latestnews) ois.readObject();
+              
+                LatestnewsList.add(i);
+            }
+        }
+        catch(RuntimeException e){
+            e.printStackTrace();
+        }
+        catch (Exception ex) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            } catch (IOException ex1) {  }           
+        }
+
+    // Display feedback details in the TextArea
+    StringBuilder LatestnewsDetails = new StringBuilder();
+    for (Latestnews n : LatestnewsList) {
+        LatestnewsDetails.append(n.toString()).append("\n");
+    }
+
+      latestNewsTextArea.setText(LatestnewsDetails.toString());*/
         
         
     }
