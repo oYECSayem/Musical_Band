@@ -6,11 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-//import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//import javafx.collections.FXCollections;
-//import javafx.collections.ObservableList;
+
 
 
 public class Merchant implements Serializable{
@@ -39,8 +37,19 @@ public class Merchant implements Serializable{
         this.description = description;
         
     }
-    
 
+    public Merchant(int investedPrice, int sellingPrice) {
+        this.investedPrice = investedPrice;
+        this.sellingPrice = sellingPrice;
+    }
+    
+    public Merchant(String productName, int productID, int sellingPrice) {
+        this.productName = productName;
+        this.productID = productID;
+        this.sellingPrice = sellingPrice;
+    }
+    
+    
     public String getProductName() {
         return productName;
     }

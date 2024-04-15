@@ -8,26 +8,27 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="634.0" prefWidth="917.0" style="-fx-background-color: #bfeae9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_marchendiseManager.Sales_trackController">
+<AnchorPane id="AnchorPane" prefHeight="634.0" prefWidth="1036.0" style="-fx-background-color: #bfeae9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milad_2221768_marchendiseManager.Sales_trackController">
    <children>
-      <Label layoutX="357.0" layoutY="34.0" text="Track Sales">
+      <Label layoutX="448.0" layoutY="28.0" text="Track Sales">
          <font>
             <Font name="Montserrat Medium Italic" size="24.0" />
          </font>
       </Label>
-      <Line endX="663.0" endY="-1.52587890625E-5" layoutX="145.0" layoutY="73.0" startX="-100.0" />
+      <Line endX="849.0" layoutX="145.0" layoutY="73.0" startX="-100.0" />
       <Label layoutX="51.0" layoutY="101.0" text="Merchat in delivery proccess:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-     <TableView layoutX="44.0" layoutY="138.0" prefHeight="375.0" prefWidth="855.0">
+     <TableView fx:id="tableView" layoutX="44.0" layoutY="138.0" prefHeight="375.0" prefWidth="962.0">
         <columns>
-          <TableColumn prefWidth="145.0" text="Product name" />
-          <TableColumn prefWidth="110.0" text="Quantity" />
-            <TableColumn prefWidth="168.0" text="Customer Name" />
-            <TableColumn prefWidth="171.0" text="Customer Address" />
-            <TableColumn prefWidth="265.0" text="Phone number" />
+          <TableColumn fx:id="productNameColumn" prefWidth="145.0" text="Product name" />
+          <TableColumn fx:id="quantityColumn" prefWidth="110.0" text="Quantity" />
+            <TableColumn fx:id="customerN" prefWidth="168.0" text="Customer Name" />
+            <TableColumn fx:id="addressColumn" prefWidth="171.0" text="Customer Address" />
+            <TableColumn fx:id="phoneNumberColumn" prefWidth="176.0" text="Phone number" />
+            <TableColumn fx:id="priceColumn" prefWidth="191.0" text="Price" />
         </columns>
       </TableView>
       <Label layoutX="44.0" layoutY="546.0" text="Delivery Done? : ">
@@ -41,5 +42,6 @@
          </font>
       </Label>
       <Button layoutX="728.0" layoutY="589.0" mnemonicParsing="false" onAction="#returnToDashOnClick" text="Return To Dashboard" />
+      <Button layoutX="803.0" layoutY="96.0" mnemonicParsing="false" onAction="#loadSalesOnClick" text="Load The Sales" />
    </children>
 </AnchorPane>

@@ -17,12 +17,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="123.0" layoutY="342.0" mnemonicParsing="false" onAction="#viewOnClick" text="View All">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="123.0" layoutY="488.0" mnemonicParsing="false" onAction="#chatboxOnClick" text="Communicate with Band Member">
+      <Button layoutX="123.0" layoutY="414.0" mnemonicParsing="false" onAction="#chatboxOnClick" text="Communicate with Band Member">
          <font>
             <Font size="18.0" />
          </font>
@@ -37,7 +32,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="123.0" layoutY="414.0" mnemonicParsing="false" onAction="#ContestOverviewOnClick" text="Contest Overview">
+      <Button layoutX="123.0" layoutY="342.0" mnemonicParsing="false" onAction="#ContestOverviewOnClick" text="Contest Overview">
          <font>
             <Font size="18.0" />
          </font>

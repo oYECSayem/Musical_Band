@@ -14,6 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -25,6 +27,14 @@ public class Event_Budget_CreatorController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private AnchorPane eventNametext;
+    @FXML
+    private TextField requirementText;
+    @FXML
+    private TextField quantityText;
+    @FXML
+    private TextField budgetText;
 
     /**
      * Initializes the controller class.
@@ -41,6 +51,10 @@ public class Event_Budget_CreatorController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void inputListButton(ActionEvent event) {
     }
     
 }
