@@ -92,7 +92,7 @@ public class ApproveBudgetSceneController implements Initializable {
     }
     
     // Parse numeric fields
-    try {
+    /*try {
         budgetID = Integer.parseInt(budgetIDTF.getText());
         taxes = Float.parseFloat(taxesTF.getText());
         amount = Float.parseFloat(amountTF.getText());
@@ -104,10 +104,11 @@ public class ApproveBudgetSceneController implements Initializable {
         alert.setContentText("Please enter valid numeric values for Budget ID, Taxes, and Amount.");
         alert.showAndWait();
         return;
-    }
+    }*/
 
     // If all checks pass, add the budget to the table
-    budget = new Budget(dateTF.getValue(), budgetID, budgetEventTF.getText(), taxes, amount);
+    budget = new Budget(dateTF.getValue(), Integer.parseInt(budgetIDTF.getText()), 
+            budgetEventTF.getText(),Float.parseFloat(taxesTF.getText()), Float.parseFloat(amountTF.getText()));
     budgetTableView.getItems().add(budget);
     giveApprovedBudgetToAccountant(budget);
     
