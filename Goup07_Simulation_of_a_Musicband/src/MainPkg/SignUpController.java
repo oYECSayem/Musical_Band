@@ -87,7 +87,13 @@ public class SignUpController implements Initializable {
             return;
         }
         
-
+        LocalDate twelveYearsAgo = LocalDate.now().minusYears(12);
+        if (dob.isAfter(twelveYearsAgo)) {
+        showAlert("Error", "Invalid Date of Birth", "You must be at least 12 years old to sign up.");
+        return;
+    }
+        
+    
         
         if (!isValidPassword(password)) {
             showAlert("Error", "Invalid Password",

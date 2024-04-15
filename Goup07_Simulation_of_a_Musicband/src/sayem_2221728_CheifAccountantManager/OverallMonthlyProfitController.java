@@ -16,6 +16,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
@@ -73,6 +74,9 @@ public class OverallMonthlyProfitController implements Initializable {
         incomeColumn.setCellValueFactory(new PropertyValueFactory<DummyProfit, Float>("income"));
         expenseColumn.setCellValueFactory(new PropertyValueFactory<DummyProfit, Float>("expense"));
         profitColumn.setCellValueFactory(new PropertyValueFactory<DummyProfit, Float>("profit"));
+        monthComboBox.getItems().addAll("January", "February", "March", "April,"
+                + "May", "June", "July", "August", "September", 
+                "November", "December");
     }    
 
 
@@ -136,7 +140,26 @@ public class OverallMonthlyProfitController implements Initializable {
         float profit = Float.parseFloat(profitAmountTA.getText());
         DummyProfit dp = new DummyProfit(date, eventName, expense, income, profit);
         overallMonthlyProfitTV.getItems().add(dp);
-        if (dateDP.getValue() == null|| eventNameTF.getText().isEmpty()){}
+        if (dateDP.getValue() == null|| eventNameTF.getText().isEmpty()||expenseTF.getText().isEmpty()
+            || incomeTF.getText().isEmpty()|| profitAmountTA.getText().isEmpty()){
+            Alert unfill = new Alert(Alert.AlertType.WARNING);
+            unfill.setTitle("Warning");
+            unfill.setHeaderText(null);
+            unfill.setContentText("Please fill in all fields.");
+            unfill.showAndWait();
+            return;
+        
+        }
+        eventNameTF.clear();
+        expenseTF.clear();
+        incomeTF.clear();
+        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+        successAlert.setTitle("Success");
+        successAlert.setHeaderText(null);
+        successAlert.setContentText("Successfully added");
+        successAlert.showAndWait();
+        return;
+        
     }
 
     @FXML
