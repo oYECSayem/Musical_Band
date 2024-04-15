@@ -24,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sadia_2220645_InstrumentManager.BudgetReceipt;
 import sayem_2221728_BandMember.Budget;
+import sayem_2221728_BandMember.ExpenseEarningInfo;
 
 /**
  * FXML Controller class
@@ -87,16 +88,16 @@ public class OverallMonthlyProfitController implements Initializable {
     @FXML
     private void getInExpenseEarningInfoButton(ActionEvent event) {
         ObjectInputStream ois = null;
-        ObservableList <BudgetReceipt> BudgetReceiptlist = FXCollections.observableArrayList();
+        ObservableList <ExpenseEarningInfo> ExpenseEarningInfolist = FXCollections.observableArrayList();
         try {
-             BudgetReceipt i;
-             ois = new ObjectInputStream(new FileInputStream("BudgetReceipt.bin"));
+             ExpenseEarningInfo i;
+             ois = new ObjectInputStream(new FileInputStream("ExpenseEarningInfo.bin"));
              
             while(true){
-                i = (BudgetReceipt) ois.readObject();
+                i = (ExpenseEarningInfo) ois.readObject();
                 
                
-                  BudgetReceiptlist.add(i);
+                  ExpenseEarningInfolist.add(i);
             }
         }
         catch(RuntimeException e){
@@ -110,12 +111,12 @@ public class OverallMonthlyProfitController implements Initializable {
         }
         
         
-        StringBuilder BudgetReceiptlistDetails = new StringBuilder();
-        for (BudgetReceipt mm : BudgetReceiptlist ) {
-            BudgetReceiptlistDetails.append(mm.toString()).append("\n");
+        StringBuilder ExpenseEarningInfolistDetails = new StringBuilder();
+        for (ExpenseEarningInfo ee : ExpenseEarningInfolist ) {
+            ExpenseEarningInfolistDetails.append(ee.toString()).append("\n");
         }
 
-        othersBudgetInfoTA.setText(BudgetReceiptlistDetails.toString());
+        expenseEarningInfoTA.setText(ExpenseEarningInfolistDetails.toString());
     }
 
     @FXML
