@@ -31,6 +31,8 @@ public class InstrumentManagerDashboardController implements Initializable {
     private BorderPane borderPane;
     @FXML
     private MenuItem Task;
+    @FXML
+    private MenuItem goToHomePageButtonOnClicked;
    
     
     @Override
@@ -86,7 +88,7 @@ public class InstrumentManagerDashboardController implements Initializable {
 
     @FXML
     private void instrumentBudgetButtonOnClicked(ActionEvent event) throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource("  MakeInstrumentBudgetScene.fxml"));
+         Parent root = FXMLLoader.load(getClass().getResource(" MakeInstrumentBudgetScene.fxml"));
          borderPane.setCenter(root);
         
     }
@@ -104,6 +106,13 @@ public class InstrumentManagerDashboardController implements Initializable {
 
         currentStage.setScene(LoginSc);
         currentStage.show();
+    }
+
+    @FXML
+    private void goToHomePageButtonOnClicked(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("InstrumentManagerDashboard.fxml"));
+         borderPane.setCenter(root);
+        
     }
     
 }

@@ -57,6 +57,11 @@
                   <MenuItem mnemonicParsing="false" text="Make budget Chart" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text=" HomePage">
+               <items>
+                  <MenuItem fx:id="goToHomePageButtonOnClicked" mnemonicParsing="false" onAction="#goToHomePageButtonOnClicked" text="Go to My HomePage" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>
