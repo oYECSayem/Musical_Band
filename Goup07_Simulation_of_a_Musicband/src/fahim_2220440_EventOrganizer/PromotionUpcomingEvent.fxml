@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="677.0" prefWidth="1054.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="677.0" prefWidth="1054.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fahim_2220440_EventOrganizer.PromotionUpcomingEventController">
    <children>
       <Button fx:id="addEventPageButton" layoutX="86.0" layoutY="539.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="144.0" text="Add Event Page" />
       <Button fx:id="publishPageButton" layoutX="589.0" layoutY="539.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="144.0" text="Publish Page" />
