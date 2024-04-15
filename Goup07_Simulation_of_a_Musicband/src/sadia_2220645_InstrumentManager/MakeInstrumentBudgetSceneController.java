@@ -26,9 +26,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
-import static sadia_2220645_InstrumentManager.BudgetReceipt.sendBudgetReceipt;
-
 import static sadia_2220645_InstrumentManager.InstrumentManager.makeBudgetForIntrument;
+import static sadia_2220645_InstrumentManager.InstrumentManager.sendBudgetReceipt;
 
 
 public class MakeInstrumentBudgetSceneController implements Initializable {

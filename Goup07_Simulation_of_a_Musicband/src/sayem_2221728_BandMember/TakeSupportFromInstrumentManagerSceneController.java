@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
@@ -67,22 +68,33 @@ public class TakeSupportFromInstrumentManagerSceneController implements Initiali
         if (majorRB.isSelected()){
             defectType = "Major defect";
         }
+        
         String instrumentName = instrumentNameCB.getValue();
         String role = bandMemberRoleCB.getValue();
+        if (nameTF.getText().isEmpty()||defectType==""||
+        instrumentNameCB.getValue()==null||bandMemberRoleCB.getValue()==null){
+            Alert unfill = new Alert(Alert.AlertType.WARNING);
+            unfill.setTitle("Warning");
+            unfill.setHeaderText(null);
+            unfill.setContentText("Please fill in all fields.");
+            unfill.showAndWait();
+            return;
+            
+        }
         
-        //ObservableList<String> instrumentName = instrumentNameCB.getItems();
-
-        // Cast the selected toggle to RadioButton
-        //RadioButton selectedRadioButton = (RadioButton) problemTypeRB.getSelectedToggle();
-        //Toggle problemType = selectedRadioButton != null ? selectedRadioButton : minorRB; // Default to minor if none selected
-
-        //ObservableList<String> role = bandMemberRoleCB.getItems();
         String text = technicalProblemTA.getText();
         TechnicalSupportMessage m1 = new TechnicalSupportMessage(name,  text, instrumentName, role, defectType);
         askForTechnicalSupport(m1);
         technicalProblemTA.clear();
         nameTF.clear();
         technicalProblemTA.clear();
+        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+        successAlert.setTitle("Success");
+        successAlert.setHeaderText(null);
+        successAlert.setContentText("Message sent");
+        successAlert.showAndWait();
+        return;
+        
     }
 
 

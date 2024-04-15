@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -41,7 +42,6 @@ public class GiveScheduleForCollabrationSceneController implements Initializable
     @FXML
     private TextArea viewSchedueTA;
 
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        // String eventTitle, String description, String date, String time, String location, String giveaway
@@ -56,8 +56,30 @@ public class GiveScheduleForCollabrationSceneController implements Initializable
        String time = timesTF.getText();
        String location = locationTF.getText();
        String giveawayDetails = giveawayTA.getText();
+       if (eventTitlesTF.getText().isEmpty()|| descriptionsTA.getText() .isEmpty() || 
+           timesTF.getText().isEmpty()|| locationTF.getText().isEmpty() || giveawayTA.getText().isEmpty()
+               ||datesDP.getValue() == null){
+           Alert unfill = new Alert(Alert.AlertType.WARNING);
+           unfill.setTitle("Warning");
+           unfill.setHeaderText(null);
+           unfill.setContentText("Please fill in all fields.");
+           unfill.showAndWait();
+           return;
+       }
        EventSchedule eSc = new EventSchedule(eventTitle, description, date, time, location, giveawayDetails);
        giveCollabrationSchedule(eSc);
+       eventTitlesTF.clear();
+       descriptionsTA.clear();
+       timesTF.clear();
+       locationTF.clear();
+       giveawayTA.clear();
+       Alert success = new Alert(Alert.AlertType.CONFIRMATION);
+       success.setTitle("Success");
+       success.setHeaderText(null);
+       success.setContentText("Schedule Successfully added");
+       success.show();
+       return;
+       
     }
 
     @FXML

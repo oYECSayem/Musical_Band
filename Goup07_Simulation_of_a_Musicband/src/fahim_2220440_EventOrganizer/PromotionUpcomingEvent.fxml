@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="591.0" prefWidth="871.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" prefHeight="677.0" prefWidth="1054.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fahim_2220440_EventOrganizer.PromotionUpcomingEventController">
    <children>
       <Button fx:id="addEventPageButton" layoutX="86.0" layoutY="539.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="144.0" text="Add Event Page" />
       <Button fx:id="publishPageButton" layoutX="589.0" layoutY="539.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="144.0" text="Publish Page" />
@@ -28,7 +27,7 @@
       <Label layoutX="38.0" layoutY="466.0" prefHeight="21.0" prefWidth="120.0" text="Organizer E-mail:" />
       <TextField fx:id="organizerPhone" layoutX="163.0" layoutY="408.0" prefHeight="31.0" prefWidth="313.0" />
       <TextField fx:id="organizerEmail" layoutX="163.0" layoutY="461.0" prefHeight="31.0" prefWidth="313.0" />
-      <Label layoutX="305.0" layoutY="14.0" prefHeight="46.0" prefWidth="313.0" text="Create Event Page">
+      <Label layoutX="381.0" layoutY="14.0" prefHeight="46.0" prefWidth="313.0" text="Create Event Page">
          <font>
             <Font size="31.0" />
          </font>

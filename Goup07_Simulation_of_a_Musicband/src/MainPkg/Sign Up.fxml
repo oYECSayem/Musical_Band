@@ -5,10 +5,12 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="750.0" style="-fx-background-color: C7F2FA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPkg.SignUpController">
+<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="789.0" style="-fx-background-color: C7F2FA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPkg.SignUpController">
    <children>
       <Label layoutX="85.0" layoutY="165.0" prefHeight="17.0" prefWidth="77.0" text="Full Name" />
       <Label layoutX="82.0" layoutY="217.0" prefHeight="17.0" prefWidth="96.0" text="User Name" />
@@ -35,5 +37,10 @@
       <TextField fx:id="newNameTextField" layoutX="171.0" layoutY="161.0" />
       <ComboBox fx:id="userTypeComboBox" layoutX="170.0" layoutY="312.0" prefHeight="31.0" prefWidth="187.0" promptText="Register as:" />
       <Label layoutX="85.0" layoutY="317.0" text="User Type" />
+      <ImageView fitHeight="126.0" fitWidth="200.0" layoutX="521.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/MUSIC%20GIF.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

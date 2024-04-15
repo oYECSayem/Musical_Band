@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="915.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sayem_2221728_BandMember.BandMemberDashboardController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="915.0" prefWidth="1272.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sayem_2221728_BandMember.BandMemberDashboardController">
     <top>
         <MenuBar prefHeight="23.0" prefWidth="760.0">
             <menus>
@@ -16,12 +16,11 @@
                     <items>
                         <MenuItem onAction="#giveScheduleButton" text="Give Schedule for Collaboration" />
                         <MenuItem onAction="#approveBudgetButton" text="Approve Budget" />
-                        <MenuItem onAction="#SocialMediaLinkButton" text="Social Media Link" />
                         <MenuItem onAction="#instrumentTechnicalSupportButton" text="Instrument Technical Support" />
                         <MenuItem onAction="#lyricsWritingButton" text="Lyrics Writing" />
                         <MenuItem onAction="#contactWithOperationalManagerButton" text="Contact with Operational Manager" />
                         <MenuItem onAction="#communicationWithFansButton" text="Communication with Fans" />
-                        <MenuItem onAction="#feedbackAndImprovemantButton" text="Feedback and Improvement" />
+                        <MenuItem onAction="#giveEarningAndExpenseInfoToAccountantButton" text="Give Expense and earning info to Accountant" />
                     </items>
                 </Menu>
                 <Menu text="Notifications">
@@ -29,7 +28,7 @@
                         <!-- Placeholder for any notification-related actions -->
                     </items>
                 </Menu>
-                <Menu onAction="#logOutButton" text="Log Out">
+                <Menu onAction="#logOutButton">
                     <items>
                         <!-- Placeholder for any extra actions -->
                     </items>
@@ -40,7 +39,7 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="647.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="460.0" fitWidth="613.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="853.0" fitWidth="1272.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/source.gif" />
                </image>

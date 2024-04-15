@@ -69,30 +69,30 @@ public class BandMemberDashboardController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("FeedbackToFansActivityScene.fxml"));
          borderPane.setCenter(root);
     }
-    @FXML
     private void feedbackAndImprovemantButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("TakeFeedbackAndImprovementSection.fxml"));
          borderPane.setCenter(root);
     }
 
-    @FXML
     private void SocialMediaLinkButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SocialMediaScene.fxml"));
          borderPane.setCenter(root);
     }
 
+    
+
+    
+
     @FXML
-    private void logOutButton(ActionEvent event)  throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainPkg/LoginSc.fxml"));
-        Parent parent = loader.load();
-
-        
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-
-        Scene LoginSc = new Scene(parent);
-
-        currentStage.setScene(LoginSc);
-        currentStage.show();
+    private void giveEarningAndExpenseInfoToAccountantButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("GiveExpenseAndEarningInformationToAccountantScene.fxml"));
+         borderPane.setCenter(root);
     }
+
+    @FXML
+    private void logOutButton(ActionEvent event) {
+    }
+
+    
+
 }

@@ -257,6 +257,35 @@ public class InstrumentManager extends User implements Serializable  {
         }
         
     }
+      
+      public static void sendBudgetReceipt(BudgetReceipt  s ){
+         File f = null;
+        FileOutputStream fos = null;      
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("BudgetReceipt.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new AppendableObjectOutputStream(fos);                
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);               
+            }
+            oos.writeObject(s);
+
+        } catch (IOException ex) {
+            Logger.getLogger(BudgetReceipt .class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(BudgetReceipt .class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
     
       
       

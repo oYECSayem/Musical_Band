@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -22,7 +23,7 @@ public class FeedbackToFansActivitySceneController implements Initializable {
     @FXML
     private TextArea replyFansTA;
     @FXML
-    private ComboBox<?> rateSongCB;
+    private ComboBox<String> rateSongCB;
     @FXML
     private TextField nameTF;
     @FXML
@@ -30,13 +31,22 @@ public class FeedbackToFansActivitySceneController implements Initializable {
 
    @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        rateSongCB.getItems().addAll("1 star", "2 star", 
+                "3 star", "4 star", "5 star");
     }    
 
     @FXML
     private void submitReplyButton(ActionEvent event) {
         String msg1 = replyFansTA.getText();
         String sender1 = nameTF.getText();
+        if (replyFansTA.getText().isEmpty()|| nameTF.getText().isEmpty()){
+           Alert unfill = new Alert(Alert.AlertType.WARNING);
+           unfill.setTitle("Warning");
+           unfill.setHeaderText(null);
+           unfill.setContentText("Please fill in all fields.");
+           unfill.showAndWait();
+           return;
+        }
         Message m = new Message(sender1, msg1);
         replyMessage(m);
     }

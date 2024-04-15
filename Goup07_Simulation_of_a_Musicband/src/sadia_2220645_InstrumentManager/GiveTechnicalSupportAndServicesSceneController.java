@@ -123,8 +123,9 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
         
         sendGuidelineAndManuals(guidelineAndManual);
         
-        
-        
+        instrumentNameTextField.clear();
+        guidelineTextArea.clear();
+        manualTextArea.clear();
         
         
     } 
@@ -151,7 +152,7 @@ public class GiveTechnicalSupportAndServicesSceneController implements Initializ
         sendMgstoBandMember(m);
         mgsSenderNameTextField.clear();
         sendMgsTextArea.clear();
-        //datepicker
+        datepicker.setValue(null);
     }
 
     @FXML

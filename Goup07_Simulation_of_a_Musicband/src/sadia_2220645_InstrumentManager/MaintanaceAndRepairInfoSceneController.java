@@ -47,8 +47,6 @@ public class MaintanaceAndRepairInfoSceneController implements Initializable {
     @FXML
     private TableColumn<DefectedInstrument, String> problemDescriptionCol;
     @FXML
-    private TableColumn<DefectedInstrument, Integer> repairCostCol;
-    @FXML
     private TextArea expanceReciptTextArea;
     @FXML
     private TableView<DefectedInstrument> repairInstrumentsTableView;
@@ -136,7 +134,7 @@ public class MaintanaceAndRepairInfoSceneController implements Initializable {
         
         
 
-        String repairCostText = repairCostTextFiled.getText().trim();
+        String repairCostText = repairCostTextFiled.getText();
         if (repairCostText.isEmpty()) {
             unfill.show();
             return;

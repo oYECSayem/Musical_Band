@@ -20,7 +20,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <RadioButton layoutX="462.0" layoutY="118.0" mnemonicParsing="false" text="FaceBook" />
+      <RadioButton fx:id="facebookRadiobutton" layoutX="462.0" layoutY="118.0" mnemonicParsing="false" text="FaceBook" />
       <RadioButton fx:id="instagramRadioButton" layoutX="592.0" layoutY="118.0" mnemonicParsing="false" text="Instagram" />
       <ComboBox fx:id="bandMembarNameComboBox" layoutX="58.0" layoutY="142.0" onAction="#bandMemberNameButtonOnClicked" prefHeight="31.0" prefWidth="205.0" promptText="Band Members Name" />
       <Label layoutX="79.0" layoutY="11.0" prefHeight="56.0" prefWidth="447.0" text="Stay Connected to our Social Media!" textFill="#c91717">

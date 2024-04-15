@@ -2,33 +2,38 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package sadia_2220645_Fan;
+package fahim_2220440_EventOrganizer;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
  *
- * @author USER
+ * @author MOSTOFA FAHIM HASAN
  */
-public class MeetAndGreetInformationSceneController implements Initializable {
+public class TicketPlatformViewOfEventOrganizerController implements Initializable {
 
     @FXML
-    private TextField nameTextField;
+    private ComboBox<?> concertName;
     @FXML
-    private TextArea notificationTextArea;
+    private ComboBox<?> ticketCategory;
     @FXML
-    private ComboBox<?> selectEventTypeComboBox;
+    private Button addMoreTicket;
     @FXML
-    private Label allEventsLabel;
+    private TableView<?> tableViewOfInfoOfTicket;
+    @FXML
+    private TableColumn<?, ?> totalTicket;
+    @FXML
+    private TableColumn<?, ?> soldTicket;
+    @FXML
+    private TableColumn<?, ?> remainTicket;
 
     /**
      * Initializes the controller class.
@@ -37,13 +42,5 @@ public class MeetAndGreetInformationSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void selectEventTypeButtonOnCicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void addEventButtonOnclicked(ActionEvent event) {
-    }
     
 }

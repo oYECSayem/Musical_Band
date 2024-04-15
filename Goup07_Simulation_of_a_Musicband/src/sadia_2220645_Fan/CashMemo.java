@@ -73,11 +73,11 @@ public class CashMemo implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         
-        sb.append("\nName").append(name);
-        sb.append("\nAdderss:").append(adderss);
-        sb.append("\npaymentMode:").append(paymentMode);
-        sb.append("\nPhone Number:").append(phoneNum);
-        sb.append("\nMerchandiseInfo:").append(merchandiseInfo);
+        sb.append("\nName :").append(name);
+        sb.append("\nAdderss :").append(adderss);
+        sb.append("\npaymentMode :").append(paymentMode);
+        sb.append("\nPhone Number :").append(phoneNum);
+        sb.append("\nMerchandiseInfo :").append(merchandiseInfo);
         sb.append("\n");
         
        

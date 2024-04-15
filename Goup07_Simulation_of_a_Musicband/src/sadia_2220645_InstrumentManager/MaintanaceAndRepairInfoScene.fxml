@@ -18,11 +18,10 @@
       </Label>
       <TableView fx:id="repairInstrumentsTableView" layoutX="60.0" layoutY="95.0" prefHeight="200.0" prefWidth="797.0">
         <columns>
-          <TableColumn fx:id="repairInstrumentNameCol" prefWidth="216.0" text=" Instrument Name" />
-          <TableColumn fx:id="repairInstrumentIDCol" minWidth="0.0" prefWidth="99.0" text=" ID" />
-            <TableColumn fx:id="defectCatagoryCol" prefWidth="170.0" text="Defect Catagory" />
-            <TableColumn fx:id="problemDescriptionCol" prefWidth="166.0" text="Problem Description" />
-            <TableColumn fx:id="repairCostCol" prefWidth="145.0" text="Repair Cost" />
+          <TableColumn fx:id="repairInstrumentNameCol" prefWidth="179.0" text=" Instrument Name" />
+          <TableColumn fx:id="repairInstrumentIDCol" minWidth="0.0" prefWidth="216.0" text=" ID" />
+            <TableColumn fx:id="defectCatagoryCol" prefWidth="205.0" text="Defect Catagory" />
+            <TableColumn fx:id="problemDescriptionCol" prefWidth="196.0" text="Problem Description" />
         </columns>
       </TableView>
       <Button layoutX="755.0" layoutY="310.0" mnemonicParsing="false" onAction="#showRepairedInstrumentDetailsButtonOnClicked" text="View List" />

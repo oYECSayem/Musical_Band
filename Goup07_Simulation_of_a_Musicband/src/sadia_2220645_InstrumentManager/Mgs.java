@@ -48,10 +48,10 @@ public class Mgs implements Serializable {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\nMessage{");
-        sb.append("\nname=").append(name);
-        sb.append("\nTextdescription=").append(Textdescription);
-        sb.append("\n shcedule=").append(shcedule);
+        sb.append("\nMessage :");
+        sb.append("\nSender Name :").append(name);
+        sb.append("\nText Description=").append(Textdescription);
+        sb.append("\nMeet shcedule :").append(shcedule);
         //sb.append('}');
         return sb.toString();
     }

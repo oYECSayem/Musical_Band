@@ -60,5 +60,6 @@
          </font>
       </Label>
       <TextField fx:id="defectedInstrumentNameTextField" layoutX="602.0" layoutY="106.0" />
+      <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#homepageButtonOnClicked" style="-fx-background-color: pink;" text="Home Page" />
    </children>
 </AnchorPane>

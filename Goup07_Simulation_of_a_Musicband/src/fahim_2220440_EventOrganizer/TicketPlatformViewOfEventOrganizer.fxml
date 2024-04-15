@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="581.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="692.0" prefWidth="1009.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fahim_2220440_EventOrganizer.TicketPlatformViewOfEventOrganizerController">
    <children>
       <Label layoutX="48.0" layoutY="58.0" prefHeight="21.0" prefWidth="106.0" text="Concert Name:" />
       <ComboBox fx:id="concertName" layoutX="175.0" layoutY="53.0" prefHeight="31.0" prefWidth="239.0" />
@@ -20,7 +20,7 @@
       <Label layoutX="429.0" layoutY="223.0" prefHeight="21.0" prefWidth="245.0" text="How many Ticket You want to add?" />
       <TextField fx:id="howMantTicektWantToAdd" layoutX="668.0" layoutY="218.0" prefHeight="31.0" prefWidth="168.0" />
       <Label layoutX="48.0" layoutY="303.0" prefHeight="21.0" prefWidth="168.0" text="Information Of Ticket:" />
-      <TableView fx:id="tableViewOfInfoOfTicket" layoutX="48.0" layoutY="345.0" prefHeight="200.0" prefWidth="787.0">
+      <TableView fx:id="tableViewOfInfoOfTicket" layoutX="48.0" layoutY="345.0" prefHeight="305.0" prefWidth="787.0">
         <columns>
           <TableColumn fx:id="ticketCategory" prefWidth="150.0" text="Ticket Category" />
           <TableColumn fx:id="totalTicket" minWidth="0.0" prefWidth="203.0" text="Total Ticket" />

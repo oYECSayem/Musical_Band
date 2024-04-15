@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="726.0" prefWidth="1142.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fahim_2220440_EventOrganizer.ConcertTicketController">
+   <children>
+      <Label layoutX="452.0" layoutY="27.0" prefHeight="21.0" prefWidth="238.0" text="Concert Ticket">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="109.0" prefHeight="25.0" prefWidth="179.0" text="Select Ticket Quantity:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="selectTicketQuantityComboBox" layoutX="64.0" layoutY="134.0" prefHeight="31.0" prefWidth="171.0" />
+      <Label layoutX="831.0" layoutY="109.0" prefHeight="25.0" prefWidth="179.0" text="Ticket Type:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="vipTicketRadioButton" layoutX="831.0" layoutY="150.0" mnemonicParsing="false" text="VIP-Ticket" textFill="#b10d0d">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="nonVipTicketRadioButton" layoutX="831.0" layoutY="179.0" mnemonicParsing="false" text="Non-VIP-Ticket" textFill="#b10d0d">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="64.0" layoutY="195.0" prefHeight="21.0" prefWidth="81.0" text="Ticket ID:" />
+      <TextField fx:id="ticketIdTextField" layoutX="129.0" layoutY="190.0" />
+      <Label layoutX="64.0" layoutY="240.0" prefHeight="21.0" prefWidth="125.0" text="Concert Details:" />
+      <TextField fx:id="concertDetailsTextField" layoutX="175.0" layoutY="235.0" prefHeight="136.0" prefWidth="247.0" />
+      <Label layoutX="690.0" layoutY="238.0" prefHeight="25.0" prefWidth="179.0" text="Ticket Price:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ticketPriceTextField" layoutX="795.0" layoutY="235.0" prefHeight="31.0" prefWidth="238.0" />
+      <TableView fx:id="concertTicketDetailsTableView" layoutX="64.0" layoutY="408.0" prefHeight="200.0" prefWidth="974.0">
+        <columns>
+          <TableColumn fx:id="ticketIdColumn" prefWidth="176.0" text="Ticket ID" />
+          <TableColumn fx:id="concertDetailsColumn" prefWidth="156.0" text="Concert Details" />
+            <TableColumn fx:id="ticketTypeColumn" prefWidth="178.0" text="Ticket Type" />
+            <TableColumn fx:id="ticketPriceColumn" prefWidth="158.0" text="Ticket Price" />
+            <TableColumn fx:id="quantityColumn" prefWidth="160.0" text="Quantity" />
+            <TableColumn fx:id="totalPriceColumn" prefWidth="145.0" text="Total Price" />
+        </columns>
+      </TableView>
+      <Button fx:id="addYourConcertEventButton" layoutX="64.0" layoutY="657.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="238.0" text="Add your concert Event" />
+      <Button fx:id="ticketPurchageNextProcessButton" layoutX="831.0" layoutY="657.0" mnemonicParsing="false" onAction="#ticketPurchaseOnClick" text="Ticket Purchase Next Process" />
+   </children>
+</AnchorPane>
