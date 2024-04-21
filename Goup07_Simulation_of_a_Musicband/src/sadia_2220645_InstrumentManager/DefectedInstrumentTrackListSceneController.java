@@ -95,7 +95,7 @@ public class DefectedInstrumentTrackListSceneController implements Initializable
 
    /* private void instrumentIdButtonOnClicked(ActionEvent event) {
         Integer selecteddefectedInstrumentId=  defectedInstumentIdComboBox.getValue();
-        for(DefectedInstrument di:DefectedInstrumentList){
+   for(DefectedInstrument di:DefectedInstrumentList){
             if (di.getDefectedInstrumentId()==selecteddefectedInstrumentId){
                 defectedInstrumentDetailsTextArea.setText("DefectedInstrument ID:"+di.getDefectedInstrumentId()+"\n DefectedInstrument Name: "
                         +di.getDefectedInstrumentName()

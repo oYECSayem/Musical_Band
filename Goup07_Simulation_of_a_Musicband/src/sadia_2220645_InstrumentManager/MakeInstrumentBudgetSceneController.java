@@ -63,8 +63,7 @@ public class MakeInstrumentBudgetSceneController implements Initializable {
     // Method to set selected instruments
      public void setSelectedInstruments(ObservableList<Instrument> selectedInstruments) {
         this.selectedInstruments = selectedInstruments;
-        
-       
+         
     }
     
      

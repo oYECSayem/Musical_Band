@@ -151,7 +151,7 @@ public class MaintanaceAndRepairInfoSceneController implements Initializable {
         
         
         
-        String combinedData = selectedInstrument.toString() + "\nRepair Cost:: " + repairInstrumentCost;
+        String combinedData = selectedInstrument.toString() + "\nRepair Cost:" + repairInstrumentCost;
 
         File f = null;
         FileOutputStream fos = null;
@@ -183,6 +183,8 @@ public class MaintanaceAndRepairInfoSceneController implements Initializable {
         success.show();
         repairCostTextFiled.clear();
         repairInstrumentsTableView.getItems().removeAll(selectedInstrument);
+        
+        
     }
 
     @FXML

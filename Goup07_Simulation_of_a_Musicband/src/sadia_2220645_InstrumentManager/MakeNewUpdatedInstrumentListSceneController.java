@@ -165,13 +165,6 @@ public class MakeNewUpdatedInstrumentListSceneController implements Initializabl
    
     ObservableList<Instrument> selectedInstruments = newUpdatedInstrumentTableView.getSelectionModel().getSelectedItems();
 
-    // Check if any instrument is selected
-    /*if (selectedInstruments.isEmpty()) {
-        alert.showAndWait();
-        return;
-    }*/
- 
-
     FXMLLoader loader = new FXMLLoader(getClass().getResource("MakeInstrumentBudgetScene.fxml"));
     Parent root = loader.load();
     MakeInstrumentBudgetSceneController controller = loader.getController();
